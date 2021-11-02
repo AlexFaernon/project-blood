@@ -965,9 +965,9 @@ GameObject:
   - component: {fileID: 1963469974}
   - component: {fileID: 1963469977}
   - component: {fileID: 1963469975}
+  - component: {fileID: 1963469979}
   - component: {fileID: 1963469973}
   - component: {fileID: 1963469976}
-  - component: {fileID: 1963469979}
   - component: {fileID: 1963469978}
   m_Layer: 5
   m_Name: Sample

@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Centrifuge.unity
     guid: 46454c205cd65d44590a1b35c0fd90ed
+  - enabled: 1
+    path: Assets/Scenes/Hemoanalyzer.unity
+    guid: c5c1db4cb3f98ba4693dcb845715ffcf
   m_configObjects: {}

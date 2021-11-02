@@ -3,7 +3,7 @@ using System.Linq;
 
 public static class BloodClass
 {
-    public static List<BloodSample> BloodSamples { get; private set; } = new List<BloodSample>
+    public static List<BloodSample> BloodSamples { get; } = new List<BloodSample>
     {
         new BloodSample(BloodGroup.A, Rh.Negative, Quality.Anemia),
         new BloodSample(BloodGroup.Zero, Rh.Positive, Quality.Normal)
@@ -11,10 +11,10 @@ public static class BloodClass
     
 
     public static IEnumerable<BloodSample> AnalyzedBloodSamples =>
-        BloodSamples.Where(x => x.IsClassified && x != CurrentBloodSample);
+        BloodSamples.Where(x => x.IsClassified);
 
     public static IEnumerable<BloodSample> UnknownBloodSamples =>
-        BloodSamples.Where(x => !x.IsClassified && x != CurrentBloodSample);
+        BloodSamples.Where(x => !x.IsClassified);
     
     public static BloodSample CurrentBloodSample { get; private set; }
 
@@ -46,6 +46,7 @@ public class BloodSample
     public Quality? ExpectedQuality = null;
 
     public bool IsSeparated;
+    public bool IsCurrent => BloodClass.CurrentBloodSample == this;
 
     public bool IsClassified => ExpectedBloodGroup != null && ExpectedRh != null && ExpectedQuality != null;
 
