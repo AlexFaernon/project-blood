@@ -6,6 +6,10 @@ public static class EventAggregator
 {
     public static Event<string> OnClick = new Event<string>();
     public static Event<GameObject> OnDrop = new Event<GameObject>();
+    public static BasicEvent PlasmaDrop = new BasicEvent();
+    public static BasicEvent BloodCellsDrop = new BasicEvent();
+    public static Event<Erythrocyte> ErythrocyteDrop = new Event<Erythrocyte>();
+    public static Event<Antigen> AntigenDrop = new Event<Antigen>();
 }
 
 public class Event<T>
@@ -26,6 +30,29 @@ public class Event<T>
     }
 
     public void Unsubscribe(Action<T> callback)
+    {
+        callbacks.Remove(callback);
+    }
+}
+
+public class BasicEvent
+{
+    private readonly List<Action> callbacks = new List<Action>();
+
+    public void Subscribe(Action callback)
+    {
+        callbacks.Add(callback);
+    }
+
+    public void Publish()
+    {
+        foreach (var callback in callbacks)
+        {
+            callback();
+        }
+    }
+
+    public void Unsubscribe(Action callback)
     {
         callbacks.Remove(callback);
     }

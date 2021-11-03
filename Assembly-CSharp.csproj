@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\Лабаратория\OnClickLab.cs" />
      <Compile Include="Assets\Scripts\Лабаратория\Центрифуга\BloodSampleCentrifuge.cs" />
      <Compile Include="Assets\Scripts\BloodClass.cs" />
+     <Compile Include="Assets\Scripts\Лабаратория\CurrentPackage.cs" />
      <Compile Include="Assets\Scripts\Textes.cs" />
      <Compile Include="Assets\Scripts\ScaleCollider.cs" />
      <Compile Include="Assets\Scripts\DragNDrop.cs" />
@@ -65,7 +66,9 @@
      <Compile Include="Assets\Scripts\EventAggregator.cs" />
      <Compile Include="Assets\Scripts\Toexp.cs" />
      <Compile Include="Assets\Scripts\Лабаратория\Геманализатор\AnalyzerProbe.cs" />
-     <Compile Include="Assets\Scripts\Лабаратория\CurrentPackage.cs" />
+     <Compile Include="Assets\Scripts\Лабаратория\Планшет\TabletCircles.cs" />
+     <Compile Include="Assets\Scripts\Лабаратория\Планшет\Circle.cs" />
+     <Compile Include="Assets\Scripts\Лабаратория\Планшет\onTouch.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
