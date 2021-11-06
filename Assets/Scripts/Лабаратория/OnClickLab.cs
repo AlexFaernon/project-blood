@@ -28,4 +28,9 @@ public class OnClickLab : MonoBehaviour
     {
         SceneManager.LoadScene("Hemoanalyzer");
     }
+
+    public void LoadGuideBook()
+    {
+        SceneManager.LoadScene("GuideBook");
+    }
 }

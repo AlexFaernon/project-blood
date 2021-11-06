@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 243518895}
   - component: {fileID: 243518894}
   - component: {fileID: 243518893}
+  - component: {fileID: 243518896}
   m_Layer: 5
   m_Name: GuideBook
   m_TagString: Untagged
@@ -204,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 243518894}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 243518896}
+        m_TargetAssemblyTypeName: OnClickLab, Assembly-CSharp
+        m_MethodName: LoadGuideBook
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &243518894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,7 +238,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 12db8dc60fe56a645a1163d9737c7198, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 493ed0950d3807240aae763bb40d597d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -243,6 +256,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243518891}
   m_CullTransparentMesh: 1
+--- !u!114 &243518896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243518891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96aab6d3dfa61a54598d8e43bf553289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &325695411
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,6 +573,7 @@ GameObject:
   - component: {fileID: 1044956057}
   - component: {fileID: 1044956056}
   - component: {fileID: 1044956055}
+  - component: {fileID: 1044956058}
   m_Layer: 5
   m_Name: Stickers
   m_TagString: Untagged
@@ -617,7 +643,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1044956056}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1044956058}
+        m_TargetAssemblyTypeName: OnClickLab, Assembly-CSharp
+        m_MethodName: LoadStickers
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1044956056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -656,6 +694,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044956053}
   m_CullTransparentMesh: 1
+--- !u!114 &1044956058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044956053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96aab6d3dfa61a54598d8e43bf553289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1204129135
 GameObject:
   m_ObjectHideFlags: 0

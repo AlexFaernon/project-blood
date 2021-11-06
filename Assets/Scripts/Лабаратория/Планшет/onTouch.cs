@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class onTouch : MonoBehaviour,IPointerDownHandler
 {
-    [SerializeField] private new GameObject gameObject;
+    [SerializeField] private GameObject drop;
     public void OnPointerDown(PointerEventData eventData)
     {
-        gameObject.SetActive(false);
+        drop.transform.GetComponent<RectTransform>().position =
+            transform.GetComponent<RectTransform>().position;
     }
 }

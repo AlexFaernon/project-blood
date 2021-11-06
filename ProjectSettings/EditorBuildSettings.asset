@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tablet.unity
     guid: b1ebe3973de57664582d596a202a6498
+  - enabled: 1
+    path: Assets/Scenes/GuideBook.unity
+    guid: ba7403553e6399e479b101008df5c6c6
   m_configObjects: {}
