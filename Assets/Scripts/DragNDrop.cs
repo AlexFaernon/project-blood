@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragNDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndDragHandler
+public class DragNDrop : MonoBehaviour, IDragHandler, IEndDragHandler
 {
     private Canvas canvas;
     private RectTransform rectTransform;
@@ -12,11 +12,6 @@ public class DragNDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndD
     {
         rectTransform = GetComponent<RectTransform>();
         canvas = GetComponentInParent<Canvas>();
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        
     }
 
     public void OnDrag(PointerEventData eventData)

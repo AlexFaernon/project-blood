@@ -5,7 +5,7 @@ using UnityEngine;
 public static class TabletCircles
 {
     public static readonly CircleContent[] Circles = new CircleContent[12];
-    
+    //todo очистка при заливке
 }
 
 public class CircleContent

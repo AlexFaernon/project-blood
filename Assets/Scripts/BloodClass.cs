@@ -5,8 +5,8 @@ public static class BloodClass
 {
     public static List<BloodSample> BloodSamples { get; } = new List<BloodSample>
     {
-        new BloodSample(BloodGroup.A, Rh.Negative, Quality.Anemia),
-        new BloodSample(BloodGroup.Zero, Rh.Positive, Quality.Normal)
+        new BloodSample(BloodGroup.Zero, Rh.Negative, Quality.Anemia),
+        new BloodSample(BloodGroup.A, Rh.Positive, Quality.Normal)
     };
     
 
