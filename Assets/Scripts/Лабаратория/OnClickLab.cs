@@ -33,4 +33,9 @@ public class OnClickLab : MonoBehaviour
     {
         SceneManager.LoadScene("GuideBook");
     }
+
+    public void LoadBar()
+    {
+        SceneManager.LoadScene("Bar");
+    }
 }
