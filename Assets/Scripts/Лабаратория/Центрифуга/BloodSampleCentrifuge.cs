@@ -5,9 +5,9 @@ using UnityEngine.UI;
 public class BloodSampleCentrifuge : MonoBehaviour
 {
     [SerializeField]private Sprite SeparatedSprite;
-    private bool IsDrop;
     private Vector2 originalPos;
     private RectTransform rectTransform;
+    private bool isTriggered;
     private void Awake()
     {
         if (BloodClass.CurrentBloodSample == null)
@@ -31,7 +31,14 @@ public class BloodSampleCentrifuge : MonoBehaviour
     {
         if (gameObject == other)
         {
-            IsDrop = true;
+            if (isTriggered)
+            {
+                Debug.Log("trigger");
+                BloodClass.CurrentBloodSample.IsSeparated = true;
+                SceneManager.LoadScene("Centrifuge");
+            }
+            
+            rectTransform.anchoredPosition = originalPos;
         }
     }
 
@@ -40,15 +47,13 @@ public class BloodSampleCentrifuge : MonoBehaviour
         EventAggregator.OnDrop.Unsubscribe(OnDrop);
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (IsDrop)
-        {
-            IsDrop = false;
-            rectTransform.anchoredPosition = originalPos;
-            Debug.Log("trigger");
-            BloodClass.CurrentBloodSample.IsSeparated = true;
-            SceneManager.LoadScene("Centrifuge");
-        }
+        isTriggered = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        isTriggered = false;
     }
 }

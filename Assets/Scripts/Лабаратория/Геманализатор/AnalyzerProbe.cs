@@ -63,7 +63,7 @@ public class AnalyzerProbe : MonoBehaviour
             return "ERROR";
         }
 
-        if (BloodClass.CurrentBloodSample.Quality == Quality.Normal)
+        if (BloodClass.CurrentBloodSample.BloodQuality == BloodQuality.Normal)
         {
             return "ok";
         }

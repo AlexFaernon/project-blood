@@ -11,7 +11,15 @@ public class UnknownPackage : MonoBehaviour
     private RectTransform rectTransform;
     void Awake()
     {
-        if (BloodClass.GetSampleByNumber(name).IsCurrent)
+        var sample = BloodClass.GetSampleByNumber(name);
+
+        if (sample == null)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+        
+        if (sample.IsCurrent)
         {
             gameObject.SetActive(false);
             return;
@@ -43,7 +51,7 @@ public class UnknownPackage : MonoBehaviour
         {
             if (IsTriggered)
             {
-                BloodClass.ChangeBloodSample(BloodClass.GetSampleByNumber(name));
+                BloodClass.ChangeCurrentBloodSample(BloodClass.GetSampleByNumber(name));
                 SceneManager.LoadScene("Lab");
             }
             

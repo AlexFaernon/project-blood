@@ -10,6 +10,9 @@ public static class EventAggregator
     public static BasicEvent BloodCellsDrop = new BasicEvent();
     public static Event<Erythrocyte> ErythrocyteDrop = new Event<Erythrocyte>();
     public static Event<Antigen> AntigenDrop = new Event<Antigen>();
+    public static Event<BloodGroup?> BloodGroupSticker = new Event<BloodGroup?>();
+    public static Event<Rh?> RhSticker = new Event<Rh?>();
+    public static Event<BloodQuality?> BloodQualitySticker = new Event<BloodQuality?>();
 }
 
 public class Event<T>

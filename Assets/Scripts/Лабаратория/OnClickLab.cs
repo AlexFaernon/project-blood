@@ -21,7 +21,7 @@ public class OnClickLab : MonoBehaviour
     
     public void LoadStickers()
     {
-        throw new NotImplementedException();
+        SceneManager.LoadScene("Stickers");
     }
     
     public void LoadHemoanalyzer()

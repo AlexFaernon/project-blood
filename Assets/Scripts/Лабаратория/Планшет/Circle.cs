@@ -77,6 +77,12 @@ public class Circle : MonoBehaviour
                 break;
         }
 
+        if (BloodClass.CurrentBloodSample.Rh == Rh.Positive && content.ContainsBloodCells &&
+            content.Antigens.Contains(Antigen.AntiD))
+        {
+            return true;
+        }
+            
         return false;
     }
 
