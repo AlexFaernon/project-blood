@@ -55,6 +55,8 @@ public class BloodSample
     public Rh? RhSticker = null;
     public BloodQuality? QualitySticker = null;
 
+    public bool IsAnalyzed;
+
     public bool IsSeparated;
     public bool IsCurrent => BloodClass.CurrentBloodSample == this;
 

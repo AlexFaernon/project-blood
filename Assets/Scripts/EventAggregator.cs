@@ -13,6 +13,7 @@ public static class EventAggregator
     public static Event<BloodGroup?> BloodGroupSticker = new Event<BloodGroup?>();
     public static Event<Rh?> RhSticker = new Event<Rh?>();
     public static Event<BloodQuality?> BloodQualitySticker = new Event<BloodQuality?>();
+    public static BasicEvent SampleDropOnCentrifuge = new BasicEvent();
 }
 
 public class Event<T>

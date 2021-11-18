@@ -33,9 +33,8 @@ public class BloodSampleCentrifuge : MonoBehaviour
         {
             if (isTriggered)
             {
-                Debug.Log("trigger");
-                BloodClass.CurrentBloodSample.IsSeparated = true;
-                SceneManager.LoadScene("Centrifuge");
+                gameObject.SetActive(false);
+                EventAggregator.SampleDropOnCentrifuge.Publish();
             }
             
             rectTransform.anchoredPosition = originalPos;

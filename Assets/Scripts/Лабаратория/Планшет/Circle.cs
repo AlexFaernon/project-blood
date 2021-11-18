@@ -37,7 +37,6 @@ public class Circle : MonoBehaviour
         if (content.ContainsPlasma)
         {
             image.color = new Color(0, 0, 255, 1);
-            return;
         }
     }
     
