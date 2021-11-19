@@ -11,7 +11,7 @@ public class OnClickBar : MonoBehaviour
 
     public void LoadShop()
     {
-        throw new NotImplementedException();
+        SceneManager.LoadScene("Shop");
     }
 
     public void LoadRecipes()

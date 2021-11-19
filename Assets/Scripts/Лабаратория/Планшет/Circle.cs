@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Circle : MonoBehaviour
 {
+    [SerializeField] Sprite AgglutinatedSprite;
+    [SerializeField] Sprite PlasmaSprite;
+
     private int number;
     private CircleContent content;
     private bool isTriggered;
@@ -30,13 +33,15 @@ public class Circle : MonoBehaviour
     {
         if (IsAgglutinated())
         {
-            image.color = new Color(255, 0 , 0, 1);
+            image.sprite = AgglutinatedSprite;
+            image.color = new Color(255, 255 , 255, 1);
             return;
         }
 
         if (content.ContainsPlasma)
         {
-            image.color = new Color(0, 0, 255, 1);
+            image.sprite = PlasmaSprite;
+            image.color = new Color(255, 255, 255, 1);
         }
     }
     

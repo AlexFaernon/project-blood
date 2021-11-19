@@ -162,7 +162,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.73741233, y: 0.15614557}
   m_AnchorMax: {x: 0.89500004, y: 0.40056333}
-  m_AnchoredPosition: {x: 0.30000305, y: -0.27500153}
+  m_AnchoredPosition: {x: 0.2999878, y: -0.27500916}
   m_SizeDelta: {x: 0, y: -0.55000305}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &17954960
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 0}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -288,6 +288,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba41d12627d949140acd1a32e9d4855e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AgglutinatedSprite: {fileID: 21300000, guid: 511756bf6f8240249adf64caf293c817, type: 3}
+  PlasmaSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
 --- !u!1 &286473628
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +455,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba41d12627d949140acd1a32e9d4855e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AgglutinatedSprite: {fileID: 21300000, guid: 511756bf6f8240249adf64caf293c817, type: 3}
+  PlasmaSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
 --- !u!1 &443301326
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,7 +626,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.527, y: 0.15614557}
   m_AnchorMax: {x: 0.684, y: 0.40056333}
-  m_AnchoredPosition: {x: -0.45999908, y: 0}
+  m_AnchoredPosition: {x: -0.45999146, y: 0}
   m_SizeDelta: {x: 0, y: -0.55000305}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &525656434
@@ -748,6 +752,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba41d12627d949140acd1a32e9d4855e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AgglutinatedSprite: {fileID: 21300000, guid: 511756bf6f8240249adf64caf293c817, type: 3}
+  PlasmaSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
 --- !u!1 &534438620
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,7 +809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -913,6 +919,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba41d12627d949140acd1a32e9d4855e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AgglutinatedSprite: {fileID: 21300000, guid: 511756bf6f8240249adf64caf293c817, type: 3}
+  PlasmaSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
 --- !u!1 &668854635
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,7 +1207,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.104, y: 0.1602722}
   m_AnchorMax: {x: 0.26200002, y: 0.40056333}
-  m_AnchoredPosition: {x: -0.16998291, y: 0.19999695}
+  m_AnchoredPosition: {x: -0.16998291, y: 0.19998169}
   m_SizeDelta: {x: 0, y: 0.44999695}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &736395258
@@ -1325,6 +1333,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba41d12627d949140acd1a32e9d4855e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AgglutinatedSprite: {fileID: 21300000, guid: 511756bf6f8240249adf64caf293c817, type: 3}
+  PlasmaSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
 --- !u!1 &873700414
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,7 +1371,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.35300002, y: 0.7053382}
   m_AnchorMax: {x: 0.41264135, y: 0.95382124}
-  m_AnchoredPosition: {x: 1.0999985, y: 0.19999695}
+  m_AnchoredPosition: {x: 1.1000061, y: 0.2000122}
   m_SizeDelta: {x: 0, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &873700416
@@ -1681,7 +1691,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.453, y: 0.7053382}
   m_AnchorMax: {x: 0.512, y: 0.95382124}
-  m_AnchoredPosition: {x: -0.4399109, y: 0.20002747}
+  m_AnchoredPosition: {x: -0.4399109, y: 0.2000122}
   m_SizeDelta: {x: 0, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &982326533
@@ -2374,6 +2384,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba41d12627d949140acd1a32e9d4855e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AgglutinatedSprite: {fileID: 21300000, guid: 511756bf6f8240249adf64caf293c817, type: 3}
+  PlasmaSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
 --- !u!1 &1172567085
 GameObject:
   m_ObjectHideFlags: 0
@@ -2558,7 +2570,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.32700002, y: 0.15614557}
   m_AnchorMax: {x: 0.48485306, y: 0.40056333}
-  m_AnchoredPosition: {x: -0.5700073, y: 0.27500153}
+  m_AnchoredPosition: {x: -0.5700073, y: 0.27500916}
   m_SizeDelta: {x: 0, y: -0.55000305}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1195542417
@@ -2684,6 +2696,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba41d12627d949140acd1a32e9d4855e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AgglutinatedSprite: {fileID: 21300000, guid: 511756bf6f8240249adf64caf293c817, type: 3}
+  PlasmaSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
 --- !u!1 &1235666313
 GameObject:
   m_ObjectHideFlags: 0
@@ -2849,6 +2863,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba41d12627d949140acd1a32e9d4855e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AgglutinatedSprite: {fileID: 21300000, guid: 511756bf6f8240249adf64caf293c817, type: 3}
+  PlasmaSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
 --- !u!1 &1557086654
 GameObject:
   m_ObjectHideFlags: 0
@@ -3507,6 +3523,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba41d12627d949140acd1a32e9d4855e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AgglutinatedSprite: {fileID: 21300000, guid: 511756bf6f8240249adf64caf293c817, type: 3}
+  PlasmaSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
 --- !u!1 &1897893566
 GameObject:
   m_ObjectHideFlags: 0
@@ -3672,6 +3690,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba41d12627d949140acd1a32e9d4855e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AgglutinatedSprite: {fileID: 21300000, guid: 511756bf6f8240249adf64caf293c817, type: 3}
+  PlasmaSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
 --- !u!1 &2063590822
 GameObject:
   m_ObjectHideFlags: 0
@@ -3837,6 +3857,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba41d12627d949140acd1a32e9d4855e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AgglutinatedSprite: {fileID: 21300000, guid: 511756bf6f8240249adf64caf293c817, type: 3}
+  PlasmaSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
 --- !u!1 &2086668779
 GameObject:
   m_ObjectHideFlags: 0
@@ -3873,7 +3895,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5594348, y: 0.7053382}
   m_AnchorMax: {x: 0.6182282, y: 0.95382124}
-  m_AnchoredPosition: {x: -0.9999237, y: 0.19999695}
+  m_AnchoredPosition: {x: -0.9999237, y: 0.2000122}
   m_SizeDelta: {x: 0, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2086668784
@@ -4109,3 +4131,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba41d12627d949140acd1a32e9d4855e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AgglutinatedSprite: {fileID: 21300000, guid: 511756bf6f8240249adf64caf293c817, type: 3}
+  PlasmaSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
