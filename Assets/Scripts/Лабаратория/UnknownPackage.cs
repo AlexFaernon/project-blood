@@ -9,6 +9,9 @@ public class UnknownPackage : MonoBehaviour
     private bool IsTriggered;
     private Vector2 originalPos;
     private RectTransform rectTransform;
+    public BloodGroup BloodGroup;
+    public Rh Rh;
+    public BloodQuality BloodQuality;
     void Awake()
     {
         var sample = BloodClass.GetSampleByNumber(name);
@@ -18,6 +21,10 @@ public class UnknownPackage : MonoBehaviour
             gameObject.SetActive(false);
             return;
         }
+        
+        BloodGroup = sample.BloodGroup;
+        Rh = sample.Rh;
+        BloodQuality = sample.BloodQuality;
         
         if (sample.IsCurrent)
         {

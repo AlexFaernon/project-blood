@@ -1,14 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 public static class BloodClass
 {
-    public static List<BloodSample> BloodSamples { get; } = new List<BloodSample>
-    {
-        new BloodSample(BloodGroup.Zero, Rh.Negative, BloodQuality.Anemia),
-        new BloodSample(BloodGroup.A, Rh.Positive, BloodQuality.Normal)
-    };
-    
+    public static List<BloodSample> BloodSamples { get; private set; } = new List<BloodSample>();
 
     public static IEnumerable<BloodSample> AnalyzedBloodSamples =>
         BloodSamples.Where(x => x.ClassificationDone);
@@ -42,6 +38,24 @@ public static class BloodClass
         }
 
         return null;
+    }
+
+    public static void ClearSamplesList()
+    {
+        BloodSamples = new List<BloodSample>();
+    }
+
+    public static void GenerateRandomSample()
+    {
+        if (BloodSamples.Count == 10)
+        {
+            throw new ArgumentOutOfRangeException("too many blood samples");
+        }
+        var random = new Random();
+        var group = (BloodGroup)random.Next(4);
+        var rh = (Rh)random.Next(2);
+        var quality = (BloodQuality)random.Next(2);
+        BloodSamples.Add(new BloodSample(group, rh, quality));
     }
 }
 
