@@ -1,11 +1,17 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public static class TabletCircles
 {
     public static readonly CircleContent[] Circles = new CircleContent[12];
     //todo очистка при заливке
+    public static bool ZeroUsed;
+    public static bool AUsed;
+    public static bool BUsed;
+    public static bool AntiAUsed;
+    public static bool AntiBUsed;
+    public static bool AntiDUsed;
+
+    public static bool IsTabletDone => ZeroUsed && AUsed && BUsed && AntiAUsed && AntiBUsed && AntiDUsed;
 }
 
 public class CircleContent

@@ -81,12 +81,16 @@ public class Circle : MonoBehaviour
                 break;
         }
 
-        if (BloodClass.CurrentBloodSample.Rh == Rh.Positive && content.ContainsBloodCells &&
-            content.Antigens.Contains(Antigen.AntiD))
+        if (content.ContainsBloodCells && content.Antigens.Contains(Antigen.AntiD))
         {
-            return true;
-        }
+            TabletCircles.AntiDUsed = true;
             
+            if (BloodClass.CurrentBloodSample.Rh == Rh.Positive)
+            {
+                return true;
+            }
+        }
+
         return false;
     }
 
@@ -105,7 +109,6 @@ public class Circle : MonoBehaviour
         if (!isTriggered) return;
         
         content.ContainsPlasma = true;
-        Debug.Log("plasma");
         ChangeImage();
     }
 
@@ -115,7 +118,6 @@ public class Circle : MonoBehaviour
         
         if (content.ContainsPlasma)
             content.ContainsBloodCells = true;
-        Debug.Log("bloodcells");
         ChangeImage();
     }
 
@@ -124,8 +126,10 @@ public class Circle : MonoBehaviour
         if (!isTriggered) return;
         
         if (content.ContainsPlasma)
+        {
+            TryUseErythrocyte(erythrocyte);
             content.Erythrocytes.Add(erythrocyte);
-        Debug.Log("eryth" + erythrocyte);
+        }
         ChangeImage();
     }
 
@@ -134,11 +138,54 @@ public class Circle : MonoBehaviour
         if (!isTriggered) return;
         
         if (content.ContainsPlasma)
+        {
+            TryUseAntigen(antigen);
             content.Antigens.Add(antigen);
-        Debug.Log("antigen" + antigen);
+        }
         ChangeImage();
     }
 
+    private void TryUseErythrocyte(Erythrocyte erythrocyte)
+    {
+        if (content.Erythrocytes.Count != 0 || content.Antigens.Count != 0) return;
+        
+        switch (erythrocyte)
+        {
+            case Erythrocyte.Zero:
+                Debug.Log("0");
+                TabletCircles.ZeroUsed = true;
+                break;
+            case Erythrocyte.A:
+                Debug.Log("A");
+                TabletCircles.AUsed = true;
+                break;
+            case Erythrocyte.B:
+                Debug.Log("B");
+                TabletCircles.BUsed = true;
+                break;
+        }
+    }
+
+    private void TryUseAntigen(Antigen antigen)
+    {
+        if (content.Erythrocytes.Count != 0 || content.Antigens.Count != 0) return;
+        
+        switch (antigen)
+        {
+            case Antigen.AntiA:
+                Debug.Log("antiA");
+                TabletCircles.AntiAUsed = true;
+                break;
+            case Antigen.AntiB:
+                Debug.Log("antiB");
+                TabletCircles.AntiBUsed = true;
+                break;
+            case Antigen.AntiD:
+                Debug.Log("antiD");
+                TabletCircles.AntiDUsed = true;
+                break;
+        }
+    }
     private void OnDestroy()
     {
         EventAggregator.PlasmaDrop.Unsubscribe(OnPlasmaDrop);

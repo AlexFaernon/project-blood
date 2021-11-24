@@ -31,17 +31,11 @@ public class ProgressBar : MonoBehaviour
             {
                 image.sprite = twoBarsSprite;
 
-                if (F())
+                if (TabletCircles.IsTabletDone)
                 {
                     image.sprite = threeBarsSprite;
-                    // todo tablet check
                 }
             }
         }
-    }
-
-    private bool F()
-    {
-        return false;
     }
 }
