@@ -18,4 +18,19 @@ public class OnClickBar : MonoBehaviour
     {
         throw new NotImplementedException();
     }
+
+    public void LoadFridge()
+    {
+        SceneManager.LoadScene("Fridge");
+    }
+
+    public void LoadBar()
+    {
+        SceneManager.LoadScene("Bar");
+    }
+
+    public void LoadBoard()
+    {
+        SceneManager.LoadScene("Board");
+    }
 }
