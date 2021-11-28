@@ -8,9 +8,16 @@ public class ScaleCollider : MonoBehaviour
 {
     private void Awake()
     {
-        var fitter = GetComponent<AspectRatioFitter>().aspectRatio;
         var rectTransform = GetComponent<RectTransform>().rect;
-        GetComponent<BoxCollider2D>().size = new Vector2(rectTransform.height * fitter, rectTransform.height);
+        if (TryGetComponent(out AspectRatioFitter aspectRatioFitter))
+        {
+            var aspectRatio = aspectRatioFitter.aspectRatio;
+            GetComponent<BoxCollider2D>().size = new Vector2(rectTransform.height * aspectRatio, rectTransform.height);
+        }
+        else
+        {
+            GetComponent<BoxCollider2D>().size = new Vector2(rectTransform.width, rectTransform.height);
+        }
     }
     
 }

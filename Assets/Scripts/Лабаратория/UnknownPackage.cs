@@ -14,7 +14,7 @@ public class UnknownPackage : MonoBehaviour
     public BloodQuality BloodQuality;
     void Awake()
     {
-        var sample = BloodClass.GetSampleByNumber(name);
+        var sample = BloodClass.GetUnknownSampleByNumber(name);
 
         if (sample == null)
         {
@@ -58,7 +58,8 @@ public class UnknownPackage : MonoBehaviour
         {
             if (IsTriggered)
             {
-                BloodClass.ChangeCurrentBloodSample(BloodClass.GetSampleByNumber(name));
+                BloodClass.ChangeCurrentBloodSample(BloodClass.GetUnknownSampleByNumber(name));
+                TabletCircles.ClearTablet();
                 SceneManager.LoadScene("Lab");
             }
             

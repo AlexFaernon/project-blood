@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 public static class TabletCircles
 {
-    public static readonly CircleContent[] Circles = new CircleContent[12];
+    public static CircleContent[] Circles { get; private set; } = new CircleContent[CirclesCount];
     //todo очистка при заливке
     public static bool ZeroUsed;
     public static bool AUsed;
@@ -10,8 +10,14 @@ public static class TabletCircles
     public static bool AntiAUsed;
     public static bool AntiBUsed;
     public static bool AntiDUsed;
+    private const int CirclesCount = 12;
 
     public static bool IsTabletDone => ZeroUsed && AUsed && BUsed && AntiAUsed && AntiBUsed && AntiDUsed;
+
+    public static void ClearTablet()
+    {
+        Circles = new CircleContent[CirclesCount];
+    }
 }
 
 public class CircleContent

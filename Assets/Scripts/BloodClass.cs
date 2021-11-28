@@ -29,12 +29,23 @@ public static class BloodClass
         CurrentBloodSample = null;
     }
 
-    public static BloodSample GetSampleByNumber(string name)
+    public static BloodSample GetUnknownSampleByNumber(string name)
     {
         var number = int.Parse(name);
         if (number < UnknownBloodSamples.Count())
         {
             return UnknownBloodSamples.ToArray()[number];
+        }
+
+        return null;
+    }
+    
+    public static BloodSample GetAnalyzedSampleByNumber(string name)
+    {
+        var number = int.Parse(name);
+        if (number < AnalyzedBloodSamples.Count())
+        {
+            return AnalyzedBloodSamples.ToArray()[number];
         }
 
         return null;

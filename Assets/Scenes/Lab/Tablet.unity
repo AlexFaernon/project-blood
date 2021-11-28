@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AgglutinatedSprite: {fileID: 21300000, guid: 511756bf6f8240249adf64caf293c817, type: 3}
-  PlasmaSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
+  FilledSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
 --- !u!1 &286473628
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AgglutinatedSprite: {fileID: 21300000, guid: 511756bf6f8240249adf64caf293c817, type: 3}
-  PlasmaSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
+  FilledSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
 --- !u!1 &443301326
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,7 +753,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AgglutinatedSprite: {fileID: 21300000, guid: 511756bf6f8240249adf64caf293c817, type: 3}
-  PlasmaSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
+  FilledSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
 --- !u!1 &534438620
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,7 +920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AgglutinatedSprite: {fileID: 21300000, guid: 511756bf6f8240249adf64caf293c817, type: 3}
-  PlasmaSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
+  FilledSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
 --- !u!1 &668854635
 GameObject:
   m_ObjectHideFlags: 0
@@ -1334,7 +1334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AgglutinatedSprite: {fileID: 21300000, guid: 511756bf6f8240249adf64caf293c817, type: 3}
-  PlasmaSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
+  FilledSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
 --- !u!1 &873700414
 GameObject:
   m_ObjectHideFlags: 0
@@ -2385,7 +2385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AgglutinatedSprite: {fileID: 21300000, guid: 511756bf6f8240249adf64caf293c817, type: 3}
-  PlasmaSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
+  FilledSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
 --- !u!1 &1172567085
 GameObject:
   m_ObjectHideFlags: 0
@@ -2697,7 +2697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AgglutinatedSprite: {fileID: 21300000, guid: 511756bf6f8240249adf64caf293c817, type: 3}
-  PlasmaSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
+  FilledSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
 --- !u!1 &1235666313
 GameObject:
   m_ObjectHideFlags: 0
@@ -2864,7 +2864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AgglutinatedSprite: {fileID: 21300000, guid: 511756bf6f8240249adf64caf293c817, type: 3}
-  PlasmaSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
+  FilledSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
 --- !u!1 &1557086654
 GameObject:
   m_ObjectHideFlags: 0
@@ -3524,7 +3524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AgglutinatedSprite: {fileID: 21300000, guid: 511756bf6f8240249adf64caf293c817, type: 3}
-  PlasmaSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
+  FilledSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
 --- !u!1 &1897893566
 GameObject:
   m_ObjectHideFlags: 0
@@ -3691,7 +3691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AgglutinatedSprite: {fileID: 21300000, guid: 511756bf6f8240249adf64caf293c817, type: 3}
-  PlasmaSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
+  FilledSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
 --- !u!1 &2063590822
 GameObject:
   m_ObjectHideFlags: 0
@@ -3858,7 +3858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AgglutinatedSprite: {fileID: 21300000, guid: 511756bf6f8240249adf64caf293c817, type: 3}
-  PlasmaSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
+  FilledSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
 --- !u!1 &2086668779
 GameObject:
   m_ObjectHideFlags: 0
@@ -4132,4 +4132,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AgglutinatedSprite: {fileID: 21300000, guid: 511756bf6f8240249adf64caf293c817, type: 3}
-  PlasmaSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}
+  FilledSprite: {fileID: 21300000, guid: ac4d5bffa7705ef44ad1fab15cc1529c, type: 3}

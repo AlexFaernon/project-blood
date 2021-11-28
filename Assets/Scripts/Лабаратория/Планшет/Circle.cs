@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Circle : MonoBehaviour
 {
     [SerializeField] Sprite AgglutinatedSprite;
-    [SerializeField] Sprite PlasmaSprite;
+    [SerializeField] Sprite FilledSprite;
 
     private int number;
     private CircleContent content;
@@ -38,9 +38,9 @@ public class Circle : MonoBehaviour
             return;
         }
 
-        if (content.ContainsPlasma)
+        if (content.ContainsPlasma || content.ContainsBloodCells)
         {
-            image.sprite = PlasmaSprite;
+            image.sprite = FilledSprite;
             image.color = new Color(255, 255, 255, 1);
         }
     }
@@ -59,29 +59,26 @@ public class Circle : MonoBehaviour
                 }
                 break;
             case BloodGroup.A:
-                if (content.Erythrocytes.Contains(Erythrocyte.B) ||
-                    content.ContainsBloodCells && content.Antigens.Contains(Antigen.AntiA))
+                if (content.Erythrocytes.Contains(Erythrocyte.B) || content.Antigens.Contains(Antigen.AntiA))
                 {
                     return true;
                 }
                 break;
             case BloodGroup.B:
-                if (content.Erythrocytes.Contains(Erythrocyte.A) ||
-                    content.ContainsBloodCells && content.Antigens.Contains(Antigen.AntiB))
+                if (content.Erythrocytes.Contains(Erythrocyte.A) || content.Antigens.Contains(Antigen.AntiB))
                 {
                     return true;
                 }
                 break;
             case BloodGroup.AB:
-                if (content.ContainsBloodCells &&
-                    (content.Antigens.Contains(Antigen.AntiA) || content.Antigens.Contains(Antigen.AntiB)))
+                if (content.Antigens.Contains(Antigen.AntiA) || content.Antigens.Contains(Antigen.AntiB))
                 {
                     return true;
                 }
                 break;
         }
 
-        if (content.ContainsBloodCells && content.Antigens.Contains(Antigen.AntiD))
+        if (content.Antigens.Contains(Antigen.AntiD))
         {
             TabletCircles.AntiDUsed = true;
             
@@ -116,8 +113,7 @@ public class Circle : MonoBehaviour
     {
         if (!isTriggered) return;
         
-        if (content.ContainsPlasma)
-            content.ContainsBloodCells = true;
+        content.ContainsBloodCells = true;
         ChangeImage();
     }
 
@@ -137,7 +133,7 @@ public class Circle : MonoBehaviour
     {
         if (!isTriggered) return;
         
-        if (content.ContainsPlasma)
+        if (content.ContainsBloodCells)
         {
             TryUseAntigen(antigen);
             content.Antigens.Add(antigen);

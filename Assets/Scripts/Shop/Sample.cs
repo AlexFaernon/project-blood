@@ -15,7 +15,7 @@ public class Sample : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
         originalPos = rectTransform.anchoredPosition;
         EventAggregator.OnDrop.Subscribe(OnDrop);
-        gameObject.SetActive(Recources.ToggleSample[int.Parse(name)]);
+        gameObject.SetActive(Recources.ToggleSampleShop[int.Parse(name)]);
     }
 
     private void OnDrop(GameObject other)
@@ -24,7 +24,7 @@ public class Sample : MonoBehaviour
         {
             if (Recources.BuySample())
             {
-                Recources.ToggleSample[int.Parse(name)] = false;
+                Recources.ToggleSampleShop[int.Parse(name)] = false;
                 SceneManager.LoadScene("Shop");
                 return;
             }

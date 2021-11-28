@@ -6,28 +6,28 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Lab.unity
+    path: Assets/Scenes/Lab/Lab.unity
     guid: 75f176c6782bf37439ff5e4aa8ccfddd
   - enabled: 1
-    path: Assets/Scenes/Centrifuge.unity
+    path: Assets/Scenes/Lab/Centrifuge.unity
     guid: 46454c205cd65d44590a1b35c0fd90ed
   - enabled: 1
-    path: Assets/Scenes/Hemoanalyzer.unity
+    path: Assets/Scenes/Lab/Hemoanalyzer.unity
     guid: c5c1db4cb3f98ba4693dcb845715ffcf
   - enabled: 1
-    path: Assets/Scenes/Tablet.unity
+    path: Assets/Scenes/Lab/Tablet.unity
     guid: b1ebe3973de57664582d596a202a6498
   - enabled: 1
-    path: Assets/Scenes/GuideBook.unity
+    path: Assets/Scenes/Lab/GuideBook.unity
     guid: ba7403553e6399e479b101008df5c6c6
   - enabled: 1
-    path: Assets/Scenes/Bar.unity
+    path: Assets/Scenes/Bar/Bar.unity
     guid: b26c6d1106357b1429cdee04019af9f1
   - enabled: 1
-    path: Assets/Scenes/Stickers.unity
+    path: Assets/Scenes/Lab/Stickers.unity
     guid: 9a95ef0468629e646b46c94a8632feda
   - enabled: 1
-    path: Assets/Scenes/Shop.unity
+    path: Assets/Scenes/Bar/Shop.unity
     guid: 03a8475ed51b281489bd04e0950636d4
   - enabled: 1
     path: Assets/Scenes/Board.unity
@@ -36,6 +36,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Statistics.unity
     guid: c696cc2bb3c855c4e96d04cc1c72345e
   - enabled: 1
-    path: Assets/Scenes/Fridge.unity
+    path: Assets/Scenes/Bar/Fridge.unity
     guid: eb2ea2de1f1881646a6f5da3bad169b9
   m_configObjects: {}

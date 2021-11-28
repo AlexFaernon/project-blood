@@ -28,9 +28,4 @@ public class OnClickBar : MonoBehaviour
     {
         SceneManager.LoadScene("Bar");
     }
-
-    public void LoadBoard()
-    {
-        SceneManager.LoadScene("Board");
-    }
 }
