@@ -7,6 +7,6 @@ public class Packages : MonoBehaviour
 
     private void Awake()
     {
-        text.text = Recources.Samples.ToString();
+        text.text = Resources.Samples.ToString();
     }
 }

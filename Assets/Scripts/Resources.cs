@@ -1,6 +1,6 @@
 
 
-public static class Recources
+public static class Resources
 {
     public const int SamplePrice = 200;
     public static int Money = 100000;

@@ -4,16 +4,16 @@ using UnityEngine;
 
 public static class EventAggregator
 {
-    public static Event<string> OnClick = new Event<string>();
-    public static Event<GameObject> OnDrop = new Event<GameObject>();
-    public static BasicEvent PlasmaDrop = new BasicEvent();
-    public static BasicEvent BloodCellsDrop = new BasicEvent();
-    public static Event<Erythrocyte> ErythrocyteDrop = new Event<Erythrocyte>();
-    public static Event<Antigen> AntigenDrop = new Event<Antigen>();
-    public static Event<BloodGroup?> BloodGroupSticker = new Event<BloodGroup?>();
-    public static Event<Rh?> RhSticker = new Event<Rh?>();
-    public static Event<BloodQuality?> BloodQualitySticker = new Event<BloodQuality?>();
-    public static BasicEvent SampleDropOnCentrifuge = new BasicEvent();
+    public static readonly Event<string> OnClick = new Event<string>();
+    public static readonly Event<GameObject> OnDrop = new Event<GameObject>();
+    public static readonly BasicEvent PlasmaDrop = new BasicEvent();
+    public static readonly BasicEvent BloodCellsDrop = new BasicEvent();
+    public static readonly Event<Erythrocyte> ErythrocyteDrop = new Event<Erythrocyte>();
+    public static readonly Event<Antigen> AntigenDrop = new Event<Antigen>();
+    public static readonly Event<BloodGroup?> BloodGroupSticker = new Event<BloodGroup?>();
+    public static readonly Event<Rh?> RhSticker = new Event<Rh?>();
+    public static readonly Event<BloodQuality?> BloodQualitySticker = new Event<BloodQuality?>();
+    public static readonly BasicEvent SampleDropOnCentrifuge = new BasicEvent();
 }
 
 public class Event<T>

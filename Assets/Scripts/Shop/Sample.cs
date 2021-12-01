@@ -15,16 +15,16 @@ public class Sample : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
         originalPos = rectTransform.anchoredPosition;
         EventAggregator.OnDrop.Subscribe(OnDrop);
-        gameObject.SetActive(Recources.ToggleSampleShop[int.Parse(name)]);
+        gameObject.SetActive(Resources.ToggleSampleShop[int.Parse(name)]);
     }
 
     private void OnDrop(GameObject other)
     {
         if (isTriggered && other == gameObject)
         {
-            if (Recources.BuySample())
+            if (Resources.BuySample())
             {
-                Recources.ToggleSampleShop[int.Parse(name)] = false;
+                Resources.ToggleSampleShop[int.Parse(name)] = false;
                 SceneManager.LoadScene("Shop");
                 return;
             }

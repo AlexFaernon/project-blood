@@ -10,6 +10,6 @@ public class Money : MonoBehaviour
 
     private void Awake()
     {
-        text.text = Recources.Money.ToString();
+        text.text = Resources.Money.ToString();
     }
 }
