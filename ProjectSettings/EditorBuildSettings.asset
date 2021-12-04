@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Bar/Bar.unity
+    guid: b26c6d1106357b1429cdee04019af9f1
+  - enabled: 1
     path: Assets/Scenes/Lab/Lab.unity
     guid: 75f176c6782bf37439ff5e4aa8ccfddd
   - enabled: 1
@@ -21,17 +24,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Lab/GuideBook.unity
     guid: ba7403553e6399e479b101008df5c6c6
   - enabled: 1
-    path: Assets/Scenes/Bar/Bar.unity
-    guid: b26c6d1106357b1429cdee04019af9f1
-  - enabled: 1
     path: Assets/Scenes/Lab/Stickers.unity
     guid: 9a95ef0468629e646b46c94a8632feda
   - enabled: 1
     path: Assets/Scenes/Bar/Shop.unity
     guid: 03a8475ed51b281489bd04e0950636d4
-  - enabled: 1
-    path: Assets/Scenes/Board.unity
-    guid: 46bb5c9c0e0d69f488ae54614a591747
   - enabled: 1
     path: Assets/Scenes/Statistics.unity
     guid: c696cc2bb3c855c4e96d04cc1c72345e

@@ -1,8 +1,23 @@
+using System;
+using System.Collections.Generic;
+
 public static class Food
 {
     public static BloodSample CurrentPackage;
+    public static Dictionary<object, int> Ingredients = new Dictionary<object, int>
+    {
+        {Fruits.Apple, 0},
+        {Fruits.Lemon, 0},
+        {Fruits.Lime, 0},
+        {Fruits.Pineapple, 0},
+        {Fruits.Orange, 0},
+        {Miscellaneous.Carnation, 0},
+        {Miscellaneous.Celery, 0},
+        {Miscellaneous.Coffee, 0},
+        {Miscellaneous.Honey, 0},
+        {Miscellaneous.Pepper, 0}
+    };
 
-    
     public class Ingredient
     {
         public readonly Fruits? Fruit;

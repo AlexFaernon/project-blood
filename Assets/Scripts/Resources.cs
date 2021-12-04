@@ -30,4 +30,15 @@ public static class Resources
         BloodClass.GenerateRandomSample();
         return true;
     }
+
+    public static bool BuyIngredient(int price)
+    {
+        if (price > Money)
+        {
+            return false;
+        }
+
+        Money -= price;
+        return true;
+    }
 }

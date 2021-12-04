@@ -1,12 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ScaleCollider : MonoBehaviour
 {
-    private void Awake()
+    private void Start()
     {
         var rectTransform = GetComponent<RectTransform>().rect;
         if (TryGetComponent(out AspectRatioFitter aspectRatioFitter))

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public static class EventAggregator
 {
-    public static readonly Event<string> OnClick = new Event<string>();
     public static readonly Event<GameObject> OnDrop = new Event<GameObject>();
     public static readonly BasicEvent PlasmaDrop = new BasicEvent();
     public static readonly BasicEvent BloodCellsDrop = new BasicEvent();

@@ -70,6 +70,7 @@ public static class BloodClass
     }
 }
 
+[Serializable]
 public class BloodSample
 {
     public readonly BloodGroup BloodGroup;
