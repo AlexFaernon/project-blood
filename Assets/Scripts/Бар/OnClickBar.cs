@@ -16,7 +16,7 @@ public class OnClickBar : MonoBehaviour
 
     public void LoadRecipes()
     {
-        throw new NotImplementedException();
+        SceneManager.LoadScene("RecipeBook");
     }
 
     public void LoadFridge()
