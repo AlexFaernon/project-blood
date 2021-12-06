@@ -1,16 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FruitsFridge : MonoBehaviour
+public class MiscScript : MonoBehaviour
 {
-    [SerializeField] private Food.Fruits fruit;
+    [SerializeField] private Food.Miscellaneous ingredient;
     private RectTransform rectTransform;
     private Vector2 originalPos;
     private bool isTriggered;
-
+    
     private void Awake()
     {
-        if (Food.Ingredients[fruit] == 0)
+        if (Food.Ingredients[ingredient] == 0)
         {
             gameObject.SetActive(false);
             return;
@@ -29,8 +31,8 @@ public class FruitsFridge : MonoBehaviour
         
         if (isTriggered)
         {
-            EventAggregator.OnFruitDrop.Publish(fruit);
-            Food.Ingredients[fruit] -= 1;
+            EventAggregator.OnMiscDrop.Publish(ingredient);
+            Food.Ingredients[ingredient] -= 1;
             SceneManager.LoadScene("Fridge");
             return;
         }

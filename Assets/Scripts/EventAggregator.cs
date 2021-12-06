@@ -14,6 +14,7 @@ public static class EventAggregator
     public static readonly Event<BloodQuality?> BloodQualitySticker = new Event<BloodQuality?>();
     public static readonly BasicEvent SampleDropOnCentrifuge = new BasicEvent();
     public static readonly Event<Food.Fruits> OnFruitDrop = new Event<Food.Fruits>();
+    public static readonly Event<Food.Miscellaneous> OnMiscDrop = new Event<Food.Miscellaneous>();
 }
 
 public class Event<T>
