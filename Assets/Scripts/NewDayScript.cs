@@ -5,6 +5,6 @@ public class NewDayScript : MonoBehaviour
 {
     public void StartNewDay()
     {
-        SceneManager.LoadScene("Bar");
+        SceneManager.LoadScene("Shop");
     }
 }
