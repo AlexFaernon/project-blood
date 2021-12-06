@@ -6,11 +6,11 @@ public static class Food
     public static BloodSample CurrentPackage;
     public static Dictionary<object, int> Ingredients = new Dictionary<object, int>
     {
-        {Fruits.Apple, 0},
-        {Fruits.Lemon, 0},
-        {Fruits.Lime, 0},
-        {Fruits.Pineapple, 0},
-        {Fruits.Orange, 0},
+        {Fruits.Apple, 1},
+        {Fruits.Lemon, 1},
+        {Fruits.Lime, 1},
+        {Fruits.Pineapple, 1},
+        {Fruits.Orange, 2},
         {Miscellaneous.Carnation, 0},
         {Miscellaneous.Celery, 0},
         {Miscellaneous.Coffee, 0},
