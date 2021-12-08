@@ -37,4 +37,9 @@ public class OnClickLab : MonoBehaviour
     {
         SceneManager.LoadScene("Bar");
     }
+
+    public void ClearTablet()
+    {
+        TabletCircles.ClearTablet();
+    }
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public static class TabletCircles
 {
@@ -17,6 +18,7 @@ public static class TabletCircles
     public static void ClearTablet()
     {
         Circles = new CircleContent[CirclesCount];
+        SceneManager.LoadScene("Tablet");
     }
 }
 
