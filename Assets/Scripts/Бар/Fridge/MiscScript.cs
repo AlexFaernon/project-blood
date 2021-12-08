@@ -31,7 +31,7 @@ public class MiscScript : MonoBehaviour
         
         if (isTriggered)
         {
-            EventAggregator.OnMiscDrop.Publish(ingredient);
+            TableManager.AddIngredient(ingredient);
             Food.Ingredients[ingredient] -= 1;
             SceneManager.LoadScene("Fridge");
             return;

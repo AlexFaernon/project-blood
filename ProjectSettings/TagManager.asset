@@ -7,6 +7,10 @@ TagManager:
   - BloodGroupSticker
   - RhSticker
   - AnemiaSticker
+  - Board
+  - Juicer
+  - Fridge
+  - IngredientsForbidden
   layers:
   - Default
   - TransparentFX

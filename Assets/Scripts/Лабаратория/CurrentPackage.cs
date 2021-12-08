@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class CurrentPackage : MonoBehaviour
 {
-    private bool IsDrop;
+    private bool isTriggered;
     private Vector2 originalPos;
     private RectTransform rectTransform;
     void Awake()
@@ -23,25 +23,32 @@ public class CurrentPackage : MonoBehaviour
 
     void OnDrop(GameObject other)
     {
-        if (gameObject == other)
+        if (gameObject != other)
         {
-            IsDrop = true;
+            return;
         }
+        
+        if (isTriggered)
+        {
+            BloodClass.CurrentBloodSample.IsSeparated = false;
+            SceneManager.LoadScene("Lab");
+        }
+        
+        rectTransform.anchoredPosition = originalPos;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        isTriggered = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        isTriggered = false;
     }
 
     private void OnDestroy()
     {
         EventAggregator.OnDrop.Unsubscribe(OnDrop);
-    }
-
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (IsDrop)
-        {
-            IsDrop = false;
-            rectTransform.anchoredPosition = originalPos;
-            BloodClass.CurrentBloodSample.IsSeparated = false;
-            SceneManager.LoadScene("Lab");
-        }
     }
 }

@@ -29,7 +29,7 @@ public class FruitsFridge : MonoBehaviour
         
         if (isTriggered)
         {
-            EventAggregator.OnFruitDrop.Publish(fruit);
+            TableManager.AddIngredient(fruit);
             Food.Ingredients[fruit] -= 1;
             SceneManager.LoadScene("Fridge");
             return;

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class IngredientOnTable : MonoBehaviour
@@ -15,7 +16,9 @@ public class IngredientOnTable : MonoBehaviour
     [SerializeField] private Sprite orange;
     [SerializeField] private Sprite celery;
     private Food.Ingredient ingredient;
-    private bool isTriggered;
+    private OnTrigger isTriggered;
+    private RectTransform rectTransform;
+    private Vector2 originalPos;
 
     private void Awake()
     {
@@ -26,8 +29,58 @@ public class IngredientOnTable : MonoBehaviour
             gameObject.SetActive(false);
             return;
         }
-        
+
+        rectTransform = GetComponent<RectTransform>();
+        if (TableManager.GetPositionByName(name) != Vector2.zero)
+        {
+            rectTransform.anchoredPosition = TableManager.GetPositionByName(name);
+        }
+        originalPos = rectTransform.anchoredPosition;
+        EventAggregator.OnDrop.Subscribe(OnDrop);
         ChangeSprite(ingredient);
+    }
+
+    private void OnDrop(GameObject other)
+    {
+        if (gameObject != other)
+        {
+            return;
+        }
+
+        switch (isTriggered)
+        {
+            case OnTrigger.None:
+                originalPos = rectTransform.anchoredPosition;
+                break;
+            case OnTrigger.Forbidden:
+                rectTransform.anchoredPosition = originalPos;
+                break;
+            case OnTrigger.Board:
+                break;
+            case OnTrigger.Juicer:
+                break;
+            case OnTrigger.Fridge:
+                ToFridge();
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+
+    private void ToFridge()
+    {
+        TableManager.RemoveIngredientByName(name);
+        if (ingredient.Fruit != null)
+        {
+            Food.Ingredients[ingredient.Fruit] += 1;
+        }
+        else
+        {
+            Food.Ingredients[ingredient.Miscellaneous] += 1;
+        }
+
+        ingredient = null;
+        SceneManager.LoadScene("Bar");
     }
 
     private void ChangeSprite(Food.Ingredient ingredient)
@@ -35,55 +88,62 @@ public class IngredientOnTable : MonoBehaviour
         var image = GetComponent<Image>();
         if (ingredient.Fruit != null)
         {
-            switch (ingredient.Fruit)
+            image.sprite = ingredient.Fruit switch
             {
-                case Food.Fruits.Apple:
-                    image.sprite = apple;
-                    break;
-                case Food.Fruits.Pineapple:
-                    image.sprite = pineapple;
-                    break;
-                case Food.Fruits.Lemon:
-                    image.sprite = lemon;
-                    break;
-                case Food.Fruits.Lime:
-                    image.sprite = lime;
-                    break;
-                case Food.Fruits.Orange:
-                    image.sprite = orange;
-                    break;
-            }
+                Food.Fruits.Apple => apple,
+                Food.Fruits.Pineapple => pineapple,
+                Food.Fruits.Lemon => lemon,
+                Food.Fruits.Lime => lime,
+                Food.Fruits.Orange => orange,
+                _ => image.sprite
+            };
         }
         else
         {
-            switch (ingredient.Miscellaneous)
+            image.sprite = ingredient.Miscellaneous switch
             {
-                case Food.Miscellaneous.Pepper:
-                    image.sprite = pepper;
-                    break;
-                case Food.Miscellaneous.Honey:
-                    image.sprite = honey;
-                    break;
-                case Food.Miscellaneous.Coffee:
-                    image.sprite = coffee;
-                    break;
-                case Food.Miscellaneous.Carnation:
-                    image.sprite = carnation;
-                    break;
-                case Food.Miscellaneous.Celery:
-                    image.sprite = celery;
-                    break;
-            }
+                Food.Miscellaneous.Pepper => pepper,
+                Food.Miscellaneous.Honey => honey,
+                Food.Miscellaneous.Coffee => coffee,
+                Food.Miscellaneous.Carnation => carnation,
+                Food.Miscellaneous.Celery => celery,
+                _ => image.sprite
+            };
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        isTriggered = true;
+        isTriggered = other.gameObject.tag switch
+        {
+            "IngredientsForbidden" => OnTrigger.Forbidden,
+            "Board" => OnTrigger.Board,
+            "Fridge" => OnTrigger.Fridge,
+            "Juicer" => OnTrigger.Juicer,
+            _ => throw new ArgumentOutOfRangeException()
+        };
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        isTriggered = false;
+        isTriggered = OnTrigger.None;
+    }
+
+    private void OnDestroy()
+    {
+        EventAggregator.OnDrop.Unsubscribe(OnDrop);
+        if (ingredient != null)
+        {
+            TableManager.SetPositionByName(name, originalPos);
+        }
+    }
+
+    private enum OnTrigger
+    {
+        None,
+        Forbidden,
+        Board,
+        Juicer,
+        Fridge
     }
 }
