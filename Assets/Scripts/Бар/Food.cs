@@ -10,8 +10,8 @@ public static class Food
         {Fruits.Lime, 1},
         {Fruits.Pineapple, 1},
         {Fruits.Orange, 2},
+        {Fruits.Celery, 1},
         {Miscellaneous.Carnation, 1},
-        {Miscellaneous.Celery, 1},
         {Miscellaneous.Coffee, 2},
         {Miscellaneous.Honey, 1},
         {Miscellaneous.Pepper, 1}
@@ -80,7 +80,8 @@ public static class Food
         Lemon,
         Apple,
         Orange,
-        Pineapple
+        Pineapple,
+        Celery
     }
     
     public enum Condition
@@ -97,7 +98,6 @@ public static class Food
         Coffee,
         Ice,
         Honey,
-        Celery,
         Carnation
     }
 }

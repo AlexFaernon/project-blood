@@ -56,8 +56,10 @@ public class IngredientOnTable : MonoBehaviour
                 rectTransform.anchoredPosition = originalPos;
                 break;
             case OnTrigger.Board:
+                Board();
                 break;
             case OnTrigger.Juicer:
+                Juicer();
                 break;
             case OnTrigger.Fridge:
                 ToFridge();
@@ -67,6 +69,24 @@ public class IngredientOnTable : MonoBehaviour
         }
     }
 
+    private void Board()
+    {
+        if (ingredient.Fruit == null || ingredient.Fruit == Food.Fruits.Celery) return;
+        
+        EventAggregator.OnBoardDrop.Publish(ingredient);
+        TableManager.RemoveIngredientByName(name);
+        ingredient = null;
+    }
+
+    private void Juicer()
+    {
+        if (ingredient.Fruit == null) return;
+        
+        EventAggregator.OnJuicerDrop.Publish(ingredient);
+        TableManager.RemoveIngredientByName(name);
+        ingredient = null;
+    }
+    
     private void ToFridge()
     {
         TableManager.RemoveIngredientByName(name);
@@ -95,6 +115,7 @@ public class IngredientOnTable : MonoBehaviour
                 Food.Fruits.Lemon => lemon,
                 Food.Fruits.Lime => lime,
                 Food.Fruits.Orange => orange,
+                Food.Fruits.Celery => celery,
                 _ => image.sprite
             };
         }
@@ -106,7 +127,6 @@ public class IngredientOnTable : MonoBehaviour
                 Food.Miscellaneous.Honey => honey,
                 Food.Miscellaneous.Coffee => coffee,
                 Food.Miscellaneous.Carnation => carnation,
-                Food.Miscellaneous.Celery => celery,
                 _ => image.sprite
             };
         }

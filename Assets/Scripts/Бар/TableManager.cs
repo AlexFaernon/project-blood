@@ -4,6 +4,8 @@ using UnityEngine;
 
 public static class TableManager
 {
+    public static Food.Fruits? CurrentBoardFruit = null;
+    public static Food.Fruits? CurrentJuicerFruit = null;
     //todo save
     private static readonly List<(Food.Ingredient, Vector2)> Ingredients = new List<(Food.Ingredient, Vector2)>();
 
