@@ -12,7 +12,7 @@ public class AnalyzedSample : MonoBehaviour
     private void Awake()
     {
         bloodSample = BloodClass.GetAnalyzedSampleByNumber(name);
-        if (bloodSample == null || bloodSample == Food.CurrentPackage)
+        if (bloodSample == null || bloodSample == TableManager.CurrentPackage)
         {
             gameObject.SetActive(false);
             return;
@@ -32,7 +32,7 @@ public class AnalyzedSample : MonoBehaviour
 
         if (isTriggered)
         {
-            Food.CurrentPackage = bloodSample;
+            TableManager.CurrentPackage = bloodSample;
             SceneManager.LoadScene("Fridge");
         }
     }

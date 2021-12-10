@@ -1,9 +1,11 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public static class TableManager
 {
+    public static List<Food.Ingredient> Shaker = new List<Food.Ingredient>();
+    public static BloodSample CurrentPackage;
+    public static bool IsInShaker;
     public static Food.Fruits? CurrentBoardFruit = null;
     public static Food.Fruits? CurrentJuicerFruit = null;
     //todo save

@@ -50,6 +50,9 @@ public class JuicerScript : MonoBehaviour
             case Food.Fruits.Celery:
                 glassColor.color = celery;
                 break;
+            case null:
+                glassColor.color = Color.white;
+                break;
         }
     }
 

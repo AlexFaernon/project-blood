@@ -18,7 +18,6 @@ public class IngredientOnTable : MonoBehaviour
     private Food.Ingredient ingredient;
     private OnTrigger isTriggered;
     private RectTransform rectTransform;
-    private Vector2 originalPos;
 
     private void Awake()
     {
@@ -33,9 +32,9 @@ public class IngredientOnTable : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
         if (TableManager.GetPositionByName(name) != Vector2.zero)
         {
-            rectTransform.anchoredPosition = TableManager.GetPositionByName(name);
+            rectTransform.position = TableManager.GetPositionByName(name);
         }
-        originalPos = rectTransform.anchoredPosition;
+        TableManager.SetPositionByName(name, rectTransform.position);
         EventAggregator.OnDrop.Subscribe(OnDrop);
         ChangeSprite(ingredient);
     }
@@ -47,13 +46,15 @@ public class IngredientOnTable : MonoBehaviour
             return;
         }
 
+        if (isTriggered != OnTrigger.Forbidden)
+        {
+            TableManager.SetPositionByName(name, rectTransform.position);
+        }
+        
         switch (isTriggered)
         {
-            case OnTrigger.None:
-                originalPos = rectTransform.anchoredPosition;
-                break;
             case OnTrigger.Forbidden:
-                rectTransform.anchoredPosition = originalPos;
+                rectTransform.position = TableManager.GetPositionByName(name);
                 break;
             case OnTrigger.Board:
                 Board();
@@ -61,11 +62,12 @@ public class IngredientOnTable : MonoBehaviour
             case OnTrigger.Juicer:
                 Juicer();
                 break;
+            case OnTrigger.Shaker:
+                Shaker();
+                break;
             case OnTrigger.Fridge:
                 ToFridge();
                 break;
-            default:
-                throw new ArgumentOutOfRangeException();
         }
     }
 
@@ -86,6 +88,17 @@ public class IngredientOnTable : MonoBehaviour
         TableManager.RemoveIngredientByName(name);
         ingredient = null;
     }
+
+    private void Shaker()
+    {
+        if (ingredient.Miscellaneous == null) return;
+        
+        Debug.Log(ingredient.Miscellaneous);
+        TableManager.Shaker.Add(ingredient);
+        TableManager.RemoveIngredientByName(name);
+        ingredient = null;
+        SceneManager.LoadScene("Bar");
+    }
     
     private void ToFridge()
     {
@@ -102,7 +115,7 @@ public class IngredientOnTable : MonoBehaviour
         ingredient = null;
         SceneManager.LoadScene("Bar");
     }
-
+    
     private void ChangeSprite(Food.Ingredient ingredient)
     {
         var image = GetComponent<Image>();
@@ -140,7 +153,8 @@ public class IngredientOnTable : MonoBehaviour
             "Board" => OnTrigger.Board,
             "Fridge" => OnTrigger.Fridge,
             "Juicer" => OnTrigger.Juicer,
-            _ => throw new ArgumentOutOfRangeException()
+            "Shaker" => OnTrigger.Shaker,
+            _ => throw new ArgumentOutOfRangeException(other.gameObject.name)
         };
     }
 
@@ -152,10 +166,6 @@ public class IngredientOnTable : MonoBehaviour
     private void OnDestroy()
     {
         EventAggregator.OnDrop.Unsubscribe(OnDrop);
-        if (ingredient != null)
-        {
-            TableManager.SetPositionByName(name, originalPos);
-        }
     }
 
     private enum OnTrigger
@@ -164,6 +174,7 @@ public class IngredientOnTable : MonoBehaviour
         Forbidden,
         Board,
         Juicer,
-        Fridge
+        Fridge,
+        Shaker
     }
 }

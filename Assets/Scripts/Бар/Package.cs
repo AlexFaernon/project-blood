@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,17 +6,18 @@ public class Package : MonoBehaviour
 {
     [SerializeField] private TMP_Text text;
     private BloodSample bloodSample;
-    private bool isTriggered;
+    private bool isOnShaker;
+    private bool isOnFridge;
     
     private void Awake()
     {
-        if (Food.CurrentPackage == null)
+        if (TableManager.CurrentPackage == null || TableManager.IsInShaker)
         {
             gameObject.SetActive(false);
             return;
         }
 
-        bloodSample = Food.CurrentPackage;
+        bloodSample = TableManager.CurrentPackage;
         text.text =
             bloodSample.BloodGroupSticker.ToString() + bloodSample.RhSticker + '\n' + bloodSample.QualitySticker;
         EventAggregator.OnDrop.Subscribe(OnDrop);
@@ -25,23 +25,47 @@ public class Package : MonoBehaviour
 
     private void OnDrop(GameObject other)
     {
-        if (other != gameObject || !isTriggered)
+        if (isOnShaker)
         {
+            Debug.Log("Blood");
+            TableManager.IsInShaker = true;
+            SceneManager.LoadScene("Bar");
             return;
         }
 
-        Food.CurrentPackage = null;
-        SceneManager.LoadScene("Bar");
+        if (isOnFridge)
+        {
+            TableManager.CurrentPackage = null;
+            SceneManager.LoadScene("Bar");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        isTriggered = true;
+        if (other.CompareTag("Fridge"))
+        {
+            isOnFridge = true;
+            return;
+        }
+
+        if (other.CompareTag("Shaker"))
+        {
+            isOnShaker = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        isTriggered = false;
+        if (other.CompareTag("Fridge"))
+        {
+            isOnFridge = false;
+            return;
+        }
+
+        if (other.CompareTag("Shaker"))
+        {
+            isOnShaker = false;
+        }
     }
 
     private void OnDestroy()

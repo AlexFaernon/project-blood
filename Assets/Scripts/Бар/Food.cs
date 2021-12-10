@@ -2,7 +2,6 @@ using System.Collections.Generic;
 
 public static class Food
 {
-    public static BloodSample CurrentPackage;
     public static Dictionary<object, int> Ingredients = new Dictionary<object, int>
     {
         {Fruits.Apple, 1},
