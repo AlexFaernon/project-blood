@@ -28,4 +28,9 @@ public class OnClickBar : MonoBehaviour
     {
         SceneManager.LoadScene("Bar");
     }
+
+    public void OnClickNo()
+    {
+        gameObject.SetActive(false);
+    }     
 }
