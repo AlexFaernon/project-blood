@@ -1,15 +1,21 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public static class TableManager
 {
+    //todo save
     public static List<Food.Ingredient> Shaker = new List<Food.Ingredient>();
     public static BloodSample CurrentPackage;
     public static bool IsInShaker;
     public static Food.Fruits? CurrentBoardFruit = null;
+    public static bool IsPiecesActive;
+    public static bool IsPeelActive;
     public static Food.Fruits? CurrentJuicerFruit = null;
     //todo save
     private static readonly List<(Food.Ingredient, Vector2)> Ingredients = new List<(Food.Ingredient, Vector2)>();
+
+    public static int IngredientsCount => Ingredients.Count;
 
     public static Food.Ingredient GetIngredientByNumber(string name)
     {

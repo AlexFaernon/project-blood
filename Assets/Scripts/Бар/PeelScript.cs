@@ -10,6 +10,10 @@ public class PeelScript : MonoBehaviour
     private bool isTriggered;
     private void Awake()
     {
+        if (!TableManager.IsPeelActive)
+        {
+            gameObject.SetActive(false);
+        }
         rectTransform = GetComponent<RectTransform>();
         originalPos = rectTransform.anchoredPosition;
         EventAggregator.OnDrop.Subscribe(OnDrop);
@@ -24,8 +28,9 @@ public class PeelScript : MonoBehaviour
             Debug.Log(TableManager.CurrentBoardFruit + "Peel");
             TableManager.Shaker.Add(new Food.Ingredient((Food.Fruits)TableManager.CurrentBoardFruit,
                 Food.Condition.Peel));
-            TableManager.CurrentBoardFruit = null;
+            TableManager.IsPeelActive = false;
             SceneManager.LoadScene("Bar");
+            return;
         }
 
         rectTransform.anchoredPosition = originalPos;

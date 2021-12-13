@@ -16,25 +16,29 @@ public class BoardScript : MonoBehaviour
 
     private void Awake()
     {
+        if (!TableManager.IsPeelActive && !TableManager.IsPiecesActive)
+        {
+            TableManager.CurrentBoardFruit = null;
+        }
         EventAggregator.OnBoardDrop.Subscribe(SetCurrentFruit);
         piecesImage = pieces.GetComponent<Image>();
         peelImage = peel.GetComponent<Image>();
         if (TableManager.CurrentBoardFruit != null)
         {
-            CutFruit();
+            ChangeColor();
         }
     }
 
     private void SetCurrentFruit(Food.Ingredient ingredient)
     {
         TableManager.CurrentBoardFruit = ingredient.Fruit;
+        TableManager.IsPeelActive = true;
+        TableManager.IsPiecesActive = true;
         SceneManager.LoadScene("Bar");
     }
 
-    private void CutFruit()
+    private void ChangeColor()
     {
-        pieces.SetActive(true);
-        peel.SetActive(true);
         switch (TableManager.CurrentBoardFruit)
         {
             case Food.Fruits.Lime:
@@ -55,6 +59,7 @@ public class BoardScript : MonoBehaviour
                 break;
             case Food.Fruits.Pineapple:
                 peel.SetActive(false);
+                TableManager.IsPeelActive = false;
                 piecesImage.color = pineapple;
                 break;
         }

@@ -8,6 +8,10 @@ public class PiecesScript : MonoBehaviour
     private bool isTriggered;
     private void Awake()
     {
+        if (!TableManager.IsPiecesActive)
+        {
+            gameObject.SetActive(false);
+        }
         rectTransform = GetComponent<RectTransform>();
         originalPos = rectTransform.anchoredPosition;
         EventAggregator.OnDrop.Subscribe(OnDrop);
@@ -22,8 +26,9 @@ public class PiecesScript : MonoBehaviour
             Debug.Log(TableManager.CurrentBoardFruit + "Pieces");
             TableManager.Shaker.Add(new Food.Ingredient((Food.Fruits)TableManager.CurrentBoardFruit,
                 Food.Condition.Pieces));
-            TableManager.CurrentBoardFruit = null;
+            TableManager.IsPiecesActive = false;
             SceneManager.LoadScene("Bar");
+            return;
         }
 
         rectTransform.anchoredPosition = originalPos;

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MiscScript : MonoBehaviour
 {
     [SerializeField] private Food.Miscellaneous ingredient;
+    [SerializeField] private GameObject shading;
     private RectTransform rectTransform;
     private Vector2 originalPos;
     private bool isTriggered;
@@ -31,10 +32,17 @@ public class MiscScript : MonoBehaviour
         
         if (isTriggered)
         {
-            TableManager.AddIngredient(ingredient);
-            Food.Ingredients[ingredient] -= 1;
-            SceneManager.LoadScene("Fridge");
-            return;
+            if (TableManager.IngredientsCount >= 4)
+            {
+                shading.SetActive(true);
+            }
+            else
+            {
+                TableManager.AddIngredient(ingredient);
+                Food.Ingredients[ingredient] -= 1;
+                SceneManager.LoadScene("Fridge");
+                return;
+            }
         }
 
         rectTransform.anchoredPosition = originalPos;

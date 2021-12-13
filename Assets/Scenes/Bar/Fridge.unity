@@ -256,6 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fruit: 4
+  shading: {fileID: 2122023840}
 --- !u!114 &14994633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,6 +438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: 3
+  shading: {fileID: 2122023840}
 --- !u!1 &49784930
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,6 +730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: 4
+  shading: {fileID: 2122023840}
 --- !u!1 &76310779
 GameObject:
   m_ObjectHideFlags: 0
@@ -2192,6 +2195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fruit: 5
+  shading: {fileID: 2122023840}
 --- !u!1 &535614797
 GameObject:
   m_ObjectHideFlags: 0
@@ -2970,6 +2974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fruit: 3
+  shading: {fileID: 2122023840}
 --- !u!114 &752003690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3127,6 +3132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fruit: 1
+  shading: {fileID: 2122023840}
 --- !u!114 &754117303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3994,6 +4000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: 0
+  shading: {fileID: 2122023840}
 --- !u!1 &1254971083
 GameObject:
   m_ObjectHideFlags: 0
@@ -4261,6 +4268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fruit: 0
+  shading: {fileID: 2122023840}
 --- !u!114 &1445474271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4844,6 +4852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fruit: 2
+  shading: {fileID: 2122023840}
 --- !u!114 &1874660451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5588,3 +5597,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: 1
+  shading: {fileID: 2122023840}

@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class FruitsFridge : MonoBehaviour
 {
     [SerializeField] private Food.Fruits fruit;
+    [SerializeField] private GameObject shading;
     private RectTransform rectTransform;
     private Vector2 originalPos;
     private bool isTriggered;
@@ -29,10 +30,17 @@ public class FruitsFridge : MonoBehaviour
         
         if (isTriggered)
         {
-            TableManager.AddIngredient(fruit);
-            Food.Ingredients[fruit] -= 1;
-            SceneManager.LoadScene("Fridge");
-            return;
+            if (TableManager.IngredientsCount >= 4)
+            {
+                shading.SetActive(true);
+            }
+            else
+            {
+                TableManager.AddIngredient(fruit);
+                Food.Ingredients[fruit] -= 1;
+                SceneManager.LoadScene("Fridge");
+                return;
+            }
         }
 
         rectTransform.anchoredPosition = originalPos;
