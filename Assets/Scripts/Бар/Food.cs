@@ -59,17 +59,24 @@ public static class Food
     {
         public string Name;
         public string Description;
-        public BloodGroup BloodGroup;
-        public Rh Rh;
-        public BloodQuality BloodQuality;
+        public BloodSample BloodSample;
+        public bool isShitted;
 
         public Cocktail(string name, string description, BloodGroup bloodGroup, Rh rh, BloodQuality bloodQuality)
         {
             Name = name;
             Description = description;
-            BloodGroup = bloodGroup;
-            Rh = rh;
-            BloodQuality = bloodQuality;
+            BloodSample = new BloodSample(bloodGroup, rh, bloodQuality);
+        }
+
+        public static Cocktail GetBadCocktail()
+        {
+            return new Cocktail();
+        }
+        
+        private Cocktail()
+        {
+            isShitted = true;
         }
     }
     

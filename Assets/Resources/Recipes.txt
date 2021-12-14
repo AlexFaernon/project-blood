@@ -11,7 +11,7 @@ Coffee Lemon,Juice Lime,Juice;
 кровавая мэри
 Description
 Zero Positive Anemia
-Lemon,Pieces Celery Pepper;
+Lemon,Pieces Celery,Juice Pepper;
 
 Name
 Description
@@ -36,7 +36,7 @@ Carnation Orange,Peel Lemon,Peel;
 Name
 Description
 Zero Negative Anemia
-Celery Coffee Ice;
+Celery,Juice Coffee Ice;
 
 зеленая фея
 Description
@@ -71,7 +71,7 @@ Coffee Carnation Orange,Juice;
 рори
 Description
 A Negative Anemia
-Celery Orange,Pieces Lemon,Juice;
+Celery,Juice Orange,Pieces Lemon,Juice;
 
 Name
 Description
@@ -96,7 +96,7 @@ Honey Ice Lime,Peel;
 Name
 Description
 B Positive Anemia
-Celery Pepper Apple,Juice;
+Celery,Juice Pepper Apple,Juice;
 
 экзотический грог
 Description
@@ -111,7 +111,7 @@ Coffee Ice Pineapple,Juice;
 золотое дно
 Description
 B Negative Anemia
-Celery Honey Lime,Juice;
+Celery,Juice Honey Lime,Juice;
 
 Name
 Description
@@ -141,7 +141,7 @@ Pepper Apple,Peel Apple,Juice;
 Name
 Description
 AB Negative Normal
-Celery Lemon,Peel Lime,Juice;
+Celery,Juice Lemon,Peel Lime,Juice;
 
 Name
 Description

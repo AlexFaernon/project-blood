@@ -15,6 +15,7 @@ public static class EventAggregator
     public static readonly BasicEvent SampleDropOnCentrifuge = new BasicEvent();
     public static readonly Event<Food.Ingredient> OnJuicerDrop = new Event<Food.Ingredient>();
     public static readonly Event<Food.Ingredient> OnBoardDrop = new Event<Food.Ingredient>();
+    public static readonly Event<Food.Cocktail> MakeCocktail = new Event<Food.Cocktail>();
 }
 
 public class Event<T>

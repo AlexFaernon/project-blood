@@ -95,6 +95,38 @@ public class BloodSample
         Rh = rh;
         BloodQuality = bloodQuality;
     }
+
+    public override bool Equals(object obj)
+    {
+        if (!(obj is BloodSample other))
+        {
+            return false;
+        }
+
+        return other.BloodGroup == BloodGroup && other.Rh == Rh && other.BloodQuality == BloodQuality;
+    }
+
+    protected bool Equals(BloodSample other)
+    {
+        return BloodGroup == other.BloodGroup && Rh == other.Rh && BloodQuality == other.BloodQuality && BloodGroupSticker == other.BloodGroupSticker && RhSticker == other.RhSticker && QualitySticker == other.QualitySticker && IsAnalyzed == other.IsAnalyzed && IsSeparated == other.IsSeparated && ClassificationDone == other.ClassificationDone;
+    }
+
+    public override int GetHashCode()
+    {
+        unchecked
+        {
+            var hashCode = (int)BloodGroup;
+            hashCode = (hashCode * 397) ^ (int)Rh;
+            hashCode = (hashCode * 397) ^ (int)BloodQuality;
+            hashCode = (hashCode * 397) ^ BloodGroupSticker.GetHashCode();
+            hashCode = (hashCode * 397) ^ RhSticker.GetHashCode();
+            hashCode = (hashCode * 397) ^ QualitySticker.GetHashCode();
+            hashCode = (hashCode * 397) ^ IsAnalyzed.GetHashCode();
+            hashCode = (hashCode * 397) ^ IsSeparated.GetHashCode();
+            hashCode = (hashCode * 397) ^ ClassificationDone.GetHashCode();
+            return hashCode;
+        }
+    }
 }
 
 public enum BloodGroup

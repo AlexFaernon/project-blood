@@ -12,6 +12,8 @@ TagManager:
   - Fridge
   - IngredientsForbidden
   - Shaker
+  - Glass
+  - Hole
   layers:
   - Default
   - TransparentFX
