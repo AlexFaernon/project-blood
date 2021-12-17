@@ -1,5 +1,7 @@
 
 
+using System;
+
 public static class Resources
 {
     public const int SamplePrice = 200;
@@ -7,15 +9,16 @@ public static class Resources
     public static int Samples => BloodClass.BloodSamples.Count;
     public static bool[] ToggleSampleShop = { true, true, true, true, true, true };
 
-    private const int StartPackagesAmount = 3;
+    private const int StartPackagesAmount = 2;
 
     public static void CreateFirstSamples()
     {
         BloodClass.ClearSamplesList();
-        
+
+        var random = new Random();
         for (var i = 0; i < StartPackagesAmount; i++)
         {
-            BloodClass.GenerateRandomSample();
+            BloodClass.GenerateRandomSample(random);
         }
     }
 
@@ -27,7 +30,8 @@ public static class Resources
         }
 
         Money -= SamplePrice;
-        BloodClass.GenerateRandomSample();
+        var random = new Random();
+        BloodClass.GenerateRandomSample(random);
         return true;
     }
 

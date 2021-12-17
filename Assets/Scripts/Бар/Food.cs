@@ -2,18 +2,19 @@ using System.Collections.Generic;
 
 public static class Food
 {
+    //todo save
     public static Dictionary<object, int> Ingredients = new Dictionary<object, int>
     {
-        {Fruits.Apple, 1},
-        {Fruits.Lemon, 1},
-        {Fruits.Lime, 1},
-        {Fruits.Pineapple, 1},
-        {Fruits.Orange, 2},
-        {Fruits.Celery, 1},
-        {Miscellaneous.Carnation, 1},
-        {Miscellaneous.Coffee, 2},
-        {Miscellaneous.Honey, 1},
-        {Miscellaneous.Pepper, 1}
+        {Fruits.Apple, 5},
+        {Fruits.Lemon, 5},
+        {Fruits.Lime, 5},
+        {Fruits.Pineapple, 5},
+        {Fruits.Orange, 5},
+        {Fruits.Celery, 5},
+        {Miscellaneous.Carnation, 5},
+        {Miscellaneous.Coffee, 5},
+        {Miscellaneous.Honey, 5},
+        {Miscellaneous.Pepper, 5}
     };
 
     public class Ingredient
@@ -57,10 +58,11 @@ public static class Food
     
     public class Cocktail
     {
-        public string Name;
-        public string Description;
-        public BloodSample BloodSample;
-        public bool isShitted;
+        public readonly string Name;
+        public readonly string Description;
+        public readonly BloodSample BloodSample;
+        public readonly bool PureBlood;
+        public readonly bool IsShitted;
 
         public Cocktail(string name, string description, BloodGroup bloodGroup, Rh rh, BloodQuality bloodQuality)
         {
@@ -71,12 +73,39 @@ public static class Food
 
         public static Cocktail GetBadCocktail()
         {
-            return new Cocktail();
+            return new Cocktail(false);
         }
-        
-        private Cocktail()
+
+        public static Cocktail GetPureBlood()
         {
-            isShitted = true;
+            return new Cocktail(true);
+        }
+
+        private Cocktail(bool isPureBlood)
+        {
+            if (isPureBlood)
+            {
+                PureBlood = true;
+            }
+            else
+            {
+                IsShitted = true;
+            }
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (!(obj is Cocktail other))
+            {
+                return false;
+            }
+
+            return other.Name == Name;
+        }
+
+        public override int GetHashCode()
+        {
+            return Name != null ? Name.GetHashCode() : 0;
         }
     }
     

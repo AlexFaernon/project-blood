@@ -4,6 +4,7 @@ using System.Linq;
 
 public static class BloodClass
 {
+    //todo save
     public static List<BloodSample> BloodSamples { get; private set; } = new List<BloodSample>();
 
     public static IEnumerable<BloodSample> AnalyzedBloodSamples =>
@@ -56,17 +57,21 @@ public static class BloodClass
         BloodSamples = new List<BloodSample>();
     }
 
-    public static void GenerateRandomSample()
+    public static void GenerateRandomSample(Random random)
     {
-        if (BloodSamples.Count == 10)
+        if (BloodSamples.Count == 9)
         {
             throw new ArgumentOutOfRangeException("too many blood samples");
         }
-        var random = new Random();
         var group = (BloodGroup)random.Next(4);
         var rh = (Rh)random.Next(2);
         var quality = (BloodQuality)random.Next(2);
         BloodSamples.Add(new BloodSample(group, rh, quality));
+    }
+
+    public static void RemoveAnalyzedPackage()
+    {
+        //todo
     }
 }
 
@@ -104,11 +109,6 @@ public class BloodSample
         }
 
         return other.BloodGroup == BloodGroup && other.Rh == Rh && other.BloodQuality == BloodQuality;
-    }
-
-    protected bool Equals(BloodSample other)
-    {
-        return BloodGroup == other.BloodGroup && Rh == other.Rh && BloodQuality == other.BloodQuality && BloodGroupSticker == other.BloodGroupSticker && RhSticker == other.RhSticker && QualitySticker == other.QualitySticker && IsAnalyzed == other.IsAnalyzed && IsSeparated == other.IsSeparated && ClassificationDone == other.ClassificationDone;
     }
 
     public override int GetHashCode()

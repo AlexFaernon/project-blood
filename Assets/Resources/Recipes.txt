@@ -13,7 +13,7 @@ Description
 Zero Positive Anemia
 Lemon,Pieces Celery,Juice Pepper;
 
-Name
+поэт
 Description
 Zero Positive Anemia
 Pineapple,Pieces Carnation Honey;
@@ -33,7 +33,7 @@ Description
 Zero Negative Anemia
 Carnation Orange,Peel Lemon,Peel;
 
-Name
+улан
 Description
 Zero Negative Anemia
 Celery,Juice Coffee Ice;
@@ -48,12 +48,12 @@ Description
 A Positive Normal
 Apple,Pieces Carnation Honey;
 
-Name
+рохля
 Description
 A Positive Anemia
 Pepper Ice Coffee;
 
-Name
+путеобходчик
 Description
 A Positive Anemia
 Lime,Peel Apple,Juice Pineapple,Juice;
@@ -63,7 +63,7 @@ Description
 A Negative Normal
 Pineapple,Pieces Lime,Juice Orange,Pieces;
 
-Name
+капеллан
 Description
 A Negative Normal
 Coffee Carnation Orange,Juice;
@@ -73,7 +73,7 @@ Description
 A Negative Anemia
 Celery,Juice Orange,Pieces Lemon,Juice;
 
-Name
+чван
 Description
 A Negative Anemia
 Lemon,Pieces Lime,Juice Apple,Juice;
@@ -83,17 +83,17 @@ Description
 B Positive Normal
 Lemon,Pieces Orange,Pieces Carnation;
 
-Name
+осечка
 Description
 B Positive Normal
 Honey Lime,Pieces Apple,Peel;
 
-Name
+цевница
 Description
 B Positive Anemia
 Honey Ice Lime,Peel;
 
-Name
+ножка
 Description
 B Positive Anemia
 Celery,Juice Pepper Apple,Juice;
@@ -103,7 +103,7 @@ Description
 B Negative Normal
 Pepper Carnation Orange,Juice;
 
-Name
+бульдозер
 Description
 B Negative Normal
 Coffee Ice Pineapple,Juice;
@@ -113,7 +113,7 @@ Description
 B Negative Anemia
 Celery,Juice Honey Lime,Juice;
 
-Name
+гидропульт
 Description
 B Negative Anemia
 Pineapple,Pieces Apple,Pieces Orange,Pieces;
@@ -128,22 +128,22 @@ Description
 AB Positive Normal
 Coffee Orange,Pieces Lime,Juice;
 
-Name
+конник
 Description
 AB Positive Anemia
 Honey Carnation Lemon,Peel;
 
-Name
+кино
 Description
 AB Positive Anemia
 Pepper Apple,Peel Apple,Juice;
 
-Name
+апология
 Description
 AB Negative Normal
 Celery,Juice Lemon,Peel Lime,Juice;
 
-Name
+томпак
 Description
 AB Negative Normal
 Apple,Pieces Coffee Orange,Peel;
@@ -153,7 +153,7 @@ Description
 AB Negative Anemia
 Orange,Pieces Ice Lemon,Juice;
 
-Name
+пикули
 Description
 AB Negative Anemia
 Honey Coffee Lemon,Peel;

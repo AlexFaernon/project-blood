@@ -11,7 +11,7 @@ public class Package : MonoBehaviour
     
     private void Awake()
     {
-        if (TableManager.CurrentPackage == null || TableManager.IsInShaker)
+        if (TableManager.CurrentPackage == null || TableManager.IsPackageInShaker)
         {
             gameObject.SetActive(false);
             return;
@@ -28,7 +28,7 @@ public class Package : MonoBehaviour
         if (isOnShaker)
         {
             Debug.Log("Blood");
-            TableManager.IsInShaker = true;
+            TableManager.IsPackageInShaker = true;
             SceneManager.LoadScene("Bar");
             return;
         }

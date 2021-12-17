@@ -30,6 +30,7 @@ public class ShakerScript : MonoBehaviour
         {
             if (TableManager.Shaker.SetEquals(recipe))
             {
+                //todo pure blood
                 var cocktail = Recipes.Cocktails[recipe];
                 var package = TableManager.CurrentPackage;
                 Debug.Log(cocktail.Name);
@@ -38,6 +39,7 @@ public class ShakerScript : MonoBehaviour
                     Debug.Log("Nice blood");
                     EventAggregator.MakeCocktail.Publish(cocktail);
                     TableManager.ClearShaker();
+                    return;
                 }
             }
         }

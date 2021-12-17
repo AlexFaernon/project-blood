@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public static class TabletCircles
 {
     public static CircleContent[] Circles { get; private set; } = new CircleContent[CirclesCount];
-    //todo очистка при заливке
     public static bool ZeroUsed;
     public static bool AUsed;
     public static bool BUsed;

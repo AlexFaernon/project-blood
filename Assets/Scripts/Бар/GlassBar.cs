@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GlassBar : MonoBehaviour
 {
-    public Triggers triggers;
+    private Triggers triggers;
     
     private void Awake()
     {
@@ -29,6 +29,13 @@ public class GlassBar : MonoBehaviour
                 TableManager.ClearCocktail();
                 SceneManager.LoadScene("Bar");
                 break;
+            case Triggers.Customer:
+                EventAggregator.SellCocktail.Publish(TableManager.CurrentCocktail);
+                TableManager.ClearCocktail();
+                TableManager.IsGlassActive = false;
+                TableManager.RemovePackage();
+                SceneManager.LoadScene("Bar");
+                break;
         }
     }
     
@@ -42,7 +49,7 @@ public class GlassBar : MonoBehaviour
     {
         if (TableManager.CurrentCocktail == null) return;
         
-        if (TableManager.CurrentCocktail.isShitted)
+        if (TableManager.CurrentCocktail.IsShitted)
         {
             GetComponent<Image>().color = Color.black;
             return;
@@ -56,12 +63,18 @@ public class GlassBar : MonoBehaviour
         if (other.CompareTag("Hole"))
         {
             triggers = Triggers.Hole;
+            return;
+        }
+
+        if (other.CompareTag("Customer"))
+        {
+            triggers = Triggers.Customer;
         }
     }
     
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Hole"))
+        if (other.CompareTag("Hole") || other.CompareTag("Customer"))
         {
             triggers = Triggers.None;
         }
@@ -72,8 +85,8 @@ public class GlassBar : MonoBehaviour
         EventAggregator.MakeCocktail.Unsubscribe(OnCocktail);
         EventAggregator.OnDrop.Unsubscribe(OnDrop);
     }
-    
-    public enum Triggers
+
+    private enum Triggers
     {
         None,
         Hole,
