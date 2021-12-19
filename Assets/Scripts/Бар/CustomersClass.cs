@@ -11,6 +11,7 @@ public static class CustomersClass
     {
         Customers.Remove(customer);
     }
+    
     public static void CreateNewCustomers()
     {
         var random = new Random();
@@ -44,12 +45,12 @@ public class Customer
             return OrderStars.ThreeStars;
         }
 
-        if (Cocktail.BloodSample.Equals(cocktail.BloodSample) && !Cocktail.PureBlood)
+        if (Cocktail.BloodSample.Equals(cocktail.BloodSample) && !cocktail.PureBlood)
         {
             return OrderStars.TwoStars;
         }
 
-        if (Cocktail.BloodSample.Equals(cocktail.BloodSample) && Cocktail.PureBlood)
+        if (Cocktail.BloodSample.Equals(cocktail.BloodSample) && cocktail.PureBlood)
         {
             return OrderStars.OneStar;
         }

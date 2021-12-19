@@ -16,9 +16,11 @@ public class ShakerScript : MonoBehaviour
 
     private void OnDrop(GameObject other)
     {
-        if (gameObject != other || !isTriggered) return;
-        
-        ShakeShakeShake();
+        if (gameObject != other) return;
+        if (isTriggered)
+        {
+            ShakeShakeShake();
+        }
         rectTransform.position = originalPos;
     }
 
@@ -26,15 +28,32 @@ public class ShakerScript : MonoBehaviour
     {
         var recipes = Recipes.Cocktails.Keys;
 
+        if (!TableManager.IsPackageInShaker)
+        {
+            if (TableManager.Shaker.Count == 0)
+            {
+                return;
+            }
+            EventAggregator.MakeCocktail.Publish(Food.Cocktail.GetBadCocktail());
+            return;
+        }
+
+        if (TableManager.Shaker.Count == 0)
+        {
+            var currentPackage = TableManager.CurrentPackage;
+            EventAggregator.MakeCocktail.Publish(Food.Cocktail.GetPureBlood(currentPackage.BloodGroup,
+                currentPackage.Rh, currentPackage.BloodQuality));
+            return;
+        }
+
         foreach (var recipe in recipes)
         {
             if (TableManager.Shaker.SetEquals(recipe))
             {
-                //todo pure blood
                 var cocktail = Recipes.Cocktails[recipe];
-                var package = TableManager.CurrentPackage;
+                var currentPackage = TableManager.CurrentPackage;
                 Debug.Log(cocktail.Name);
-                if (cocktail.BloodSample.Equals(package))
+                if (cocktail.BloodSample.Equals(currentPackage))
                 {
                     Debug.Log("Nice blood");
                     EventAggregator.MakeCocktail.Publish(cocktail);

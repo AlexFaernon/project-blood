@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEngine;
 
 public static class TableManager
 {
@@ -18,7 +17,7 @@ public static class TableManager
 
     public static bool IsGlassActive;
     //todo save
-    private static readonly List<(Food.Ingredient, Vector2)> IngredientsOnTable = new List<(Food.Ingredient, Vector2)>();
+    private static readonly List<Food.Ingredient> IngredientsOnTable = new List<Food.Ingredient>();
 
     public static int IngredientsCount => IngredientsOnTable.Count;
 
@@ -35,6 +34,7 @@ public static class TableManager
 
     public static void RemovePackage()
     {
+        BloodClass.RemoveAnalyzedPackage(CurrentPackage);
         CurrentPackage = null;
         IsPackageInShaker = false;
     }
@@ -44,7 +44,7 @@ public static class TableManager
         var number = int.Parse(name);
         if (number < IngredientsOnTable.Count)
         {
-            return IngredientsOnTable[number].Item1;
+            return IngredientsOnTable[number];
         }
 
         return null;
@@ -55,26 +55,14 @@ public static class TableManager
         var number = int.Parse(name);
         IngredientsOnTable.RemoveAt(number);
     }
-
-    public static Vector2 GetPositionByName(string name)
-    {
-        var number = int.Parse(name);
-        return IngredientsOnTable[number].Item2;
-    }
-    
-    public static void SetPositionByName(string name, Vector2 pos)
-    {
-        var number = int.Parse(name);
-        IngredientsOnTable[number] = (IngredientsOnTable[number].Item1, pos);
-    }
     
     public static void AddIngredient(Food.Miscellaneous miscellaneous)
     {
-        IngredientsOnTable.Add((new Food.Ingredient(miscellaneous), Vector2.zero));
+        IngredientsOnTable.Add(new Food.Ingredient(miscellaneous));
     }
     
     public static void AddIngredient(Food.Fruits fruit)
     {
-        IngredientsOnTable.Add((new Food.Ingredient(fruit, Food.Condition.Fruit), Vector2.zero));
+        IngredientsOnTable.Add(new Food.Ingredient(fruit, Food.Condition.Fruit));
     }
 }

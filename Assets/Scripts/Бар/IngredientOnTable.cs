@@ -18,6 +18,7 @@ public class IngredientOnTable : MonoBehaviour
     private Food.Ingredient ingredient;
     private OnTrigger isTriggered;
     private RectTransform rectTransform;
+    private Vector2 originalPos;
 
     private void Awake()
     {
@@ -30,13 +31,9 @@ public class IngredientOnTable : MonoBehaviour
         }
 
         rectTransform = GetComponent<RectTransform>();
-        if (TableManager.GetPositionByName(name) != Vector2.zero)
-        {
-            rectTransform.position = TableManager.GetPositionByName(name);
-        }
-        TableManager.SetPositionByName(name, rectTransform.position);
+        originalPos = rectTransform.anchoredPosition;
         EventAggregator.OnDrop.Subscribe(OnDrop);
-        ChangeSprite(ingredient);
+        ChangeSprite();
     }
 
     private void OnDrop(GameObject other)
@@ -48,13 +45,13 @@ public class IngredientOnTable : MonoBehaviour
 
         if (isTriggered != OnTrigger.Forbidden)
         {
-            TableManager.SetPositionByName(name, rectTransform.position);
+            originalPos = rectTransform.anchoredPosition;
         }
         
         switch (isTriggered)
         {
             case OnTrigger.Forbidden:
-                rectTransform.position = TableManager.GetPositionByName(name);
+                rectTransform.anchoredPosition = originalPos;
                 break;
             case OnTrigger.Board:
                 Board();
@@ -93,7 +90,6 @@ public class IngredientOnTable : MonoBehaviour
     {
         if (ingredient.Miscellaneous == null) return;
         
-        Debug.Log(ingredient.Miscellaneous);
         TableManager.Shaker.Add(ingredient);
         TableManager.RemoveIngredientByName(name);
         ingredient = null;
@@ -116,7 +112,7 @@ public class IngredientOnTable : MonoBehaviour
         SceneManager.LoadScene("Bar");
     }
     
-    private void ChangeSprite(Food.Ingredient ingredient)
+    private void ChangeSprite()
     {
         var image = GetComponent<Image>();
         if (ingredient.Fruit != null)
@@ -154,7 +150,7 @@ public class IngredientOnTable : MonoBehaviour
             "Fridge" => OnTrigger.Fridge,
             "Juicer" => OnTrigger.Juicer,
             "Shaker" => OnTrigger.Shaker,
-            _ => throw new ArgumentOutOfRangeException(other.gameObject.name)
+            _ => isTriggered
         };
     }
 

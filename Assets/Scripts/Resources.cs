@@ -1,5 +1,3 @@
-
-
 using System;
 
 public static class Resources
@@ -7,10 +5,16 @@ public static class Resources
     public const int SamplePrice = 200;
     public static int Money = 100000;
     public static int Samples => BloodClass.BloodSamples.Count;
-    public static bool[] ToggleSampleShop = { true, true, true, true, true, true };
+    //todo пофиксить абьюз через закрытие
+    public static bool[] ToggleSampleShop { get; private set; } = { true, true, true, true, true, true };
 
-    private const int StartPackagesAmount = 2;
+    private const int StartPackagesAmount = 1;
 
+    public static void ResetSamples()
+    {
+        ToggleSampleShop = new[] { true, true, true, true, true, true };
+    }
+    
     public static void CreateFirstSamples()
     {
         BloodClass.ClearSamplesList();

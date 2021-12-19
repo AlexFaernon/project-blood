@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class GlassBar : MonoBehaviour
 {
     private Triggers triggers;
+    private RectTransform rectTransform;
+    private Vector2 originalPos;
     
     private void Awake()
     {
@@ -13,7 +15,9 @@ public class GlassBar : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
-        
+
+        rectTransform = GetComponent<RectTransform>();
+        originalPos = rectTransform.anchoredPosition;
         EventAggregator.MakeCocktail.Subscribe(OnCocktail);
         EventAggregator.OnDrop.Subscribe(OnDrop);
         ChangeSprite();
@@ -28,13 +32,16 @@ public class GlassBar : MonoBehaviour
             case Triggers.Hole:
                 TableManager.ClearCocktail();
                 SceneManager.LoadScene("Bar");
-                break;
+                return;
             case Triggers.Customer:
                 EventAggregator.SellCocktail.Publish(TableManager.CurrentCocktail);
                 TableManager.ClearCocktail();
                 TableManager.IsGlassActive = false;
                 TableManager.RemovePackage();
                 SceneManager.LoadScene("Bar");
+                return;
+            default:
+                rectTransform.anchoredPosition = originalPos;
                 break;
         }
     }

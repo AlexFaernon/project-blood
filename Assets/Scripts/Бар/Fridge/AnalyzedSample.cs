@@ -20,7 +20,7 @@ public class AnalyzedSample : MonoBehaviour
         
         EventAggregator.OnDrop.Subscribe(OnDrop);
         text.text =
-            bloodSample.BloodGroupSticker.ToString() + bloodSample.RhSticker + '\n' + bloodSample.QualitySticker;
+            bloodSample.BloodGroupSticker.ToString() + bloodSample.RhSticker + '\n' + bloodSample.BloodQualitySticker;
     }
 
     private void OnDrop(GameObject other)

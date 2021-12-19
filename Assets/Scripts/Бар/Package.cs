@@ -19,7 +19,7 @@ public class Package : MonoBehaviour
 
         bloodSample = TableManager.CurrentPackage;
         text.text =
-            bloodSample.BloodGroupSticker.ToString() + bloodSample.RhSticker + '\n' + bloodSample.QualitySticker;
+            bloodSample.BloodGroupSticker.ToString() + bloodSample.RhSticker + '\n' + bloodSample.BloodQualitySticker;
         EventAggregator.OnDrop.Subscribe(OnDrop);
     }
 

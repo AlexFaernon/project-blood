@@ -12,17 +12,17 @@ public class AnemiaDrop : MonoBehaviour
         image = GetComponent<Image>();
         
         if (BloodClass.CurrentBloodSample != null)
-            ChangeSticker(BloodClass.CurrentBloodSample?.QualitySticker);
+            ChangeSticker(BloodClass.CurrentBloodSample?.BloodQualitySticker);
         
         EventAggregator.BloodQualitySticker.Subscribe(ChangeSticker);
     }
 
     private void ChangeSticker(BloodQuality? bloodQuality)
     {
-        BloodClass.CurrentBloodSample.QualitySticker = bloodQuality;
+        BloodClass.CurrentBloodSample.BloodQualitySticker = bloodQuality;
         
         image.color = Color.white;
-        switch (BloodClass.CurrentBloodSample.QualitySticker)
+        switch (BloodClass.CurrentBloodSample.BloodQualitySticker)
         {
             case BloodQuality.Normal:
                 image.sprite = spriteNormal;

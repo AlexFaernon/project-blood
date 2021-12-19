@@ -13,7 +13,6 @@ public class IceScript : MonoBehaviour
     {
         if (gameObject != other || !isTriggered) return;
         
-        Debug.Log("ice");
         TableManager.Shaker.Add(new Food.Ingredient(Food.Miscellaneous.Ice));
     }
 

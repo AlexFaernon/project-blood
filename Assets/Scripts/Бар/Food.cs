@@ -73,24 +73,23 @@ public static class Food
 
         public static Cocktail GetBadCocktail()
         {
-            return new Cocktail(false);
+            return new Cocktail();
         }
 
-        public static Cocktail GetPureBlood()
+        public static Cocktail GetPureBlood(BloodGroup bloodGroup, Rh rh, BloodQuality bloodQuality)
         {
-            return new Cocktail(true);
+            return new Cocktail(bloodGroup, rh, bloodQuality);
         }
 
-        private Cocktail(bool isPureBlood)
+        private Cocktail(BloodGroup bloodGroup, Rh rh, BloodQuality bloodQuality)
         {
-            if (isPureBlood)
-            {
-                PureBlood = true;
-            }
-            else
-            {
-                IsShitted = true;
-            }
+            PureBlood = true;
+            BloodSample = new BloodSample(bloodGroup, rh, bloodQuality);
+        }
+        
+        private Cocktail()
+        {
+            IsShitted = true;
         }
 
         public override bool Equals(object obj)

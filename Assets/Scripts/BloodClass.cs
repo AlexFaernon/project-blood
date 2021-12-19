@@ -69,9 +69,9 @@ public static class BloodClass
         BloodSamples.Add(new BloodSample(group, rh, quality));
     }
 
-    public static void RemoveAnalyzedPackage()
+    public static void RemoveAnalyzedPackage(BloodSample bloodSample)
     {
-        //todo
+        BloodSamples.Remove(bloodSample);
     }
 }
 
@@ -84,14 +84,14 @@ public class BloodSample
 
     public BloodGroup? BloodGroupSticker = null;
     public Rh? RhSticker = null;
-    public BloodQuality? QualitySticker = null;
+    public BloodQuality? BloodQualitySticker = null;
 
     public bool IsAnalyzed;
 
     public bool IsSeparated;
     public bool IsCurrent => BloodClass.CurrentBloodSample == this;
 
-    public bool IsClassified => BloodGroupSticker != null && RhSticker != null && QualitySticker != null;
+    public bool IsClassified => BloodGroupSticker != null && RhSticker != null && BloodQualitySticker != null;
     public bool ClassificationDone;
 
     public BloodSample(BloodGroup bloodGroup, Rh rh, BloodQuality bloodQuality)
@@ -108,6 +108,13 @@ public class BloodSample
             return false;
         }
 
+        if (other.IsAnalyzed && IsAnalyzed)
+        {
+            return other.BloodGroup == BloodGroup && other.Rh == Rh && other.BloodQuality == BloodQuality &&
+                   other.BloodGroupSticker == BloodGroupSticker && other.RhSticker == RhSticker &&
+                   other.BloodQualitySticker == BloodQualitySticker;
+        }
+        
         return other.BloodGroup == BloodGroup && other.Rh == Rh && other.BloodQuality == BloodQuality;
     }
 
@@ -120,7 +127,7 @@ public class BloodSample
             hashCode = (hashCode * 397) ^ (int)BloodQuality;
             hashCode = (hashCode * 397) ^ BloodGroupSticker.GetHashCode();
             hashCode = (hashCode * 397) ^ RhSticker.GetHashCode();
-            hashCode = (hashCode * 397) ^ QualitySticker.GetHashCode();
+            hashCode = (hashCode * 397) ^ BloodQualitySticker.GetHashCode();
             hashCode = (hashCode * 397) ^ IsAnalyzed.GetHashCode();
             hashCode = (hashCode * 397) ^ IsSeparated.GetHashCode();
             hashCode = (hashCode * 397) ^ ClassificationDone.GetHashCode();

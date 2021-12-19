@@ -1,6 +1,6 @@
-using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CustomerScript : MonoBehaviour
 {
@@ -11,7 +11,7 @@ public class CustomerScript : MonoBehaviour
         customer = CustomersClass.GetCurrentCustomer;
         if (customer == null)
         {
-            gameObject.SetActive(false);
+            SceneManager.LoadScene("DayEnd");
             return;
         }
 
