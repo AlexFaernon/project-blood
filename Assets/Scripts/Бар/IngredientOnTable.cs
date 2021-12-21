@@ -90,7 +90,7 @@ public class IngredientOnTable : MonoBehaviour
     {
         if (ingredient.Miscellaneous == null) return;
         
-        TableManager.Shaker.Add(ingredient);
+        TableManager.AddIngredientToShaker(ingredient);
         TableManager.RemoveIngredientByName(name);
         ingredient = null;
         SceneManager.LoadScene("Bar");

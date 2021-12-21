@@ -21,7 +21,7 @@ public class JuiceGlassScript : MonoBehaviour
 
         if (isTriggered)
         {
-            TableManager.Shaker.Add(new Food.Ingredient((Food.Fruits)TableManager.CurrentJuicerFruit,
+            TableManager.AddIngredientToShaker(new Food.Ingredient((Food.Fruits)TableManager.CurrentJuicerFruit,
                 Food.Condition.Juice));
             TableManager.CurrentJuicerFruit = null;
             SceneManager.LoadScene("Bar");

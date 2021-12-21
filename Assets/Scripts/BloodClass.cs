@@ -4,7 +4,7 @@ using System.Linq;
 
 public static class BloodClass
 {
-    //todo save
+    //todo saved
     public static List<BloodSample> BloodSamples { get; private set; } = new List<BloodSample>();
 
     public static IEnumerable<BloodSample> AnalyzedBloodSamples =>
@@ -25,6 +25,11 @@ public static class BloodClass
         CurrentBloodSample = bloodSample;
     }
 
+    public static void LoadBloodSamples(List<BloodSample> bloodSamples)
+    {
+        BloodSamples = bloodSamples;
+    }
+    
     public static void ClearCurrentBloodSample()
     {
         CurrentBloodSample = null;
@@ -52,11 +57,6 @@ public static class BloodClass
         return null;
     }
 
-    public static void ClearSamplesList()
-    {
-        BloodSamples = new List<BloodSample>();
-    }
-
     public static void GenerateRandomSample(Random random)
     {
         if (BloodSamples.Count == 9)
@@ -72,6 +72,7 @@ public static class BloodClass
     public static void RemoveAnalyzedPackage(BloodSample bloodSample)
     {
         BloodSamples.Remove(bloodSample);
+        SaveDataScript.SaveBlood();
     }
 }
 

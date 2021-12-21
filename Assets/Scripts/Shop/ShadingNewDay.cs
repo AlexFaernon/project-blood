@@ -6,6 +6,9 @@ public class ShadingNewDay : MonoBehaviour
     public void OnClickYes()
     {
         Shop.ToggleIngredients = true;
+        SaveDataScript.SaveShop();
+        SaveDataScript.SaveBlood();
+        SaveDataScript.SaveMoney();
         CustomersClass.CreateNewCustomers();
         SceneManager.LoadScene("Bar");
     }

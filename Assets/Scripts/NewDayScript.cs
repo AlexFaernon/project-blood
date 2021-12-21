@@ -5,7 +5,7 @@ public class NewDayScript : MonoBehaviour
 {
     public void StartNewDay()
     {
-        Resources.CreateFirstSamples();
+        //todo Resources.CreateFirstSamples();
         SceneManager.LoadScene("Shop");
     }
 }

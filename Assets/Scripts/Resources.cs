@@ -3,9 +3,9 @@ using System;
 public static class Resources
 {
     public const int SamplePrice = 200;
+    //todo saved
     public static int Money = 100000;
     public static int Samples => BloodClass.BloodSamples.Count;
-    //todo пофиксить абьюз через закрытие
     public static bool[] ToggleSampleShop { get; private set; } = { true, true, true, true, true, true };
 
     private const int StartPackagesAmount = 1;
@@ -17,13 +17,12 @@ public static class Resources
     
     public static void CreateFirstSamples()
     {
-        BloodClass.ClearSamplesList();
-
         var random = new Random();
         for (var i = 0; i < StartPackagesAmount; i++)
         {
             BloodClass.GenerateRandomSample(random);
         }
+        SaveDataScript.SaveBlood();
     }
 
     public static bool BuySample()
@@ -47,6 +46,7 @@ public static class Resources
         }
 
         Money -= price;
+        SaveDataScript.SaveMoney();
         return true;
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 public static class Food
@@ -17,6 +18,7 @@ public static class Food
         {Miscellaneous.Pepper, 5}
     };
 
+    [Serializable]
     public class Ingredient
     {
         public readonly Fruits? Fruit;
@@ -56,6 +58,7 @@ public static class Food
         }
     }
     
+    [Serializable]
     public class Cocktail
     {
         public readonly string Name;

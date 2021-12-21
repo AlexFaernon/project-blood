@@ -4,12 +4,19 @@ using System.Linq;
 
 public static class CustomersClass
 {
-    private static List<Customer> Customers = new List<Customer>();
+    //todo saved
+    public static List<Customer> Customers { get; private set; } = new List<Customer>();
     public static Customer GetCurrentCustomer => Customers.Count > 0 ? Customers[0] : null;
 
     public static void RemoveCustomer(Customer customer)
     {
         Customers.Remove(customer);
+        SaveDataScript.SaveCustomers();
+    }
+
+    public static void LoadCustomers(List<Customer> customers)
+    {
+        Customers = customers;
     }
     
     public static void CreateNewCustomers()
@@ -23,9 +30,12 @@ public static class CustomersClass
             var cocktails = Recipes.GetCocktailsByBlood(bloodSample);
             Customers.Add(new Customer(cocktails[random.Next(cocktails.Count)]));
         }
+        
+        SaveDataScript.SaveCustomers();
     }
 }
 
+[Serializable]
 public class Customer
 {
     public readonly Food.Cocktail Cocktail;

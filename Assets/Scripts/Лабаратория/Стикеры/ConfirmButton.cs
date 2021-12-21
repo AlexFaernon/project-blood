@@ -8,6 +8,7 @@ public class ConfirmButton : MonoBehaviour
     public void OnClickYes()
     {
         BloodClass.CurrentBloodSample.ClassificationDone = true;
+        SaveDataScript.SaveBlood();
         BloodClass.ClearCurrentBloodSample();
         SceneManager.LoadScene("Lab");
     }

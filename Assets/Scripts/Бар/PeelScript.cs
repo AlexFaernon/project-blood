@@ -25,7 +25,7 @@ public class PeelScript : MonoBehaviour
 
         if (isTriggered)
         {
-            TableManager.Shaker.Add(new Food.Ingredient((Food.Fruits)TableManager.CurrentBoardFruit,
+            TableManager.AddIngredientToShaker(new Food.Ingredient((Food.Fruits)TableManager.CurrentBoardFruit,
                 Food.Condition.Peel));
             TableManager.IsPeelActive = false;
             SceneManager.LoadScene("Bar");

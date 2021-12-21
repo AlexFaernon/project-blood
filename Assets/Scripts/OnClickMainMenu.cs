@@ -4,9 +4,17 @@ using UnityEngine.SceneManagement;
 
 public class OnClickMainMenu : MonoBehaviour
 {
-    public void LoadNewDay()
+    public void GameStart()
     {
-        SceneManager.LoadScene("DayStart");
+        LoadDataScript.LoadAll();
+        if (Shop.ToggleIngredients)
+        {
+            SceneManager.LoadScene("Bar");
+        }
+        else
+        {
+            SceneManager.LoadScene("DayStart");
+        }
     }
 
     public void LoadStatistics()

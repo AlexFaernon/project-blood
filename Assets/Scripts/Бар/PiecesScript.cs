@@ -24,7 +24,7 @@ public class PiecesScript : MonoBehaviour
         if (isTriggered)
         {
             Debug.Log(TableManager.CurrentBoardFruit + "Pieces");
-            TableManager.Shaker.Add(new Food.Ingredient((Food.Fruits)TableManager.CurrentBoardFruit,
+            TableManager.AddIngredientToShaker(new Food.Ingredient((Food.Fruits)TableManager.CurrentBoardFruit,
                 Food.Condition.Pieces));
             TableManager.IsPiecesActive = false;
             SceneManager.LoadScene("Bar");

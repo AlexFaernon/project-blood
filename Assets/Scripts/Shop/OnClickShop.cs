@@ -19,6 +19,6 @@ public class OnClickShop : MonoBehaviour
 
 public static class Shop
 {
-    //todo save
+    //todo saved
     public static bool ToggleIngredients;
 }

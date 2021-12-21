@@ -2,11 +2,12 @@ using System.Collections.Generic;
 
 public static class TableManager
 {
-    //todo save
+    //todo saved
     public static HashSet<Food.Ingredient> Shaker = new HashSet<Food.Ingredient>();
     
     public static BloodSample CurrentPackage;
     public static bool IsPackageInShaker;
+    //todo save all
     public static Food.Cocktail CurrentCocktail;
     
     public static Food.Fruits? CurrentBoardFruit = null;
@@ -17,9 +18,9 @@ public static class TableManager
 
     public static bool IsGlassActive;
     //todo save
-    private static readonly List<Food.Ingredient> IngredientsOnTable = new List<Food.Ingredient>();
+    public static List<Food.Ingredient> ingredientsOnTable { get; private set; } = new List<Food.Ingredient>();
 
-    public static int IngredientsCount => IngredientsOnTable.Count;
+    public static int IngredientsCount => ingredientsOnTable.Count;
 
     public static void ClearCocktail()
     {
@@ -30,6 +31,7 @@ public static class TableManager
     public static void ClearShaker()
     {
         Shaker = new HashSet<Food.Ingredient>();
+        SaveDataScript.SaveShaker();
     }
 
     public static void RemovePackage()
@@ -42,9 +44,9 @@ public static class TableManager
     public static Food.Ingredient GetIngredientByNumber(string name)
     {
         var number = int.Parse(name);
-        if (number < IngredientsOnTable.Count)
+        if (number < ingredientsOnTable.Count)
         {
-            return IngredientsOnTable[number];
+            return ingredientsOnTable[number];
         }
 
         return null;
@@ -53,16 +55,30 @@ public static class TableManager
     public static void RemoveIngredientByName(string name)
     {
         var number = int.Parse(name);
-        IngredientsOnTable.RemoveAt(number);
+        ingredientsOnTable.RemoveAt(number);
+        SaveDataScript.SaveIngredientsOnTable();
+    }
+
+    public static void AddIngredientToShaker(Food.Ingredient ingredient)
+    {
+        Shaker.Add(ingredient);
+        SaveDataScript.SaveShaker();
+    }
+
+    public static void LoadIngredients(List<Food.Ingredient> ingredients)
+    {
+        ingredientsOnTable = ingredients;
     }
     
     public static void AddIngredient(Food.Miscellaneous miscellaneous)
     {
-        IngredientsOnTable.Add(new Food.Ingredient(miscellaneous));
+        ingredientsOnTable.Add(new Food.Ingredient(miscellaneous));
+        SaveDataScript.SaveIngredientsOnTable();
     }
     
     public static void AddIngredient(Food.Fruits fruit)
     {
-        IngredientsOnTable.Add(new Food.Ingredient(fruit, Food.Condition.Fruit));
+        ingredientsOnTable.Add(new Food.Ingredient(fruit, Food.Condition.Fruit));
+        SaveDataScript.SaveIngredientsOnTable();
     }
 }

@@ -13,7 +13,7 @@ public class IceScript : MonoBehaviour
     {
         if (gameObject != other || !isTriggered) return;
         
-        TableManager.Shaker.Add(new Food.Ingredient(Food.Miscellaneous.Ice));
+        TableManager.AddIngredientToShaker(new Food.Ingredient(Food.Miscellaneous.Ice));
     }
 
     private void OnTriggerEnter2D(Collider2D other)

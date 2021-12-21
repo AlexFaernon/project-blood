@@ -1218,7 +1218,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1470544112}
         m_TargetAssemblyTypeName: OnClickMainMenu, Assembly-CSharp
-        m_MethodName: LoadNewDay
+        m_MethodName: GameStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
