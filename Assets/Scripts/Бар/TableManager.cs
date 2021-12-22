@@ -9,7 +9,6 @@ public static class TableManager
     public static bool IsPackageInShaker;
     //todo save all
     public static Food.Cocktail CurrentCocktail;
-    
     public static Food.Fruits? CurrentBoardFruit = null;
     public static bool IsPiecesActive;
     public static bool IsPeelActive;

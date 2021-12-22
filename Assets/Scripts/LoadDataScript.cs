@@ -11,6 +11,12 @@ public static class LoadDataScript
     public const string MoneySavePath = "/MoneySave.bp";
     public const string ShakerSavePath = "/ShakerSave.bp";
     public const string IngredientsOnTableSavePath = "/IgredientsOnTableSave.bp";
+    public const string CurrentCocktailSavePath = "/CurrentCocktailSave.bp";
+    public const string CurrentBoardFruitSavePath = "/CurrentBoardFruitSave.bp";
+    public const string IsPiecesActiveSavePath = "/IsPiecesActiveSave.bp";
+    public const string IsPeelActiveSavePath = "/IsPeelActiveSave.bp";
+    public const string CurrentJuicerFruitSavePath = "/CurrentJuicerFruitSave.bp";
+    public const string IsGlassActiveSavePath = "/IsGlassActiveSave.bp";
     private static readonly BinaryFormatter binaryFormatter = new BinaryFormatter();
 
     public static void LoadAll()
@@ -21,6 +27,12 @@ public static class LoadDataScript
         LoadMoney();
         LoadShaker();
         LoadIngredientsOnTable();
+        LoadCurrentCocktail();
+        LoadCurrentBoardFruit();
+        LoadIsPiecesActive();
+        LoadIsPeelActive();
+        LoadCurrentJuicerFruit();
+        LoadIsGlassActive();
     }
     
     private static void LoadBlood()
@@ -79,6 +91,66 @@ public static class LoadDataScript
         {
             var file = File.Open(Application.persistentDataPath + IngredientsOnTableSavePath, FileMode.Open);
             TableManager.LoadIngredients((List<Food.Ingredient>)binaryFormatter.Deserialize(file));
+            file.Close();
+        }
+    }
+
+    private static void LoadCurrentCocktail()
+    {
+        if (File.Exists(Application.persistentDataPath + CurrentCocktailSavePath))
+        {
+            var file = File.Open(Application.persistentDataPath + CurrentCocktailSavePath, FileMode.Open);
+            TableManager.CurrentCocktail = (Food.Cocktail)binaryFormatter.Deserialize(file);
+            file.Close();
+        }
+    }
+
+    private static void LoadCurrentBoardFruit()
+    {
+        if (File.Exists(Application.persistentDataPath + CurrentBoardFruitSavePath))
+        {
+            var file = File.Open(Application.persistentDataPath + CurrentBoardFruitSavePath, FileMode.Open);
+            TableManager.CurrentBoardFruit = (Food.Fruits)binaryFormatter.Deserialize(file);
+            file.Close();
+        }
+    }
+
+    private static void LoadIsPiecesActive()
+    {
+        if (File.Exists(Application.persistentDataPath + IsPiecesActiveSavePath))
+        {
+            var file = File.Open(Application.persistentDataPath + IsPiecesActiveSavePath, FileMode.Open);
+            TableManager.IsPiecesActive = (bool)binaryFormatter.Deserialize(file);
+            file.Close();
+        }
+    }
+
+    private static void LoadIsPeelActive()
+    {
+        if (File.Exists(Application.persistentDataPath + IsPeelActiveSavePath))
+        {
+            var file = File.Open(Application.persistentDataPath + IsPeelActiveSavePath, FileMode.Open);
+            TableManager.IsPeelActive = (bool)binaryFormatter.Deserialize(file);
+            file.Close();
+        }
+    }
+
+    private static void LoadCurrentJuicerFruit()
+    {
+        if (File.Exists(Application.persistentDataPath + CurrentJuicerFruitSavePath))
+        {
+            var file = File.Open(Application.persistentDataPath + CurrentJuicerFruitSavePath, FileMode.Open);
+            TableManager.CurrentJuicerFruit = (Food.Fruits)binaryFormatter.Deserialize(file);
+            file.Close();
+        }
+    }
+
+    private static void LoadIsGlassActive()
+    {
+        if (File.Exists(Application.persistentDataPath + IsGlassActiveSavePath))
+        {
+            var file = File.Open(Application.persistentDataPath + IsGlassActiveSavePath, FileMode.Open);
+            TableManager.IsGlassActive = (bool)binaryFormatter.Deserialize(file);
             file.Close();
         }
     }
