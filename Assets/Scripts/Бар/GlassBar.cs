@@ -36,7 +36,10 @@ public class GlassBar : MonoBehaviour
             case Triggers.Customer:
                 EventAggregator.SellCocktail.Publish(TableManager.CurrentCocktail);
                 TableManager.ClearCocktail();
+                
                 TableManager.IsGlassActive = false;
+                SaveDataScript.SaveIsGlassActive();
+                
                 TableManager.RemovePackage();
                 SceneManager.LoadScene("Bar");
                 return;
@@ -49,6 +52,7 @@ public class GlassBar : MonoBehaviour
     private void OnCocktail(Food.Cocktail cocktail)
     {
         TableManager.CurrentCocktail = cocktail;
+        SaveDataScript.SaveCurrentCocktail();
         SceneManager.LoadScene("Bar");
     }
 

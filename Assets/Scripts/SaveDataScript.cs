@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class SaveDataScript
 {
-    private static BinaryFormatter binaryFormatter = new BinaryFormatter();
+    private static readonly BinaryFormatter binaryFormatter = new BinaryFormatter();
     
     public static void SaveBlood()
     {
@@ -50,6 +50,12 @@ public static class SaveDataScript
 
     public static void SaveCurrentCocktail()
     {
+        if (TableManager.CurrentCocktail == null)
+        {
+            File.Delete(Application.persistentDataPath + LoadDataScript.CurrentCocktailSavePath);
+            return;
+        }
+        
         var file = File.Create(Application.persistentDataPath + LoadDataScript.CurrentCocktailSavePath);
         binaryFormatter.Serialize(file, TableManager.CurrentCocktail);
         file.Close();
@@ -57,6 +63,12 @@ public static class SaveDataScript
 
     public static void SaveCurrentBoardFruit()
     {
+        if (TableManager.CurrentBoardFruit == null)
+        {
+            File.Delete(Application.persistentDataPath + LoadDataScript.CurrentBoardFruitSavePath);
+            return;
+        }
+        
         var file = File.Create(Application.persistentDataPath + LoadDataScript.CurrentBoardFruitSavePath);
         binaryFormatter.Serialize(file, TableManager.CurrentBoardFruit);
         file.Close();
@@ -78,6 +90,12 @@ public static class SaveDataScript
 
     public static void SaveCurrentJuicerFruit()
     {
+        if (TableManager.CurrentJuicerFruit == null)
+        {
+            File.Delete(Application.persistentDataPath + LoadDataScript.CurrentJuicerFruitSavePath);
+            return;
+        }
+        
         var file = File.Create(Application.persistentDataPath + LoadDataScript.CurrentJuicerFruitSavePath);
         binaryFormatter.Serialize(file, TableManager.CurrentJuicerFruit);
         file.Close();

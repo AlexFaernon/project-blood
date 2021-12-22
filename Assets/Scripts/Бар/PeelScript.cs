@@ -27,7 +27,10 @@ public class PeelScript : MonoBehaviour
         {
             TableManager.AddIngredientToShaker(new Food.Ingredient((Food.Fruits)TableManager.CurrentBoardFruit,
                 Food.Condition.Peel));
+            
             TableManager.IsPeelActive = false;
+            SaveDataScript.SaveIsPeelActive();
+            
             SceneManager.LoadScene("Bar");
             return;
         }

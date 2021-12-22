@@ -24,6 +24,7 @@ public static class TableManager
     public static void ClearCocktail()
     {
         CurrentCocktail = null;
+        SaveDataScript.SaveCurrentCocktail();
         IsPackageInShaker = false;
     }
 

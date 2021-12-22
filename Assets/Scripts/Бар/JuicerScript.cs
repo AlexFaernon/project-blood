@@ -25,6 +25,8 @@ public class JuicerScript : MonoBehaviour
     private void SetCurrentFruit(Food.Ingredient ingredient)
     {
         TableManager.CurrentJuicerFruit = ingredient.Fruit;
+        SaveDataScript.SaveCurrentJuicerFruit();
+        
         SceneManager.LoadScene("Bar");
     }
 

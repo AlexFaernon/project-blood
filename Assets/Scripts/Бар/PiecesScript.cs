@@ -23,10 +23,10 @@ public class PiecesScript : MonoBehaviour
 
         if (isTriggered)
         {
-            Debug.Log(TableManager.CurrentBoardFruit + "Pieces");
             TableManager.AddIngredientToShaker(new Food.Ingredient((Food.Fruits)TableManager.CurrentBoardFruit,
                 Food.Condition.Pieces));
             TableManager.IsPiecesActive = false;
+            SaveDataScript.SaveIsPiecesActive();
             SceneManager.LoadScene("Bar");
             return;
         }

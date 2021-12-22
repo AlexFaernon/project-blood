@@ -14,6 +14,7 @@ public class GlassFridge : MonoBehaviour
         if (gameObject != other || !isTriggered) return;
         
         TableManager.IsGlassActive = true;
+        SaveDataScript.SaveIsGlassActive();
     }
 
     private void OnDestroy()

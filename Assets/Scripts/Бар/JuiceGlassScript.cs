@@ -23,7 +23,10 @@ public class JuiceGlassScript : MonoBehaviour
         {
             TableManager.AddIngredientToShaker(new Food.Ingredient((Food.Fruits)TableManager.CurrentJuicerFruit,
                 Food.Condition.Juice));
+            
             TableManager.CurrentJuicerFruit = null;
+            SaveDataScript.SaveCurrentJuicerFruit();
+            
             SceneManager.LoadScene("Bar");
         }
 

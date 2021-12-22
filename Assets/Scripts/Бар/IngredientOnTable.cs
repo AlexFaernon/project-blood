@@ -42,15 +42,10 @@ public class IngredientOnTable : MonoBehaviour
         {
             return;
         }
-
-        if (isTriggered != OnTrigger.Forbidden)
-        {
-            originalPos = rectTransform.anchoredPosition;
-        }
         
         switch (isTriggered)
         {
-            case OnTrigger.Forbidden:
+            case OnTrigger.None:
                 rectTransform.anchoredPosition = originalPos;
                 break;
             case OnTrigger.Board:
@@ -70,7 +65,11 @@ public class IngredientOnTable : MonoBehaviour
 
     private void Board()
     {
-        if (ingredient.Fruit == null || ingredient.Fruit == Food.Fruits.Celery) return;
+        if (ingredient.Fruit == null || ingredient.Fruit == Food.Fruits.Celery)
+        {
+            rectTransform.anchoredPosition = originalPos;
+            return;
+        }
         
         EventAggregator.OnBoardDrop.Publish(ingredient);
         TableManager.RemoveIngredientByName(name);
@@ -79,7 +78,11 @@ public class IngredientOnTable : MonoBehaviour
 
     private void Juicer()
     {
-        if (ingredient.Fruit == null) return;
+        if (ingredient.Fruit == null)
+        {
+            rectTransform.anchoredPosition = originalPos;
+            return;
+        }
         
         EventAggregator.OnJuicerDrop.Publish(ingredient);
         TableManager.RemoveIngredientByName(name);
@@ -88,7 +91,11 @@ public class IngredientOnTable : MonoBehaviour
 
     private void Shaker()
     {
-        if (ingredient.Miscellaneous == null) return;
+        if (ingredient.Miscellaneous == null)
+        {
+            rectTransform.anchoredPosition = originalPos;
+            return;
+        }
         
         TableManager.AddIngredientToShaker(ingredient);
         TableManager.RemoveIngredientByName(name);
@@ -145,7 +152,6 @@ public class IngredientOnTable : MonoBehaviour
     {
         isTriggered = other.gameObject.tag switch
         {
-            "IngredientsForbidden" => OnTrigger.Forbidden,
             "Board" => OnTrigger.Board,
             "Fridge" => OnTrigger.Fridge,
             "Juicer" => OnTrigger.Juicer,
@@ -167,7 +173,6 @@ public class IngredientOnTable : MonoBehaviour
     private enum OnTrigger
     {
         None,
-        Forbidden,
         Board,
         Juicer,
         Fridge,
