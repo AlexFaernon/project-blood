@@ -8,6 +8,6 @@ public class DayEndScript : MonoBehaviour
         Resources.ResetSamples();
         Shop.ToggleIngredients = false;
         SaveDataScript.SaveShop();
-        SceneManager.LoadScene("Scenes/DayStart");
+        SceneManager.LoadScene("Statistics");
     }
 }

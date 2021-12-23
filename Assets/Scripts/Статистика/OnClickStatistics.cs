@@ -2,12 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OnClickStatistics : MonoBehaviour
 {
     public void LoadNewDay()
     {
-        throw new NotImplementedException();
+        SceneManager.LoadScene("DayStart");
     }
     public void Leave()
     {

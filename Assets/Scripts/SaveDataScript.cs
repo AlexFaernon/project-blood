@@ -107,4 +107,18 @@ public static class SaveDataScript
         binaryFormatter.Serialize(file, TableManager.IsGlassActive);
         file.Close();
     }
+    
+    public static void SaveAllAttempts()
+    {
+        var file = File.Create(Application.persistentDataPath + LoadDataScript.AllAttemptsSavePath);
+        binaryFormatter.Serialize(file, GlobalStatistics.allAttempts);
+        file.Close();
+    }
+    
+    public static void SaveSuccessfulAttempts()
+    {
+        var file = File.Create(Application.persistentDataPath + LoadDataScript.SuccessfulAttemptsSavePath);
+        binaryFormatter.Serialize(file, GlobalStatistics.successfulAttempts);
+        file.Close();
+    }
 }

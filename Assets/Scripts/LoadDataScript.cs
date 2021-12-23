@@ -17,6 +17,8 @@ public static class LoadDataScript
     public const string IsPeelActiveSavePath = "/IsPeelActiveSave.bp";
     public const string CurrentJuicerFruitSavePath = "/CurrentJuicerFruitSave.bp";
     public const string IsGlassActiveSavePath = "/IsGlassActiveSave.bp";
+    public const string AllAttemptsSavePath = "/AttemptsSavePath.bp";
+    public const string SuccessfulAttemptsSavePath = "/SuccessfulSavePath.bp";
     private static readonly BinaryFormatter binaryFormatter = new BinaryFormatter();
 
     public static void LoadAll()
@@ -33,6 +35,8 @@ public static class LoadDataScript
         LoadIsPeelActive();
         LoadCurrentJuicerFruit();
         LoadIsGlassActive();
+        LoadAllAttempts();
+        LoadSuccessfulAttempts();
     }
     
     private static void LoadBlood()
@@ -151,6 +155,26 @@ public static class LoadDataScript
         {
             var file = File.Open(Application.persistentDataPath + IsGlassActiveSavePath, FileMode.Open);
             TableManager.IsGlassActive = (bool)binaryFormatter.Deserialize(file);
+            file.Close();
+        }
+    }
+    
+    private static void LoadAllAttempts()
+    {
+        if (File.Exists(Application.persistentDataPath + AllAttemptsSavePath))
+        {
+            var file = File.Open(Application.persistentDataPath + AllAttemptsSavePath, FileMode.Open);
+            GlobalStatistics.LoadAllAttempts((int[,])binaryFormatter.Deserialize(file));
+            file.Close();
+        }
+    }
+    
+    private static void LoadSuccessfulAttempts()
+    {
+        if (File.Exists(Application.persistentDataPath + SuccessfulAttemptsSavePath))
+        {
+            var file = File.Open(Application.persistentDataPath + SuccessfulAttemptsSavePath, FileMode.Open);
+            GlobalStatistics.LoadSuccessfulAttempts((int[,])binaryFormatter.Deserialize(file));
             file.Close();
         }
     }
