@@ -52,22 +52,26 @@ public class Customer
         
         if (Cocktail.Equals(cocktail))
         {
+            DailyStatistics.AddRecord(OrderStars.ThreeStars, Cocktail.BloodSample, cocktail.BloodSample);
             GlobalStatistics.AddAttempt(cocktail.BloodSample, true);
             return OrderStars.ThreeStars;
         }
 
         if (Cocktail.BloodSample.Equals(cocktail.BloodSample) && !cocktail.PureBlood)
         {
+            DailyStatistics.AddRecord(OrderStars.TwoStars, Cocktail.BloodSample, cocktail.BloodSample);
             GlobalStatistics.AddAttempt(cocktail.BloodSample, true);
             return OrderStars.TwoStars;
         }
 
         if (Cocktail.BloodSample.Equals(cocktail.BloodSample) && cocktail.PureBlood)
         {
+            DailyStatistics.AddRecord(OrderStars.OneStar, Cocktail.BloodSample, cocktail.BloodSample);
             GlobalStatistics.AddAttempt(cocktail.BloodSample, true);
             return OrderStars.OneStar;
         }
 
+        DailyStatistics.AddRecord(OrderStars.NoStars, Cocktail.BloodSample, cocktail.BloodSample);
         GlobalStatistics.AddAttempt(cocktail.BloodSample, false);
         return OrderStars.NoStars;
     }

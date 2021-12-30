@@ -102,6 +102,11 @@ public class BloodSample
         BloodQuality = bloodQuality;
     }
 
+    public override string ToString()
+    {
+        return BloodGroup + (Rh == Rh.Negative ? "-" : "+");
+    }
+
     public override bool Equals(object obj)
     {
         if (!(obj is BloodSample other))

@@ -1,159 +1,256 @@
 космополитан
+Можете дать мне 0 положительную без анемии с...апельсином?   
 Description
+1
+#FF0000
 Zero Positive Normal
 Ice Lime,Pieces Orange,Peel;
 
 нежный поклонник
+Пожалуйста первую с "положительным", "нежным" вкусом кофе
 Description
+3
+#FF0000
 Zero Positive Normal
 Coffee Lemon,Juice Lime,Juice;
 
-кровавая мэри
-Description
-Zero Positive Anemia
-Lemon,Pieces Celery,Juice Pepper;
-
-поэт
-Description
-Zero Positive Anemia
-Pineapple,Pieces Carnation Honey;
-
-пряная мучача
-Description
-Zero Negative Normal
-Honey Lime,Pieces Pepper;
-
 ирландский пирог тодди
+Первую с анемией и яблоками
 Description
-Zero Negative Normal
+3
+#FF0000
+Zero Positive Anemia
 Orange,Pieces Apple,Pieces Lemon,Juice;
 
-глинтвейн
+пряная мучача
+Я требую сладко-пряный напиток с первой!
 Description
+4
+#FF0000
+Zero Positive Anemia
+Honey Lime,Pieces Pepper;
+
+поэт
+Мне пожалуйста одного "Поэта"
+Description
+0
+#FF0000
+Zero Negative Normal
+Lime,Pieces Orange,Pieces Ice;
+
+кровавая мэри
+Давно хотел попробовать Кровавую Мэри
+Description
+4
+#FF0000
+Zero Negative Normal
+Lemon,Pieces Celery,Juice Pepper;
+
+глинтвейн
+Хм... Давайте Глинтвейн с первой
+Description
+2
+#FF0000
 Zero Negative Anemia
 Carnation Orange,Peel Lemon,Peel;
 
 улан
+Смиренно прошу первую с анемией и льдом
 Description
+3
+#FF0000
 Zero Negative Anemia
 Celery,Juice Coffee Ice;
 
 зеленая фея
+Пожалуйста одну положительную Вторую, без анемии
 Description
+1
+#FF0000
 A Positive Normal
-Ice Lemon,Juice Lemon,Peel;
+Ice Lemon,Pieces Lemon,Peel;
 
 горячий тодди
+Быстро гони сюда вторую положительную! И чтобы без анемии!
 Description
+2
+#FF0000
 A Positive Normal
 Apple,Pieces Carnation Honey;
 
 рохля
+Order
 Description
+0
+#FF0000
 A Positive Anemia
-Pepper Ice Coffee;
+Apple,Pieces Lemon,Pieces Ice;
 
 путеобходчик
+Order
 Description
+4
+#FF0000
 A Positive Anemia
 Lime,Peel Apple,Juice Pineapple,Juice;
 
 бенгалия
+Order
 Description
+4
+#FF0000
 A Negative Normal
 Pineapple,Pieces Lime,Juice Orange,Pieces;
 
-капеллан
+конник
+Order
 Description
+2
+#FF0000
 A Negative Normal
-Coffee Carnation Orange,Juice;
+Honey Carnation Lemon,Peel;
 
 рори
+Order
 Description
+3
+#FF0000
 A Negative Anemia
 Celery,Juice Orange,Pieces Lemon,Juice;
 
 чван
+Order
 Description
+3
+#FF0000
 A Negative Anemia
 Lemon,Pieces Lime,Juice Apple,Juice;
 
-тодди грог
+цевница
+Order
 Description
+1
+#FF0000
 B Positive Normal
-Lemon,Pieces Orange,Pieces Carnation;
+Apple,Pieces Ice Lime,Peel;
 
 осечка
+Order
 Description
+2
+#FF0000
 B Positive Normal
 Honey Lime,Pieces Apple,Peel;
 
-цевница
+тод грог
+Order
 Description
+2
+#FF0000
 B Positive Anemia
-Honey Ice Lime,Peel;
+Lemon,Pieces Orange,Pieces Carnation;
 
 ножка
+Order
 Description
+4
+#FF0000
 B Positive Anemia
 Celery,Juice Pepper Apple,Juice;
 
 экзотический грог
+Order
 Description
+4
+#FF0000
 B Negative Normal
 Pepper Carnation Orange,Juice;
 
 бульдозер
+Order
 Description
+4
+#FF0000
 B Negative Normal
 Coffee Ice Pineapple,Juice;
 
-золотое дно
+пикули
+Order
 Description
+2
+#FF0000
 B Negative Anemia
-Celery,Juice Honey Lime,Juice;
+Honey Coffee Lemon,Peel;
 
 гидропульт
+Order
 Description
+0
+#FF0000
 B Negative Anemia
-Pineapple,Pieces Apple,Pieces Orange,Pieces;
+Lemon,Pieces Apple,Pieces Orange,Pieces;
 
 острая тропикана
+Order
 Description
+4
+#FF0000
 AB Positive Normal
 Pineapple,Pieces Pepper Lemon,Juice;
 
 оранжевый бунт
+Order
 Description
+1
+#FF0000
 AB Positive Normal
-Coffee Orange,Pieces Lime,Juice;
+Orange,Peel Orange,Pieces Lime,Pieces;
 
-конник
+капеллан
+Order
 Description
+3
+#FF0000
 AB Positive Anemia
-Honey Carnation Lemon,Peel;
+Coffee Carnation Orange,Juice;
 
 кино
+Order
 Description
+4
+#FF0000
 AB Positive Anemia
 Pepper Apple,Peel Apple,Juice;
 
 апология
+Order
 Description
+3
+#FF0000
 AB Negative Normal
 Celery,Juice Lemon,Peel Lime,Juice;
 
 томпак
+Order
 Description
+0
+#FF0000
 AB Negative Normal
-Apple,Pieces Coffee Orange,Peel;
+Orange,Pieces Ice Lime,Pieces;
+
 
 том коллинз
+Order
 Description
+2
+#FF0000
 AB Negative Anemia
-Orange,Pieces Ice Lemon,Juice;
+Apple,Pieces Coffee Orange,Peel;
 
-пикули
+золотое дно
+Order
 Description
+3
+#FF0000
 AB Negative Anemia
-Honey Coffee Lemon,Peel;
+Celery,Juice Honey Lime,Juice;

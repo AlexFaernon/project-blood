@@ -10,8 +10,18 @@ public class OnClickStatistics : MonoBehaviour
     {
         SceneManager.LoadScene("DayStart");
     }
-    public void Leave()
+    public void LoadDailyStatistic()
     {
-        throw new NotImplementedException();
+        SceneManager.LoadScene("Dayly statistics");
+    }
+
+    public void LoadGlobalStatistics()
+    {
+        SceneManager.LoadScene("Statistics");
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

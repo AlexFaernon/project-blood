@@ -17,16 +17,19 @@ public class LoadRecipes : MonoBehaviour
         {
             var splitRecipe = recipe.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
             var recipeName = splitRecipe[0];
-            var description = splitRecipe[1];
-            var blood = splitRecipe[2];
-            var ingredients = splitRecipe[3];
+            var order = splitRecipe[1];
+            var description = splitRecipe[2];
+            var level = splitRecipe[3];
+            var color = splitRecipe[4];
+            var blood = splitRecipe[5];
+            var ingredients = splitRecipe[6];
             var parsedIngredients = new HashSet<Food.Ingredient>();
             foreach (var ingredient in ingredients.Split())
             {
                 parsedIngredients.Add(ParseIngredient(ingredient));
             }
 
-            Recipes.Cocktails[parsedIngredients] = GetCocktail(recipeName, description, blood.Split());
+            Recipes.Cocktails[parsedIngredients] = GetCocktail(recipeName, description, order, level, color, blood.Split());
         }
     }
 
@@ -44,12 +47,13 @@ public class LoadRecipes : MonoBehaviour
         return new Food.Ingredient(miscellaneous);
     }
 
-    private Food.Cocktail GetCocktail(string recipeName, string description, string[] blood)
+    private Food.Cocktail GetCocktail(string recipeName, string description, string order, string level, string color, string[] blood)
     {
         Enum.TryParse<BloodGroup>(blood[0], out var bloodGroup);
         Enum.TryParse<Rh>(blood[1], out var rh);
         Enum.TryParse<BloodQuality>(blood[2], out var bloodQuality);
 
-        return new Food.Cocktail(recipeName, description, bloodGroup, rh, bloodQuality);
+        var intLevel = int.Parse(level);
+        return new Food.Cocktail(recipeName, description, order, intLevel, color, bloodGroup, rh, bloodQuality);
     }
 }

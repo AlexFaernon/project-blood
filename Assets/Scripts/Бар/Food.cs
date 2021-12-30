@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public static class Food
 {
@@ -63,14 +64,21 @@ public static class Food
     {
         public readonly string Name;
         public readonly string Description;
+        public readonly string Order;
+        public readonly string Color;
+        public readonly int Level;
         public readonly BloodSample BloodSample;
         public readonly bool PureBlood;
         public readonly bool IsShitted;
 
-        public Cocktail(string name, string description, BloodGroup bloodGroup, Rh rh, BloodQuality bloodQuality)
+        public Cocktail(string name, string description, string order, int level, string color, BloodGroup bloodGroup,
+            Rh rh, BloodQuality bloodQuality)
         {
             Name = name;
             Description = description;
+            Order = order;
+            Level = level;
+            Color = color;
             BloodSample = new BloodSample(bloodGroup, rh, bloodQuality);
         }
 
