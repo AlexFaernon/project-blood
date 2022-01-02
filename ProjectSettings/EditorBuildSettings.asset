@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dayly statistics.unity
     guid: 5257262bdd8a37949a1f9b426334372e
+  - enabled: 1
+    path: Assets/Scenes/Bar/RecipeBook.unity
+    guid: df1121c71a8639949bef5dc826cadd25
   m_configObjects: {}

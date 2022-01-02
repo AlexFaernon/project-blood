@@ -72,8 +72,11 @@ public class Customer
             return OrderStars.OneStar;
         }
 
-        DailyStatistics.AddRecord(OrderStars.NoStars, Cocktail.BloodSample, cocktail.BloodSample);
-        GlobalStatistics.AddAttempt(cocktail.BloodSample, false);
+        if (!Cocktail.IsShitted)
+        {
+            DailyStatistics.AddRecord(OrderStars.NoStars, Cocktail.BloodSample, cocktail.BloodSample);
+            GlobalStatistics.AddAttempt(cocktail.BloodSample, false);
+        }
         return OrderStars.NoStars;
     }
 }

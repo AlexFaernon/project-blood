@@ -38,6 +38,7 @@ public class FruitsFridge : MonoBehaviour
             {
                 TableManager.AddIngredient(fruit);
                 Food.Ingredients[fruit] -= 1;
+                SaveDataScript.SaveIngredients();
                 SceneManager.LoadScene("Fridge");
                 return;
             }

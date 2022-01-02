@@ -40,6 +40,7 @@ public class MiscScript : MonoBehaviour
             {
                 TableManager.AddIngredient(ingredient);
                 Food.Ingredients[ingredient] -= 1;
+                SaveDataScript.SaveIngredients();
                 SceneManager.LoadScene("Fridge");
                 return;
             }

@@ -40,6 +40,7 @@ public class IngredientScript : MonoBehaviour
                 {
                     Food.Ingredients[miscellaneous] += 1;
                 }
+                SaveDataScript.SaveIngredients();
             }
 
             SceneManager.LoadScene("Shop");

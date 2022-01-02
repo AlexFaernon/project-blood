@@ -8,7 +8,8 @@ public class AnalyzedSample : MonoBehaviour
     [SerializeField] private TMP_Text text;
     private BloodSample bloodSample;
     private bool isTriggered;
-
+    private Vector2 originalPos;
+    private RectTransform rectTransform;
     private void Awake()
     {
         bloodSample = BloodClass.GetAnalyzedSampleByNumber(name);
@@ -17,7 +18,9 @@ public class AnalyzedSample : MonoBehaviour
             gameObject.SetActive(false);
             return;
         }
-        
+
+        rectTransform = GetComponent<RectTransform>();
+        originalPos = rectTransform.anchoredPosition;
         EventAggregator.OnDrop.Subscribe(OnDrop);
         text.text =
             bloodSample.BloodGroupSticker.ToString() + bloodSample.RhSticker + '\n' + bloodSample.BloodQualitySticker;
@@ -34,7 +37,10 @@ public class AnalyzedSample : MonoBehaviour
         {
             TableManager.CurrentPackage = bloodSample;
             SceneManager.LoadScene("Fridge");
+            return;
         }
+
+        rectTransform.anchoredPosition = originalPos;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

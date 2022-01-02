@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class Food
 {
-    //todo save
+    //todo saved
     public static Dictionary<object, int> Ingredients = new Dictionary<object, int>
     {
         {Fruits.Apple, 5},
@@ -68,11 +68,12 @@ public static class Food
         public readonly string Color;
         public readonly int Level;
         public readonly BloodSample BloodSample;
+        public readonly HashSet<Ingredient> Ingredients;
         public readonly bool PureBlood;
         public readonly bool IsShitted;
 
         public Cocktail(string name, string description, string order, int level, string color, BloodGroup bloodGroup,
-            Rh rh, BloodQuality bloodQuality)
+            Rh rh, BloodQuality bloodQuality, HashSet<Ingredient> ingredients)
         {
             Name = name;
             Description = description;
@@ -80,6 +81,7 @@ public static class Food
             Level = level;
             Color = color;
             BloodSample = new BloodSample(bloodGroup, rh, bloodQuality);
+            Ingredients = ingredients;
         }
 
         public static Cocktail GetBadCocktail()

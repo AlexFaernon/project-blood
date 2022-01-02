@@ -10,6 +10,7 @@ public static class DailyStatistics
     public static void AddRecord(OrderStars stars, BloodSample wanted, BloodSample given)
     {
         Records.Add(new StatisticRecord(stars, wanted, given));
+        SaveDataScript.SaveDailyStatistics();
     }
 
     public static StatisticRecord GetRecord()
@@ -30,6 +31,7 @@ public static class DailyStatistics
     public static void ResetRecords()
     {
         Records = new List<StatisticRecord>();
+        SaveDataScript.SaveDailyStatistics();
     }
 }
 

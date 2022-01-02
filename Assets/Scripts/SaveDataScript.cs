@@ -121,4 +121,23 @@ public static class SaveDataScript
         binaryFormatter.Serialize(file, GlobalStatistics.successfulAttempts);
         file.Close();
     }
+
+    public static void SaveIngredients()
+    {
+        var file = File.Create(Application.persistentDataPath + LoadDataScript.IngredientsSavePath);
+        var toSave = new int[LoadDataScript.IngredientsKeys.Length];
+        for (var i = 0; i < LoadDataScript.IngredientsKeys.Length; i++)
+        {
+            toSave[i] = Food.Ingredients[LoadDataScript.IngredientsKeys[i]];
+        }
+        binaryFormatter.Serialize(file, toSave);
+        file.Close();
+    }
+
+    public static void SaveDailyStatistics()
+    {
+        var file = File.Create(Application.persistentDataPath + LoadDataScript.DailyStatisticsSavePath);
+        binaryFormatter.Serialize(file, DailyStatistics.Records);
+        file.Close();
+    }
 }

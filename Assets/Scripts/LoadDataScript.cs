@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -19,6 +20,23 @@ public static class LoadDataScript
     public const string IsGlassActiveSavePath = "/IsGlassActiveSave.bp";
     public const string AllAttemptsSavePath = "/AttemptsSavePath.bp";
     public const string SuccessfulAttemptsSavePath = "/SuccessfulSavePath.bp";
+    public const string IngredientsSavePath = "/Ingredients.bp";
+    public const string DailyStatisticsSavePath = "/DailyStatistics.bp";
+
+    public static readonly object[] IngredientsKeys =
+    {
+        Food.Fruits.Apple,
+        Food.Fruits.Lemon,
+        Food.Fruits.Lime,
+        Food.Fruits.Pineapple,
+        Food.Fruits.Orange,
+        Food.Fruits.Celery,
+        Food.Miscellaneous.Carnation,
+        Food.Miscellaneous.Coffee,
+        Food.Miscellaneous.Honey,
+        Food.Miscellaneous.Pepper
+    };
+    
     private static readonly BinaryFormatter binaryFormatter = new BinaryFormatter();
 
     public static void LoadAll()
@@ -37,6 +55,8 @@ public static class LoadDataScript
         LoadIsGlassActive();
         LoadAllAttempts();
         LoadSuccessfulAttempts();
+        LoadIngredients();
+        LoadDailyStatistics();
     }
     
     private static void LoadBlood()
@@ -175,6 +195,36 @@ public static class LoadDataScript
         {
             var file = File.Open(Application.persistentDataPath + SuccessfulAttemptsSavePath, FileMode.Open);
             GlobalStatistics.LoadSuccessfulAttempts((int[,])binaryFormatter.Deserialize(file));
+            file.Close();
+        }
+    }
+
+    private static void LoadIngredients()
+    {
+        if (File.Exists(Application.persistentDataPath + IngredientsSavePath))
+        {
+            var file = File.Open(Application.persistentDataPath + IngredientsSavePath, FileMode.Open);
+            var values = (int[])binaryFormatter.Deserialize(file);
+            if (values.Length != IngredientsKeys.Length)
+            {
+                throw new ArgumentException("Arrays has different lengths");
+            }
+
+            for (var i = 0; i < IngredientsKeys.Length; i++)
+            {
+                Food.Ingredients[IngredientsKeys[i]] = values[i];
+            }
+            
+            file.Close();
+        }
+    }
+
+    private static void LoadDailyStatistics()
+    {
+        if (File.Exists(Application.persistentDataPath + DailyStatisticsSavePath))
+        {
+            var file = File.Open(Application.persistentDataPath + DailyStatisticsSavePath, FileMode.Open);
+            DailyStatistics.Records = (List<StatisticRecord>)binaryFormatter.Deserialize(file);
             file.Close();
         }
     }

@@ -109,10 +109,12 @@ public class IngredientOnTable : MonoBehaviour
         if (ingredient.Fruit != null)
         {
             Food.Ingredients[ingredient.Fruit] += 1;
+            SaveDataScript.SaveIngredients();
         }
         else
         {
             Food.Ingredients[ingredient.Miscellaneous] += 1;
+            SaveDataScript.SaveIngredients();
         }
 
         ingredient = null;

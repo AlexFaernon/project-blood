@@ -7,7 +7,7 @@ public static class TableManager
     
     public static BloodSample CurrentPackage;
     public static bool IsPackageInShaker;
-    //todo save all
+    //todo saved all
     public static Food.Cocktail CurrentCocktail;
     public static Food.Fruits? CurrentBoardFruit = null;
     public static bool IsPiecesActive;
@@ -16,7 +16,7 @@ public static class TableManager
     public static Food.Fruits? CurrentJuicerFruit = null;
 
     public static bool IsGlassActive;
-    //todo save
+    //todo saved
     public static List<Food.Ingredient> ingredientsOnTable { get; private set; } = new List<Food.Ingredient>();
 
     public static int IngredientsCount => ingredientsOnTable.Count;

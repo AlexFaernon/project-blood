@@ -8,6 +8,8 @@ public class Package : MonoBehaviour
     private BloodSample bloodSample;
     private bool isOnShaker;
     private bool isOnFridge;
+    private RectTransform rectTransform;
+    private Vector2 originalPos;
     
     private void Awake()
     {
@@ -17,6 +19,8 @@ public class Package : MonoBehaviour
             return;
         }
 
+        rectTransform = GetComponent<RectTransform>();
+        originalPos = rectTransform.anchoredPosition;
         bloodSample = TableManager.CurrentPackage;
         text.text =
             bloodSample.BloodGroupSticker.ToString() + bloodSample.RhSticker + '\n' + bloodSample.BloodQualitySticker;
@@ -37,7 +41,10 @@ public class Package : MonoBehaviour
         {
             TableManager.CurrentPackage = null;
             SceneManager.LoadScene("Bar");
+            return;
         }
+
+        rectTransform.anchoredPosition = originalPos;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

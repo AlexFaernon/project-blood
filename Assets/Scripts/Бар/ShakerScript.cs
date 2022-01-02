@@ -26,7 +26,7 @@ public class ShakerScript : MonoBehaviour
 
     private void ShakeShakeShake()
     {
-        var recipes = Recipes.Cocktails.Keys;
+        var cocktails = Recipes.Cocktails;
 
         if (!TableManager.IsPackageInShaker)
         {
@@ -46,11 +46,10 @@ public class ShakerScript : MonoBehaviour
             return;
         }
 
-        foreach (var recipe in recipes)
+        foreach (var cocktail in cocktails)
         {
-            if (TableManager.Shaker.SetEquals(recipe))
+            if (TableManager.Shaker.SetEquals(cocktail.Ingredients))
             {
-                var cocktail = Recipes.Cocktails[recipe];
                 var currentPackage = TableManager.CurrentPackage;
                 Debug.Log(cocktail.Name);
                 if (cocktail.BloodSample.Equals(currentPackage))
