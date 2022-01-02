@@ -8,7 +8,7 @@ public class CustomerScript : MonoBehaviour
     private Customer customer;
     private void Awake()
     {
-        customer = CustomersClass.GetCurrentCustomer;
+        customer = CustomersClass.CurrentCustomer;
         if (customer == null)
         {
             SceneManager.LoadScene("DayEnd");

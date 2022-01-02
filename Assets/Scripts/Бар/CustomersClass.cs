@@ -6,7 +6,7 @@ public static class CustomersClass
 {
     //todo saved
     public static List<Customer> Customers { get; private set; } = new List<Customer>();
-    public static Customer GetCurrentCustomer => Customers.Count > 0 ? Customers[0] : null;
+    public static Customer CurrentCustomer => Customers.Count > 0 ? Customers[0] : null;
 
     public static void RemoveCustomer(Customer customer)
     {
@@ -40,6 +40,7 @@ public class Customer
 {
     public readonly Food.Cocktail Cocktail;
     public string Order => Cocktail.Name;
+    public string Blood => Cocktail.BloodSample.ToString();
 
     public Customer(Food.Cocktail cocktail)
     {
