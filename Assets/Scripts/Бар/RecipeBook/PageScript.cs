@@ -11,6 +11,7 @@ public class PageScript : MonoBehaviour
     [SerializeField] private TMP_Text cocktailName;
     [SerializeField] private TMP_Text recipe;
     [SerializeField] private TMP_Text blood;
+    [SerializeField] private TMP_Text order;
     private Food.Cocktail cocktail;
 
     private Dictionary<string, string> Translate = new Dictionary<string, string>
@@ -33,6 +34,7 @@ public class PageScript : MonoBehaviour
 
     private void Awake()
     {
+        order.text = CustomersClass.CurrentCustomer.Order;
         cocktail = PagesManager.GetPage(pageSide);
 
         cocktailName.text = cocktail.Name;

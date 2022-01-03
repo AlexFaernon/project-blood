@@ -39,7 +39,7 @@ public static class CustomersClass
 public class Customer
 {
     public readonly Food.Cocktail Cocktail;
-    public string Order => Cocktail.Name;
+    public string Order => Cocktail.Order;
     public string Blood => Cocktail.BloodSample.ToString();
 
     public Customer(Food.Cocktail cocktail)
