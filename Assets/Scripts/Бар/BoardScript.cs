@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -22,6 +23,7 @@ public class BoardScript : MonoBehaviour
             SaveDataScript.SaveCurrentBoardFruit();
         }
         EventAggregator.OnBoardDrop.Subscribe(SetCurrentFruit);
+        
         piecesImage = pieces.GetComponent<Image>();
         peelImage = peel.GetComponent<Image>();
         if (TableManager.CurrentBoardFruit != null)
@@ -72,6 +74,8 @@ public class BoardScript : MonoBehaviour
                 break;
         }
     }
+
+    
 
     private void OnDestroy()
     {

@@ -15,6 +15,13 @@ TagManager:
   - Glass
   - Hole
   - Customer
+  - IngredientOnTable
+  - BloodOnTable
+  - Peel
+  - Pieces
+  - Fruit
+  - Miscellaneous
+  - Ice
   layers:
   - Default
   - TransparentFX

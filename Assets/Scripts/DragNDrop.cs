@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragNDrop : MonoBehaviour, IDragHandler, IEndDragHandler
+public class DragNDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     private Canvas canvas;
     private RectTransform rectTransform;
@@ -13,7 +11,12 @@ public class DragNDrop : MonoBehaviour, IDragHandler, IEndDragHandler
         rectTransform = GetComponent<RectTransform>();
         canvas = GetComponentInParent<Canvas>();
     }
-
+    
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+       EventAggregator.ToggleHighlightingOn.Publish(gameObject);
+    }
+    
     public void OnDrag(PointerEventData eventData)
     {
         var nextPos = rectTransform.anchoredPosition + eventData.delta / canvas.scaleFactor;
@@ -22,6 +25,7 @@ public class DragNDrop : MonoBehaviour, IDragHandler, IEndDragHandler
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        EventAggregator.ToggleHighlightingOff.Publish();
         EventAggregator.OnDrop.Publish(gameObject);
     }
 }

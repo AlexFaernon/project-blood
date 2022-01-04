@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 223335200}
   m_Layer: 5
   m_Name: 2
-  m_TagString: Untagged
+  m_TagString: IngredientOnTable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 310306902}
   m_Layer: 5
   m_Name: IceCubes
-  m_TagString: Untagged
+  m_TagString: Ice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -813,7 +813,7 @@ GameObject:
   - component: {fileID: 367379933}
   m_Layer: 5
   m_Name: 1
-  m_TagString: Untagged
+  m_TagString: IngredientOnTable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1652,6 +1652,7 @@ GameObject:
   - component: {fileID: 462045201}
   - component: {fileID: 462045206}
   - component: {fileID: 462045205}
+  - component: {fileID: 462045207}
   m_Layer: 5
   m_Name: Shaker
   m_TagString: Shaker
@@ -1813,6 +1814,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3966014afe3f1a840bcd9f48525b1c20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &462045207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462045197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c33d2116b7b0dfe409b8aa26212de197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags:
+  - IngredientOnTable
+  - BloodOnTable
+  - Peel
+  - Pieces
+  - Miscellaneous
+  - Ice
 --- !u!1 &509257312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1921,7 +1941,7 @@ GameObject:
   - component: {fileID: 523586002}
   m_Layer: 5
   m_Name: Peel
-  m_TagString: Untagged
+  m_TagString: Peel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2318,6 +2338,7 @@ GameObject:
   - component: {fileID: 800527326}
   - component: {fileID: 800527325}
   - component: {fileID: 800527328}
+  - component: {fileID: 800527329}
   m_Layer: 5
   m_Name: Glass
   m_TagString: Glass
@@ -2458,6 +2479,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3966014afe3f1a840bcd9f48525b1c20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &800527329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800527320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c33d2116b7b0dfe409b8aa26212de197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags:
+  - Shaker
 --- !u!1 &812447531
 GameObject:
   m_ObjectHideFlags: 0
@@ -2947,7 +2982,7 @@ GameObject:
   - component: {fileID: 1069315093}
   m_Layer: 5
   m_Name: Package
-  m_TagString: Untagged
+  m_TagString: BloodOnTable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3171,7 +3206,7 @@ GameObject:
   - component: {fileID: 1266190362}
   m_Layer: 5
   m_Name: Pieces
-  m_TagString: Untagged
+  m_TagString: Pieces
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3320,6 +3355,7 @@ GameObject:
   - component: {fileID: 1339878578}
   - component: {fileID: 1339878580}
   - component: {fileID: 1339878585}
+  - component: {fileID: 1339878586}
   - component: {fileID: 1339878579}
   - component: {fileID: 1339878584}
   - component: {fileID: 1339878583}
@@ -3478,6 +3514,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pieces: {fileID: 1266190358}
   peel: {fileID: 523585998}
+--- !u!114 &1339878586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339878577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c33d2116b7b0dfe409b8aa26212de197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags:
+  - Fruit
 --- !u!1 &1376129078
 GameObject:
   m_ObjectHideFlags: 0
@@ -3579,7 +3629,7 @@ GameObject:
   - component: {fileID: 1459493643}
   m_Layer: 5
   m_Name: 3
-  m_TagString: Untagged
+  m_TagString: IngredientOnTable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4559,6 +4609,7 @@ GameObject:
   - component: {fileID: 1821509636}
   - component: {fileID: 1821509635}
   - component: {fileID: 1821509634}
+  - component: {fileID: 1821509639}
   m_Layer: 5
   m_Name: Juicer
   m_TagString: Juicer
@@ -4709,6 +4760,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Glass: {fileID: 610399712}
+--- !u!114 &1821509639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821509630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c33d2116b7b0dfe409b8aa26212de197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags:
+  - Fruit
 --- !u!1 &1828701448
 GameObject:
   m_ObjectHideFlags: 0

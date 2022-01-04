@@ -136,6 +136,8 @@ public class IngredientOnTable : MonoBehaviour
                 Food.Fruits.Celery => celery,
                 _ => image.sprite
             };
+
+            gameObject.tag = "Fruit";
         }
         else
         {
@@ -147,6 +149,8 @@ public class IngredientOnTable : MonoBehaviour
                 Food.Miscellaneous.Carnation => carnation,
                 _ => image.sprite
             };
+            
+            gameObject.tag = "Miscellaneous";
         }
     }
 

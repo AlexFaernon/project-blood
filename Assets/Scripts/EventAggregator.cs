@@ -17,6 +17,8 @@ public static class EventAggregator
     public static readonly Event<Food.Ingredient> OnBoardDrop = new Event<Food.Ingredient>();
     public static readonly Event<Food.Cocktail> MakeCocktail = new Event<Food.Cocktail>();
     public static readonly Event<Food.Cocktail> SellCocktail = new Event<Food.Cocktail>();
+    public static readonly Event<GameObject> ToggleHighlightingOn = new Event<GameObject>();
+    public static readonly BasicEvent ToggleHighlightingOff = new BasicEvent();
 }
 
 public class Event<T>

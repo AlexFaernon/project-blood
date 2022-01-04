@@ -295,6 +295,7 @@ GameObject:
   - component: {fileID: 300695217}
   - component: {fileID: 300695216}
   - component: {fileID: 300695218}
+  - component: {fileID: 300695220}
   m_Layer: 5
   m_Name: TestTube
   m_TagString: Untagged
@@ -446,6 +447,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   filledTube: {fileID: 21300000, guid: 27cd2278b6090e94a80e938a99804b17, type: 3}
   separatedTube: {fileID: 21300000, guid: c1bb1c4828849154f82ae11f9bbb1a22, type: 3}
+--- !u!114 &300695220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300695211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c33d2116b7b0dfe409b8aa26212de197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags:
+  - Untagged
 --- !u!1 &430893154
 GameObject:
   m_ObjectHideFlags: 0
