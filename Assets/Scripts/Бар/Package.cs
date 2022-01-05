@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Package : MonoBehaviour
 {
-    [SerializeField] private TMP_Text text;
+    [SerializeField] private TMP_Text label;
     private BloodSample bloodSample;
     private bool isOnShaker;
     private bool isOnFridge;
@@ -22,9 +22,17 @@ public class Package : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
         originalPos = rectTransform.anchoredPosition;
         bloodSample = TableManager.CurrentPackage;
-        text.text =
-            bloodSample.BloodGroupSticker.ToString() + bloodSample.RhSticker + '\n' + bloodSample.BloodQualitySticker;
         EventAggregator.OnDrop.Subscribe(OnDrop);
+        SetText();
+    }
+    
+    private void SetText()
+    {
+        var text =
+            (bloodSample.BloodGroupSticker == BloodGroup.Zero ? "0" : bloodSample.BloodGroupSticker.ToString()) +
+            (bloodSample.RhSticker == Rh.Negative ? "-" : "+") + '\n' +
+            (bloodSample.BloodQuality == BloodQuality.Normal ? "Норм" : "Анем");
+        label.text = text;
     }
 
     private void OnDrop(GameObject other)

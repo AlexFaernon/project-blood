@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class AnalyzedSample : MonoBehaviour
 {
-    [SerializeField] private TMP_Text text;
+    [SerializeField] private TMP_Text label;
     private BloodSample bloodSample;
     private bool isTriggered;
     private Vector2 originalPos;
@@ -22,10 +22,18 @@ public class AnalyzedSample : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
         originalPos = rectTransform.anchoredPosition;
         EventAggregator.OnDrop.Subscribe(OnDrop);
-        text.text =
-            bloodSample.BloodGroupSticker.ToString() + bloodSample.RhSticker + '\n' + bloodSample.BloodQualitySticker;
+        SetText();
     }
 
+    private void SetText()
+    {
+        var text =
+            (bloodSample.BloodGroupSticker == BloodGroup.Zero ? "0" : bloodSample.BloodGroupSticker.ToString()) +
+            (bloodSample.RhSticker == Rh.Negative ? "-" : "+") + '\n' +
+            (bloodSample.BloodQuality == BloodQuality.Normal ? "Норм" : "Анем");
+        label.text = text;
+    }
+    
     private void OnDrop(GameObject other)
     {
         if (other != gameObject)

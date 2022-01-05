@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 237c80a9ba72396438fa9a9cc07c3384
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - bloodGroupSticker: {instanceID: 0}
+  - rhSticker: {instanceID: 0}
+  - qualitySticker: {instanceID: 0}
+  - Zero: {fileID: 21300000, guid: a3b278d8becfdb84aad52ea4120eb044, type: 3}
+  - A: {fileID: 21300000, guid: 0ad2e60498d222347b40143d4958769d, type: 3}
+  - B: {fileID: 21300000, guid: 1c1447ac19080e746903351189e9af1f, type: 3}
+  - AB: {fileID: 21300000, guid: 0e589d71cfd57d54290b58c3e25d834d, type: 3}
+  - Negative: {fileID: 21300000, guid: 76fbb6ddaeb958f44a10cefe446f1f90, type: 3}
+  - Positive: {fileID: 21300000, guid: 1357e974f1928c84792660a777d3664a, type: 3}
+  - Normal: {fileID: 21300000, guid: 2c5056f6b3b4b084a90e73a323c090ee, type: 3}
+  - Anemia: {fileID: 21300000, guid: 738b00d93ea8c0342a57d2e2e5d8ea33, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

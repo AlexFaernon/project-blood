@@ -1,29 +1,27 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GuideBookPageScript : MonoBehaviour
 {
     [SerializeField] private PageSide pageSide;
-    [SerializeField] private GameObject textOnly;
+    [SerializeField] private Image page;
 
     private void Awake()
     {
-        if (GuideBookManager.GuideBookTemplate == GuideBookTemplate.TextOnly)
-        {
-            textOnly.SetActive(true);
-        }
+        page.sprite = GuideBookManager.GetPage(pageSide);
     }
 
     public void OnClick()
     {
         if (pageSide == PageSide.Left)
         {
-            GuideBookManager.PageNumber -= 1;
+            GuideBookManager.PageNumber -= 2;
         }
         else
         {
-            GuideBookManager.PageNumber += 1;
+            GuideBookManager.PageNumber += 2;
         }
 
         SceneManager.LoadScene("GuideBook");

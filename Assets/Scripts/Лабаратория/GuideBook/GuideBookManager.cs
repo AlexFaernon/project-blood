@@ -1,31 +1,26 @@
-using UnityEngine.SceneManagement;
+using UnityEngine;
 
 public static class GuideBookManager
 {
-    public static int PageNumber; //0-2 первый и второй разделы
+    private static int pageNumber;
 
-    public static GuideBookTemplate GuideBookTemplate
+    public static int PageNumber
     {
-        get
-        {
-            if (PageNumber >= 0 && PageNumber < 4)
-            {
-                return GuideBookTemplate.TextOnly;
-            }
+        get => pageNumber;
 
-            return GuideBookTemplate.PictureText;
+        set
+        {
+            if (value < Pages.Length - 1 && value >= 0)
+            {
+                pageNumber = value;
+            }
         }
     }
-}
 
-public static class GuideBookText
-{
-    public static string[] Pages;
-    public static string GetPage => Pages[GuideBookManager.PageNumber];
-}
+    public static Sprite[] Pages;
 
-public enum GuideBookTemplate
-{
-    TextOnly,
-    PictureText
+    public static Sprite GetPage(PageSide pageSide)
+    {
+        return pageSide == PageSide.Left ? Pages[PageNumber] : Pages[PageNumber + 1];
+    }
 }
