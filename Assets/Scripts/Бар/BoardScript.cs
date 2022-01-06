@@ -9,11 +9,11 @@ public class BoardScript : MonoBehaviour
     [SerializeField] private GameObject peel;
     private Image piecesImage;
     private Image peelImage;
-    private readonly Color pineapple = new Color(240f/255, 234f/255, 78f/255);
-    private readonly Color lime = new Color(119f/255, 255f/255, 13f/255);
-    private readonly Color orange = new Color(255f/255, 138f/255, 0);
-    private readonly Color apple = new Color(255f/255, 9f/255, 9f/255);
-    private readonly Color lemon = new Color(255f/255, 202f/255, 33f/255);
+    public static readonly Color pineapple = new Color(240f/255, 234f/255, 78f/255);
+    public static readonly Color lime = new Color(119f/255, 255f/255, 13f/255);
+    public static readonly Color orange = new Color(255f/255, 138f/255, 0);
+    public static readonly Color apple = new Color(255f/255, 9f/255, 9f/255);
+    public static readonly Color lemon = new Color(255f/255, 202f/255, 33f/255);
 
     private void Awake()
     {

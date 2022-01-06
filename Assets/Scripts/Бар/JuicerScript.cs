@@ -32,30 +32,17 @@ public class JuicerScript : MonoBehaviour
 
     private void JuiceFruit()
     {
-        switch (TableManager.CurrentJuicerFruit)
+        glassColor.color = TableManager.CurrentJuicerFruit switch
         {
-            case Food.Fruits.Lime:
-                glassColor.color = lime;
-                break;
-            case Food.Fruits.Lemon:
-                glassColor.color = lemon;
-                break;
-            case Food.Fruits.Apple:
-                glassColor.color = apple;
-                break;
-            case Food.Fruits.Orange:
-                glassColor.color = orange;
-                break;
-            case Food.Fruits.Pineapple:
-                glassColor.color = pineapple;
-                break;
-            case Food.Fruits.Celery:
-                glassColor.color = celery;
-                break;
-            case null:
-                glassColor.color = Color.white;
-                break;
-        }
+            Food.Fruits.Lime => lime,
+            Food.Fruits.Lemon => lemon,
+            Food.Fruits.Apple => apple,
+            Food.Fruits.Orange => orange,
+            Food.Fruits.Pineapple => pineapple,
+            Food.Fruits.Celery => celery,
+            null => Color.white,
+            _ => glassColor.color
+        };
     }
 
     private void OnDestroy()

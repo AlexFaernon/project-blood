@@ -65,7 +65,7 @@ public static class Food
         public readonly string Name;
         public readonly string Description;
         public readonly string Order;
-        public readonly string Color;
+        private readonly string color;
         public readonly int Level;
         public readonly BloodSample BloodSample;
         public readonly HashSet<Ingredient> Ingredients;
@@ -79,7 +79,7 @@ public static class Food
             Description = description;
             Order = order;
             Level = level;
-            Color = color;
+            this.color = color;
             BloodSample = new BloodSample(bloodGroup, rh, bloodQuality);
             Ingredients = ingredients;
         }
@@ -94,9 +94,20 @@ public static class Food
             return new Cocktail(bloodGroup, rh, bloodQuality);
         }
 
+        public Color GetColor()
+        {
+            if (ColorUtility.TryParseHtmlString(color, out var parsedColor))
+            {
+                return parsedColor;
+            }
+
+            throw new ArgumentException("cant parse color");
+        }
+
         private Cocktail(BloodGroup bloodGroup, Rh rh, BloodQuality bloodQuality)
         {
             PureBlood = true;
+            color = "#ff0000";
             BloodSample = new BloodSample(bloodGroup, rh, bloodQuality);
         }
         
