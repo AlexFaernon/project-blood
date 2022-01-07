@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RhSticker : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class RhSticker : MonoBehaviour
     {
         rectTransform = GetComponent<RectTransform>().anchoredPosition;
         EventAggregator.OnDrop.Subscribe(OnDrop);
+        
+        if (GameMode.IsTraining)
+        {
+            EventAggregator.HighlightCorrectRhSticker.Subscribe(ToggleHighlight);
+        }
     }
 
     private void OnDrop(GameObject other)
@@ -20,6 +26,14 @@ public class RhSticker : MonoBehaviour
         }
 
         GetComponent<RectTransform>().anchoredPosition = rectTransform;
+    }
+    
+    private void ToggleHighlight(Rh correctRh)
+    {
+        if (rh == correctRh)
+        {
+            GetComponent<Image>().color = Color.green;
+        }
     }
     
     private void OnTriggerEnter2D(Collider2D other)
@@ -41,5 +55,10 @@ public class RhSticker : MonoBehaviour
     private void OnDestroy()
     {
         EventAggregator.OnDrop.Unsubscribe(OnDrop);
+        
+        if (GameMode.IsTraining)
+        {
+            EventAggregator.HighlightCorrectRhSticker.Unsubscribe(ToggleHighlight);
+        }
     }
 }

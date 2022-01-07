@@ -19,6 +19,10 @@ public static class EventAggregator
     public static readonly Event<Food.Cocktail> SellCocktail = new Event<Food.Cocktail>();
     public static readonly Event<GameObject> ToggleHighlightingOn = new Event<GameObject>();
     public static readonly BasicEvent ToggleHighlightingOff = new BasicEvent();
+    public static readonly BasicEvent OnTrainingCheck = new BasicEvent();
+    public static readonly Event<BloodGroup> HighlightCorrectBloodGroupSticker = new Event<BloodGroup>();
+    public static readonly Event<Rh> HighlightCorrectRhSticker = new Event<Rh>();
+    public static readonly Event<BloodQuality> HighlightCorrectQualitySticker = new Event<BloodQuality>();
 }
 
 public class Event<T>

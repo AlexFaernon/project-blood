@@ -15,6 +15,10 @@ public class AnemiaDrop : MonoBehaviour
             ChangeSticker(BloodClass.CurrentBloodSample?.BloodQualitySticker);
         
         EventAggregator.BloodQualitySticker.Subscribe(ChangeSticker);
+        if (GameMode.IsTraining)
+        {
+            EventAggregator.OnTrainingCheck.Subscribe(OnTrainingCheck);
+        }
     }
 
     private void ChangeSticker(BloodQuality? bloodQuality)
@@ -31,13 +35,30 @@ public class AnemiaDrop : MonoBehaviour
                 image.sprite = spriteAnemia;
                 break;
             case null:
-                image.color = new Color(0,0,0,0);
+                image.color = Color.clear;
                 break;
+        }
+    }
+
+    private void OnTrainingCheck()
+    {
+        if (BloodClass.CurrentBloodSample.BloodQuality == BloodClass.CurrentBloodSample.BloodQualitySticker)
+        {
+            image.color = Color.green;
+        }
+        else
+        {
+            image.color = Color.red;
+            EventAggregator.HighlightCorrectQualitySticker.Publish(BloodClass.CurrentBloodSample.BloodQuality);
         }
     }
 
     private void OnDestroy()
     {
         EventAggregator.BloodQualitySticker.Unsubscribe(ChangeSticker);
+        if (GameMode.IsTraining)
+        {
+            EventAggregator.OnTrainingCheck.Unsubscribe(OnTrainingCheck);
+        }
     }
 }

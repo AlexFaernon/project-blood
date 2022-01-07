@@ -17,6 +17,10 @@ public class BloodGroupDrop : MonoBehaviour
             ChangeSticker(BloodClass.CurrentBloodSample?.BloodGroupSticker);
         
         EventAggregator.BloodGroupSticker.Subscribe(ChangeSticker);
+        if (GameMode.IsTraining)
+        {
+            EventAggregator.OnTrainingCheck.Subscribe(OnTrainingCheck);
+        }
     }
 
     private void ChangeSticker(BloodGroup? bloodGroup)
@@ -43,9 +47,27 @@ public class BloodGroupDrop : MonoBehaviour
                 break;
         }
     }
+    
+    private void OnTrainingCheck()
+    {
+        if (BloodClass.CurrentBloodSample.BloodGroup == BloodClass.CurrentBloodSample.BloodGroupSticker)
+        {
+            image.color = Color.green;
+        }
+        else
+        {
+            image.color = Color.red;
+            EventAggregator.HighlightCorrectBloodGroupSticker.Publish(BloodClass.CurrentBloodSample.BloodGroup);
+        }
+    }
 
     private void OnDestroy()
     {
         EventAggregator.BloodGroupSticker.Unsubscribe(ChangeSticker);
+        
+        if (GameMode.IsTraining)
+        {
+            EventAggregator.OnTrainingCheck.Unsubscribe(OnTrainingCheck);
+        }
     }
 }

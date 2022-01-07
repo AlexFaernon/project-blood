@@ -15,6 +15,10 @@ public class RhDrop : MonoBehaviour
             ChangeSticker(BloodClass.CurrentBloodSample.RhSticker);
         
         EventAggregator.RhSticker.Subscribe(ChangeSticker);
+        if (GameMode.IsTraining)
+        {
+            EventAggregator.OnTrainingCheck.Subscribe(OnTrainingCheck);
+        }
     }
 
     private void ChangeSticker(Rh? rh)
@@ -35,9 +39,26 @@ public class RhDrop : MonoBehaviour
                 break;
         }
     }
+    
+    private void OnTrainingCheck()
+    {
+        if (BloodClass.CurrentBloodSample.Rh == BloodClass.CurrentBloodSample.RhSticker)
+        {
+            image.color = Color.green;
+        }
+        else
+        {
+            image.color = Color.red;
+            EventAggregator.HighlightCorrectRhSticker.Publish(BloodClass.CurrentBloodSample.Rh);
+        }
+    }
 
     private void OnDestroy()
     {
         EventAggregator.RhSticker.Unsubscribe(ChangeSticker);
+        if (GameMode.IsTraining)
+        {
+            EventAggregator.OnTrainingCheck.Subscribe(OnTrainingCheck);
+        }
     }
 }

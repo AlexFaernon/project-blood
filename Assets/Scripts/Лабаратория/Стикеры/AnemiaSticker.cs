@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AnemiaSticker : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class AnemiaSticker : MonoBehaviour
     {
         rectTransform = GetComponent<RectTransform>().anchoredPosition;
         EventAggregator.OnDrop.Subscribe(OnDrop);
+
+        if (GameMode.IsTraining)
+        {
+            EventAggregator.HighlightCorrectQualitySticker.Subscribe(ToggleHighlight);
+        }
     }
 
     private void OnDrop(GameObject other)
@@ -20,6 +26,14 @@ public class AnemiaSticker : MonoBehaviour
         }
 
         GetComponent<RectTransform>().anchoredPosition = rectTransform;
+    }
+
+    private void ToggleHighlight(BloodQuality correctBloodQuality)
+    {
+        if (bloodQuality == correctBloodQuality)
+        {
+            GetComponent<Image>().color = Color.green;
+        }
     }
     
     private void OnTriggerEnter2D(Collider2D other)
@@ -41,5 +55,10 @@ public class AnemiaSticker : MonoBehaviour
     private void OnDestroy()
     {
         EventAggregator.OnDrop.Unsubscribe(OnDrop);
+        
+        if (GameMode.IsTraining)
+        {
+            EventAggregator.HighlightCorrectQualitySticker.Unsubscribe(ToggleHighlight);
+        }
     }
 }

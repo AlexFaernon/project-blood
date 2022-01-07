@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = System.Random;
 
 public class OnClickMainMenu : MonoBehaviour
 {
@@ -23,6 +24,15 @@ public class OnClickMainMenu : MonoBehaviour
     }
     public void LoadTraining()
     {
-        throw new NotImplementedException();
+        var random = new Random();
+        
+        for (var i = 0; i < 5; i++)
+        {
+            BloodClass.GenerateRandomSample(random);
+        }
+
+        GameMode.IsTraining = true;
+
+        SceneManager.LoadScene("Lab");
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BloodGroupSticker : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class BloodGroupSticker : MonoBehaviour
     {
         rectTransform = GetComponent<RectTransform>().anchoredPosition;
         EventAggregator.OnDrop.Subscribe(OnDrop);
+        
+        if (GameMode.IsTraining)
+        {
+            EventAggregator.HighlightCorrectBloodGroupSticker.Subscribe(ToggleHighlight);
+        }
     }
 
     private void OnDrop(GameObject other)
@@ -20,6 +26,14 @@ public class BloodGroupSticker : MonoBehaviour
         }
 
         GetComponent<RectTransform>().anchoredPosition = rectTransform;
+    }
+    
+    private void ToggleHighlight(BloodGroup correctBloodGroup)
+    {
+        if (bloodGroup == correctBloodGroup)
+        {
+            GetComponent<Image>().color = Color.green;
+        }
     }
     
     private void OnTriggerEnter2D(Collider2D other)
@@ -41,5 +55,10 @@ public class BloodGroupSticker : MonoBehaviour
     private void OnDestroy()
     {
         EventAggregator.OnDrop.Unsubscribe(OnDrop);
+        
+        if (GameMode.IsTraining)
+        {
+            EventAggregator.HighlightCorrectBloodGroupSticker.Unsubscribe(ToggleHighlight);
+        }
     }
 }

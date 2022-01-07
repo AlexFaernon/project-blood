@@ -834,6 +834,7 @@ GameObject:
   - component: {fileID: 741026814}
   - component: {fileID: 741026816}
   - component: {fileID: 741026815}
+  - component: {fileID: 741026817}
   m_Layer: 5
   m_Name: Sticker
   m_TagString: Untagged
@@ -899,6 +900,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 741026813}
   m_CullTransparentMesh: 1
+--- !u!114 &741026817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741026813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a1ae3addfe34f4087374e2b41f021a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &785744311
 GameObject:
   m_ObjectHideFlags: 0
@@ -2267,6 +2280,7 @@ GameObject:
   - component: {fileID: 1349275141}
   - component: {fileID: 1349275140}
   - component: {fileID: 1349275139}
+  - component: {fileID: 1349275143}
   m_Layer: 5
   m_Name: BarButton
   m_TagString: Untagged
@@ -2399,6 +2413,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1349275137}
   m_CullTransparentMesh: 1
+--- !u!114 &1349275143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349275137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a1ae3addfe34f4087374e2b41f021a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1364719654
 GameObject:
   m_ObjectHideFlags: 0
