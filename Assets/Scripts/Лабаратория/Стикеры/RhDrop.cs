@@ -58,7 +58,7 @@ public class RhDrop : MonoBehaviour
         EventAggregator.RhSticker.Unsubscribe(ChangeSticker);
         if (GameMode.IsTraining)
         {
-            EventAggregator.OnTrainingCheck.Subscribe(OnTrainingCheck);
+            EventAggregator.OnTrainingCheck.Unsubscribe(OnTrainingCheck);
         }
     }
 }

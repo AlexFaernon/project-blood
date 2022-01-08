@@ -8,7 +8,6 @@ public class ConfirmButton : MonoBehaviour
     public void OnClickYes()
     {
         BloodClass.CurrentBloodSample.ClassificationDone = true;
-        BloodClass.ClearCurrentBloodSample();
         if (!GameMode.IsTraining)
         {
             PackageToFridge();
