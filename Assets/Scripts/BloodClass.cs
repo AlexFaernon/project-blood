@@ -25,6 +25,13 @@ public static class BloodClass
         CurrentBloodSample = bloodSample;
     }
 
+    public static void ClearBloodSamples()
+    {
+        if (CurrentGameMode.GameMode != GameMode.Training) throw new ArgumentException("not training");
+        
+        BloodSamples = new List<BloodSample>();
+    }
+
     public static void LoadBloodSamples(List<BloodSample> bloodSamples)
     {
         BloodSamples = bloodSamples;
@@ -89,6 +96,9 @@ public class BloodSample
 
     public bool IsAnalyzed;
 
+    public bool IsCorrectlyAnalyzed =>
+        BloodGroup == BloodGroupSticker && Rh == RhSticker && BloodQuality == BloodQualitySticker;
+
     public bool IsSeparated;
     public bool IsCurrent => BloodClass.CurrentBloodSample == this;
 
@@ -101,7 +111,7 @@ public class BloodSample
         Rh = rh;
         BloodQuality = bloodQuality;
     }
-
+    
     public override string ToString()
     {
         return BloodGroup + (Rh == Rh.Negative ? "-" : "+") + (BloodQuality == BloodQuality.Normal ? ", норм." : ", анем.");

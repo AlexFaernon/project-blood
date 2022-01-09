@@ -1,4 +1,11 @@
-public static class GameMode
+public static class CurrentGameMode
 {
-    public static bool IsTraining;
+    public static GameMode GameMode = GameMode.MainMenu;
+}
+
+public enum GameMode
+{
+    MainMenu,
+    Game,
+    Training
 }

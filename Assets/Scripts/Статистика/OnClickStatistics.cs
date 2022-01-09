@@ -1,27 +1,52 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class OnClickStatistics : MonoBehaviour
 {
-    public void LoadNewDay()
+    public void NextScene()
     {
-        SceneManager.LoadScene("DayStart");
+        switch (CurrentGameMode.GameMode)
+        {
+            case GameMode.MainMenu:
+                throw new ArgumentException("not in game");
+            case GameMode.Game:
+                SceneManager.LoadScene("DayStart");
+                break;
+            case GameMode.Training:
+                LoadMainMenu();
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
     }
-    public void LoadDailyStatistic()
+
+    public void Back()
     {
-        SceneManager.LoadScene("Dayly statistics");
+        switch (CurrentGameMode.GameMode)
+        {
+            case GameMode.MainMenu:
+                SceneManager.LoadScene("MainMenu");
+                break;
+            case GameMode.Game:
+                SceneManager.LoadScene("Dayly statistics");
+                break;
+            case GameMode.Training:
+                SceneManager.LoadScene("TrainingStatistics");
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
     }
 
     public void LoadGlobalStatistics()
     {
         SceneManager.LoadScene("Statistics");
     }
-
+    
     public void LoadMainMenu()
     {
+        CurrentGameMode.GameMode = GameMode.MainMenu;
         SceneManager.LoadScene("MainMenu");
     }
 }

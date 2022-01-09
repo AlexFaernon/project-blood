@@ -875,7 +875,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 212033731}
         m_TargetAssemblyTypeName: OnClickStatistics, Assembly-CSharp
-        m_MethodName: LoadDailyStatistic
+        m_MethodName: Back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1690,7 +1690,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 618619340}
         m_TargetAssemblyTypeName: OnClickStatistics, Assembly-CSharp
-        m_MethodName: LoadNewDay
+        m_MethodName: NextScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

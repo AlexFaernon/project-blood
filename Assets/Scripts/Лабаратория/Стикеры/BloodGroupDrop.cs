@@ -17,7 +17,7 @@ public class BloodGroupDrop : MonoBehaviour
             ChangeSticker(BloodClass.CurrentBloodSample?.BloodGroupSticker);
         
         EventAggregator.BloodGroupSticker.Subscribe(ChangeSticker);
-        if (GameMode.IsTraining)
+        if (CurrentGameMode.GameMode == GameMode.Training)
         {
             EventAggregator.OnTrainingCheck.Subscribe(OnTrainingCheck);
         }
@@ -65,7 +65,7 @@ public class BloodGroupDrop : MonoBehaviour
     {
         EventAggregator.BloodGroupSticker.Unsubscribe(ChangeSticker);
         
-        if (GameMode.IsTraining)
+        if (CurrentGameMode.GameMode == GameMode.Training)
         {
             EventAggregator.OnTrainingCheck.Unsubscribe(OnTrainingCheck);
         }

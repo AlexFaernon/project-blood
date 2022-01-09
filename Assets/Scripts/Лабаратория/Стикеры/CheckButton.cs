@@ -27,7 +27,7 @@ public class CheckButton : MonoBehaviour
                 button.interactable = true;
         }
         
-        if (GameMode.IsTraining && BloodClass.CurrentBloodSample is { ClassificationDone: true })
+        if (CurrentGameMode.GameMode == GameMode.Training && BloodClass.CurrentBloodSample is { ClassificationDone: true })
         {
             gameObject.SetActive(false);
         }

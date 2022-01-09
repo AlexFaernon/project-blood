@@ -36,7 +36,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Bar/Shop.unity
     guid: 03a8475ed51b281489bd04e0950636d4
   - enabled: 1
-    path: Assets/Scenes/Statistics.unity
+    path: Assets/Scenes/Statistics/Statistics.unity
     guid: c696cc2bb3c855c4e96d04cc1c72345e
   - enabled: 1
     path: Assets/Scenes/Bar/Fridge.unity
@@ -45,9 +45,12 @@ EditorBuildSettings:
     path: Assets/Scenes/DayEnd.unity
     guid: e382901dca054ad409a4bbd583973f10
   - enabled: 1
-    path: Assets/Scenes/Dayly statistics.unity
+    path: Assets/Scenes/Statistics/Dayly statistics.unity
     guid: 5257262bdd8a37949a1f9b426334372e
   - enabled: 1
     path: Assets/Scenes/Bar/RecipeBook.unity
     guid: df1121c71a8639949bef5dc826cadd25
+  - enabled: 1
+    path: Assets/Scenes/Statistics/TrainingStatistics.unity
+    guid: ce15199042808fd46892f66145910690
   m_configObjects: {}

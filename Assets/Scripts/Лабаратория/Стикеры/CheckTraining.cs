@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,6 +10,13 @@ public class CheckTraining : MonoBehaviour
     public void OnClick()
     {
         BloodClass.ClearCurrentBloodSample();
+        if (!BloodClass.UnknownBloodSamples.Any())
+        {
+            BloodClass.ClearBloodSamples();
+            SceneManager.LoadScene("TrainingStatistics");
+            return;
+        }
+        
         SceneManager.LoadScene("Lab");
     }
     

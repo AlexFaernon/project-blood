@@ -8,7 +8,7 @@ public class ConfirmButton : MonoBehaviour
     public void OnClickYes()
     {
         BloodClass.CurrentBloodSample.ClassificationDone = true;
-        if (!GameMode.IsTraining)
+        if (CurrentGameMode.GameMode == GameMode.Game)
         {
             PackageToFridge();
         }
@@ -32,6 +32,8 @@ public class ConfirmButton : MonoBehaviour
     private void CheckOnTraining()
     {
         EventAggregator.OnTrainingCheck.Publish();
+        TrainingStatistics.AddResult(BloodClass.CurrentBloodSample);
+        GlobalStatistics.AddAttempt(BloodClass.CurrentBloodSample, BloodClass.CurrentBloodSample.IsCorrectlyAnalyzed);
         confirmScreen.SetActive(false);
     }
 }

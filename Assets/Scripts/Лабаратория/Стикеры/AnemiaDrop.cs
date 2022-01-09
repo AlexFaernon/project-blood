@@ -15,7 +15,7 @@ public class AnemiaDrop : MonoBehaviour
             ChangeSticker(BloodClass.CurrentBloodSample?.BloodQualitySticker);
         
         EventAggregator.BloodQualitySticker.Subscribe(ChangeSticker);
-        if (GameMode.IsTraining)
+        if (CurrentGameMode.GameMode == GameMode.Training)
         {
             EventAggregator.OnTrainingCheck.Subscribe(OnTrainingCheck);
         }
@@ -56,7 +56,7 @@ public class AnemiaDrop : MonoBehaviour
     private void OnDestroy()
     {
         EventAggregator.BloodQualitySticker.Unsubscribe(ChangeSticker);
-        if (GameMode.IsTraining)
+        if (CurrentGameMode.GameMode == GameMode.Training)
         {
             EventAggregator.OnTrainingCheck.Unsubscribe(OnTrainingCheck);
         }

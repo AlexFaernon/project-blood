@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class GenerateDailyStatistics : MonoBehaviour
+public class GenerateTrainingStatistics : MonoBehaviour
 {
     [SerializeField] private GameObject prefab;
-    
+
     private void Start()
     {
-        DailyStatistics.SetEnumerator();
-        for (var i = 0; i < DailyStatistics.Records.Count; i++)
+        TrainingStatistics.SetEnumerator();
+        for (var i = 0; i < TrainingStatistics.ResultsCount; i++)
         {
             Instantiate(prefab, transform);
         }

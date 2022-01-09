@@ -15,7 +15,7 @@ public class RhDrop : MonoBehaviour
             ChangeSticker(BloodClass.CurrentBloodSample.RhSticker);
         
         EventAggregator.RhSticker.Subscribe(ChangeSticker);
-        if (GameMode.IsTraining)
+        if (CurrentGameMode.GameMode == GameMode.Training)
         {
             EventAggregator.OnTrainingCheck.Subscribe(OnTrainingCheck);
         }
@@ -56,7 +56,7 @@ public class RhDrop : MonoBehaviour
     private void OnDestroy()
     {
         EventAggregator.RhSticker.Unsubscribe(ChangeSticker);
-        if (GameMode.IsTraining)
+        if (CurrentGameMode.GameMode == GameMode.Training)
         {
             EventAggregator.OnTrainingCheck.Unsubscribe(OnTrainingCheck);
         }

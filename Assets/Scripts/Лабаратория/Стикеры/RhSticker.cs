@@ -12,7 +12,7 @@ public class RhSticker : MonoBehaviour
         rectTransform = GetComponent<RectTransform>().anchoredPosition;
         EventAggregator.OnDrop.Subscribe(OnDrop);
         
-        if (GameMode.IsTraining)
+        if (CurrentGameMode.GameMode == GameMode.Training)
         {
             EventAggregator.HighlightCorrectRhSticker.Subscribe(ToggleHighlight);
         }
@@ -56,7 +56,7 @@ public class RhSticker : MonoBehaviour
     {
         EventAggregator.OnDrop.Unsubscribe(OnDrop);
         
-        if (GameMode.IsTraining)
+        if (CurrentGameMode.GameMode == GameMode.Training)
         {
             EventAggregator.HighlightCorrectRhSticker.Unsubscribe(ToggleHighlight);
         }

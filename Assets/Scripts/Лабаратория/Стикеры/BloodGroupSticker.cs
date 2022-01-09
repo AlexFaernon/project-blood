@@ -12,7 +12,7 @@ public class BloodGroupSticker : MonoBehaviour
         rectTransform = GetComponent<RectTransform>().anchoredPosition;
         EventAggregator.OnDrop.Subscribe(OnDrop);
         
-        if (GameMode.IsTraining)
+        if (CurrentGameMode.GameMode == GameMode.Training)
         {
             EventAggregator.HighlightCorrectBloodGroupSticker.Subscribe(ToggleHighlight);
         }
@@ -56,7 +56,7 @@ public class BloodGroupSticker : MonoBehaviour
     {
         EventAggregator.OnDrop.Unsubscribe(OnDrop);
         
-        if (GameMode.IsTraining)
+        if (CurrentGameMode.GameMode == GameMode.Training)
         {
             EventAggregator.HighlightCorrectBloodGroupSticker.Unsubscribe(ToggleHighlight);
         }

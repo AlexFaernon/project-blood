@@ -7,6 +7,7 @@ public class OnClickMainMenu : MonoBehaviour
 {
     public void GameStart()
     {
+        CurrentGameMode.GameMode = GameMode.Game;
         LoadDataScript.LoadAll();
         if (Shop.ToggleIngredients)
         {
@@ -24,14 +25,13 @@ public class OnClickMainMenu : MonoBehaviour
     }
     public void LoadTraining()
     {
+        CurrentGameMode.GameMode = GameMode.Training;
         var random = new Random();
         
-        for (var i = 0; i < 5; i++)
+        for (var i = 0; i < 2; i++)
         {
             BloodClass.GenerateRandomSample(random);
         }
-
-        GameMode.IsTraining = true;
 
         SceneManager.LoadScene("Lab");
     }

@@ -4,7 +4,7 @@ public class ToggleOnTraining : MonoBehaviour
 {
     private void Awake()
     {
-        if (GameMode.IsTraining)
+        if (CurrentGameMode.GameMode == GameMode.Training)
         {
             gameObject.SetActive(false);
         }
