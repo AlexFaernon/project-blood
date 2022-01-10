@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ConfirmButton : MonoBehaviour
 {
     [SerializeField] private GameObject confirmScreen;
+    [SerializeField] private Button backButton;
     
     public void OnClickYes()
     {
@@ -16,6 +18,7 @@ public class ConfirmButton : MonoBehaviour
         {
             CheckOnTraining();
         }
+        BloodClass.ClearCurrentBloodSample();
     }
 
     public void OnClickNo()
@@ -35,5 +38,6 @@ public class ConfirmButton : MonoBehaviour
         TrainingStatistics.AddResult(BloodClass.CurrentBloodSample);
         GlobalStatistics.AddAttempt(BloodClass.CurrentBloodSample, BloodClass.CurrentBloodSample.IsCorrectlyAnalyzed);
         confirmScreen.SetActive(false);
+        backButton.interactable = false;
     }
 }

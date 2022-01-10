@@ -114,7 +114,8 @@ public class BloodSample
     
     public override string ToString()
     {
-        return BloodGroup + (Rh == Rh.Negative ? "-" : "+") + (BloodQuality == BloodQuality.Normal ? ", норм." : ", анем.");
+        return (BloodGroup == BloodGroup.Zero ? "0" : BloodGroup.ToString()) +
+               (Rh == Rh.Negative ? "-" : "+") + (BloodQuality == BloodQuality.Normal ? " норм." : " анем.");
     }
 
     public override bool Equals(object obj)

@@ -34,7 +34,9 @@ public class ShakerScript : MonoBehaviour
             {
                 return;
             }
+            
             EventAggregator.MakeCocktail.Publish(Food.Cocktail.GetBadCocktail());
+            TableManager.ClearShaker();
             return;
         }
 
@@ -56,13 +58,13 @@ public class ShakerScript : MonoBehaviour
                 {
                     Debug.Log("Nice blood");
                     EventAggregator.MakeCocktail.Publish(cocktail);
-                    TableManager.ClearShaker();
                     return;
                 }
             }
         }
         
         EventAggregator.MakeCocktail.Publish(Food.Cocktail.GetBadCocktail());
+        TableManager.ClearShaker();
     }
     
     private void OnTriggerEnter2D(Collider2D other)

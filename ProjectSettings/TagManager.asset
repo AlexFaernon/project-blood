@@ -22,6 +22,8 @@ TagManager:
   - Fruit
   - Miscellaneous
   - Ice
+  - Celery
+  - JuiceGlass
   layers:
   - Default
   - TransparentFX

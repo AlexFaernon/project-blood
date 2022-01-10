@@ -136,6 +136,8 @@ public class IngredientOnTable : MonoBehaviour
                 Food.Fruits.Celery => celery,
                 _ => image.sprite
             };
+
+            gameObject.tag = ingredient.Fruit == Food.Fruits.Celery ? "Celery" : "Fruit";
         }
         else
         {

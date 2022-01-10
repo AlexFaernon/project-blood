@@ -79,6 +79,11 @@ public class GlassBar : MonoBehaviour
         
         cocktailColor.color = TableManager.CurrentCocktail.GetColor();
 
+        if (TableManager.CurrentCocktail.IsShitted || TableManager.CurrentCocktail.PureBlood)
+        {
+            return;
+        }
+        
         foreach (var ingredient in TableManager.CurrentCocktail.Ingredients)
         {
             if (ingredient.Fruit != null)

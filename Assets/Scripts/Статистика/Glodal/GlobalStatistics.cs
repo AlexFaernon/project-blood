@@ -1,5 +1,3 @@
-using UnityEngine.VFX;
-
 public static class GlobalStatistics
 {
     public static int[,] allAttempts { get; private set; } = new int[4,2];
