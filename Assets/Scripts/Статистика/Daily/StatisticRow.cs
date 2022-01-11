@@ -26,21 +26,27 @@ public class StatisticRow : MonoBehaviour
             return;
         }
 
+        customerName.text = CustomerData.GetRandomName();
+        
         switch (record.Stars)
         {
             case OrderStars.NoStars:
+                review.text = CustomerData.GetRandomZeroStarReview();
                 oneStar.color = Color.clear;
                 twoStar.color = Color.clear;
                 threeStar.color = Color.clear;
                 break;
             case OrderStars.OneStar:
+                review.text = CustomerData.GetRandomOneStarReview();
                 twoStar.color = Color.clear;
                 threeStar.color = Color.clear;
                 break;
             case OrderStars.TwoStars:
+                review.text = CustomerData.GetRandomTwoStarsReview();
                 threeStar.color = Color.clear;
                 break;
             case OrderStars.ThreeStars:
+                review.text = CustomerData.GetRandomThreeStarsReview();
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
