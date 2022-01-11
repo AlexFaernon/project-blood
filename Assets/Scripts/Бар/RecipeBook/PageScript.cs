@@ -12,7 +12,7 @@ public class PageScript : MonoBehaviour
     [SerializeField] private TMP_Text order;
     private Food.Cocktail cocktail;
 
-    private Dictionary<string, string> Translate = new Dictionary<string, string>
+    private readonly Dictionary<string, string> Translate = new Dictionary<string, string>
     {
         {"Apple", "яблока"},
         {"Lemon", "лимона"},
@@ -34,8 +34,18 @@ public class PageScript : MonoBehaviour
     {
         order.text = CustomersClass.CurrentCustomer.Order;
         cocktail = PagesManager.GetPage(pageSide);
-
+        
         cocktailName.text = cocktail.Name;
+
+        if (pageSide == PageSide.Left)
+        {
+            EventAggregator.RecipeBookCocktailLeft.Publish(cocktail);
+        }
+        else
+        {
+            EventAggregator.RecipeBookCocktailRight.Publish(cocktail);
+        }
+        
         recipe.text = GetIngredients();
         blood.text = cocktail.BloodSample.ToString();
     }
