@@ -9,6 +9,8 @@ public class CheckTraining : MonoBehaviour
 
     public void OnClick()
     {
+        BloodClass.ClearCurrentBloodSample();
+        
         if (!BloodClass.UnknownBloodSamples.Any())
         {
             BloodClass.ClearBloodSamples();

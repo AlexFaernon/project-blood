@@ -3,7 +3,6 @@ using System;
 public static class Resources
 {
     public const int SamplePrice = 200;
-    //todo saved
     public static int Money = 100000;
     public static int Samples => BloodClass.BloodSamples.Count;
     public static bool[] ToggleSampleShop { get; private set; } = { true, true, true, true, true, true };

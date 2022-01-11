@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -69,14 +68,7 @@ public class GlassBar : MonoBehaviour
     {
         if (TableManager.CurrentCocktail == null) return;
         
-        
         cocktailColor.gameObject.SetActive(true);
-        if (TableManager.CurrentCocktail.IsShitted)
-        {
-            cocktailColor.color = Color.black;
-            return;
-        }
-        
         cocktailColor.color = TableManager.CurrentCocktail.GetColor();
 
         if (TableManager.CurrentCocktail.IsShitted || TableManager.CurrentCocktail.PureBlood)

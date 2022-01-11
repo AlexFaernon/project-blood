@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Unity.Collections;
 
 public static class DailyStatistics
 {
-    //todo save
     public static List<StatisticRecord> Records = new List<StatisticRecord>();
     private static List<StatisticRecord>.Enumerator enumerator;
     public static void AddRecord(OrderStars stars, BloodSample wanted, BloodSample given)

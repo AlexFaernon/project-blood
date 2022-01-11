@@ -4,7 +4,6 @@ using System.Linq;
 
 public static class BloodClass
 {
-    //todo saved
     public static List<BloodSample> BloodSamples { get; private set; } = new List<BloodSample>();
 
     public static IEnumerable<BloodSample> AnalyzedBloodSamples =>

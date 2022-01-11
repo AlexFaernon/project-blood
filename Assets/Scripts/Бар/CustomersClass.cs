@@ -4,7 +4,6 @@ using System.Linq;
 
 public static class CustomersClass
 {
-    //todo saved
     public static List<Customer> Customers { get; private set; } = new List<Customer>();
     public static Customer CurrentCustomer => Customers.Count > 0 ? Customers[0] : null;
 
@@ -51,6 +50,13 @@ public class Customer
     {
         CustomersClass.RemoveCustomer(this);
         
+        if (cocktail.IsShitted)
+        {
+            DailyStatistics.AddRecord(OrderStars.NoStars, Cocktail.BloodSample, cocktail.BloodSample);
+            GlobalStatistics.AddAttempt(cocktail.BloodSample, false);
+            return OrderStars.NoStars;
+        }
+        
         if (Cocktail.Equals(cocktail))
         {
             DailyStatistics.AddRecord(OrderStars.ThreeStars, Cocktail.BloodSample, cocktail.BloodSample);
@@ -71,12 +77,9 @@ public class Customer
             GlobalStatistics.AddAttempt(cocktail.BloodSample, true);
             return OrderStars.OneStar;
         }
-
-        if (!Cocktail.IsShitted)
-        {
-            DailyStatistics.AddRecord(OrderStars.NoStars, Cocktail.BloodSample, cocktail.BloodSample);
-            GlobalStatistics.AddAttempt(cocktail.BloodSample, false);
-        }
+        
+        DailyStatistics.AddRecord(OrderStars.NoStars, Cocktail.BloodSample, cocktail.BloodSample);
+        GlobalStatistics.AddAttempt(cocktail.BloodSample, false);
         return OrderStars.NoStars;
     }
 }

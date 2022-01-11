@@ -18,7 +18,6 @@ public class ConfirmButton : MonoBehaviour
         {
             CheckOnTraining();
         }
-        BloodClass.ClearCurrentBloodSample();
     }
 
     public void OnClickNo()
@@ -28,6 +27,7 @@ public class ConfirmButton : MonoBehaviour
 
     private void PackageToFridge()
     {
+        BloodClass.ClearCurrentBloodSample();
         SaveDataScript.SaveBlood();
         SceneManager.LoadScene("Lab");
     }

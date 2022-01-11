@@ -2,12 +2,11 @@ using System.Collections.Generic;
 
 public static class TableManager
 {
-    //todo saved
     public static HashSet<Food.Ingredient> Shaker = new HashSet<Food.Ingredient>();
     
     public static BloodSample CurrentPackage;
     public static bool IsPackageInShaker;
-    //todo saved all
+
     public static Food.Cocktail CurrentCocktail;
     public static Food.Fruits? CurrentBoardFruit = null;
     public static bool IsPiecesActive;
@@ -16,7 +15,7 @@ public static class TableManager
     public static Food.Fruits? CurrentJuicerFruit = null;
 
     public static bool IsGlassActive;
-    //todo saved
+
     public static List<Food.Ingredient> ingredientsOnTable { get; private set; } = new List<Food.Ingredient>();
 
     public static int IngredientsCount => ingredientsOnTable.Count;

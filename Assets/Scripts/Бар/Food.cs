@@ -4,7 +4,6 @@ using UnityEngine;
 
 public static class Food
 {
-    //todo saved
     public static Dictionary<object, int> Ingredients = new Dictionary<object, int>
     {
         {Fruits.Apple, 5},
@@ -84,14 +83,14 @@ public static class Food
             Ingredients = ingredients;
         }
 
-        public static Cocktail GetBadCocktail()
+        public static Cocktail GetBadCocktail(BloodGroup bloodGroup, Rh rh, BloodQuality bloodQuality)
         {
-            return new Cocktail();
+            return new Cocktail(false, bloodGroup, rh, bloodQuality);
         }
 
         public static Cocktail GetPureBlood(BloodGroup bloodGroup, Rh rh, BloodQuality bloodQuality)
         {
-            return new Cocktail(bloodGroup, rh, bloodQuality);
+            return new Cocktail(true, bloodGroup, rh, bloodQuality);
         }
 
         public Color GetColor()
@@ -104,16 +103,18 @@ public static class Food
             throw new ArgumentException("cant parse color");
         }
 
-        private Cocktail(BloodGroup bloodGroup, Rh rh, BloodQuality bloodQuality)
+        private Cocktail(bool isBlood, BloodGroup bloodGroup, Rh rh, BloodQuality bloodQuality)
         {
-            PureBlood = true;
-            color = "#ff0000";
             BloodSample = new BloodSample(bloodGroup, rh, bloodQuality);
-        }
-        
-        private Cocktail()
-        {
+            if (isBlood)
+            {
+                PureBlood = true;
+                color = "#ff0000";
+                return;
+            }
+
             IsShitted = true;
+            color = "#000000";
         }
 
         public override bool Equals(object obj)

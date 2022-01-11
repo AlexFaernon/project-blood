@@ -6,6 +6,7 @@ public class TrainingRecord : MonoBehaviour
 {
     [SerializeField] private TMP_Text result;
     [SerializeField] private TMP_Text given;
+    [SerializeField] private Sprite correctSprite;
     private Image image;
     private TrainingResult trainingResult;
 
@@ -16,6 +17,9 @@ public class TrainingRecord : MonoBehaviour
         given.text = trainingResult.Given.ToString();
 
         image = GetComponent<Image>();
-        image.color = trainingResult.IsCorrect ? Color.green : Color.red;
+        if (trainingResult.IsCorrect)
+        {
+            image.sprite = correctSprite;
+        }
     }
 }

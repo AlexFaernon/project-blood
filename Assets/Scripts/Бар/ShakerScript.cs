@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class ShakerScript : MonoBehaviour
@@ -27,6 +26,7 @@ public class ShakerScript : MonoBehaviour
     private void ShakeShakeShake()
     {
         var cocktails = Recipes.Cocktails;
+        var currentPackage = TableManager.CurrentPackage;
 
         if (!TableManager.IsPackageInShaker)
         {
@@ -35,14 +35,14 @@ public class ShakerScript : MonoBehaviour
                 return;
             }
             
-            EventAggregator.MakeCocktail.Publish(Food.Cocktail.GetBadCocktail());
+            EventAggregator.MakeCocktail.Publish(Food.Cocktail.GetBadCocktail(currentPackage.BloodGroup,
+                currentPackage.Rh, currentPackage.BloodQuality));
             TableManager.ClearShaker();
             return;
         }
 
         if (TableManager.Shaker.Count == 0)
         {
-            var currentPackage = TableManager.CurrentPackage;
             EventAggregator.MakeCocktail.Publish(Food.Cocktail.GetPureBlood(currentPackage.BloodGroup,
                 currentPackage.Rh, currentPackage.BloodQuality));
             return;
@@ -52,7 +52,6 @@ public class ShakerScript : MonoBehaviour
         {
             if (TableManager.Shaker.SetEquals(cocktail.Ingredients))
             {
-                var currentPackage = TableManager.CurrentPackage;
                 Debug.Log(cocktail.Name);
                 if (cocktail.BloodSample.Equals(currentPackage))
                 {
@@ -63,7 +62,8 @@ public class ShakerScript : MonoBehaviour
             }
         }
         
-        EventAggregator.MakeCocktail.Publish(Food.Cocktail.GetBadCocktail());
+        EventAggregator.MakeCocktail.Publish(Food.Cocktail.GetBadCocktail(currentPackage.BloodGroup,
+            currentPackage.Rh, currentPackage.BloodQuality));
         TableManager.ClearShaker();
     }
     
