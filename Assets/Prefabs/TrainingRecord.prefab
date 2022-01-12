@@ -357,7 +357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   result: {fileID: 1332512986421103079}
   given: {fileID: 6421072616124047427}
-  correctSprite: {fileID: 734081542361844221, guid: afd4e3880457bc24cb59ad0100f8fcef, type: 3}
+  correctSprite: {fileID: 8040155709104991896, guid: afd4e3880457bc24cb59ad0100f8fcef, type: 3}
 --- !u!114 &1014168906721194082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,7 +378,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2651017370374730129, guid: 39b67efa64c874741bc552dc2708b013, type: 3}
+  m_Sprite: {fileID: 734081542361844221, guid: afd4e3880457bc24cb59ad0100f8fcef, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
