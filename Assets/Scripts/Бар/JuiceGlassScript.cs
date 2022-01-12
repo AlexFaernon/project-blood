@@ -19,13 +19,16 @@ public class JuiceGlassScript : MonoBehaviour
 
         if (isTriggered)
         {
-            TableManager.AddIngredientToShaker(new Food.Ingredient((Food.Fruits)TableManager.CurrentJuicerFruit,
-                Food.Condition.Juice));
-            
-            TableManager.CurrentJuicerFruit = null;
-            SaveDataScript.SaveCurrentJuicerFruit();
-            
-            SceneManager.LoadScene("Bar");
+            if (TableManager.CurrentJuicerFruit != null)
+            {
+                TableManager.AddIngredientToShaker(new Food.Ingredient((Food.Fruits)TableManager.CurrentJuicerFruit,
+                    Food.Condition.Juice));
+
+                TableManager.CurrentJuicerFruit = null;
+                SaveDataScript.SaveCurrentJuicerFruit();
+
+                SceneManager.LoadScene("Bar");
+            }
         }
 
         rectTransform.anchoredPosition = originalPos;
