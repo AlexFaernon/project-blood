@@ -2646,15 +2646,15 @@ MonoBehaviour:
   cocktailColor: {fileID: 547131187}
   pieces: {fileID: 957780633}
   peel: {fileID: 1778437919}
-  lemonPeel: {fileID: 0}
-  limePeel: {fileID: 0}
-  orangePeel: {fileID: 0}
-  applePeel: {fileID: 0}
-  lemonPieces: {fileID: 0}
-  limePieces: {fileID: 0}
-  orangePieces: {fileID: 0}
-  applePieces: {fileID: 0}
-  pineapplePieces: {fileID: 0}
+  lemonPeel: {fileID: 4596706338465237354, guid: fa692d913f3d4604db7735911067272b, type: 3}
+  limePeel: {fileID: 8242891743220494525, guid: fa692d913f3d4604db7735911067272b, type: 3}
+  orangePeel: {fileID: -5651761452835898896, guid: fa692d913f3d4604db7735911067272b, type: 3}
+  applePeel: {fileID: -866188150408453065, guid: fa692d913f3d4604db7735911067272b, type: 3}
+  lemonPieces: {fileID: -1304607780481968111, guid: fa692d913f3d4604db7735911067272b, type: 3}
+  limePieces: {fileID: 8723839120984426160, guid: fa692d913f3d4604db7735911067272b, type: 3}
+  orangePieces: {fileID: -5249144903319898640, guid: fa692d913f3d4604db7735911067272b, type: 3}
+  applePieces: {fileID: -2816530359246088203, guid: fa692d913f3d4604db7735911067272b, type: 3}
+  pineapplePieces: {fileID: -2816530359246088203, guid: fa692d913f3d4604db7735911067272b, type: 3}
 --- !u!114 &800527326
 MonoBehaviour:
   m_ObjectHideFlags: 0
