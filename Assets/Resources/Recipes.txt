@@ -2,7 +2,7 @@
 Можете дать мне 0 положительную без анемии с...апельсином?   
 Description
 1
-#FF0000
+C0E91D
 Zero Positive Normal
 Ice Lime,Pieces Orange,Peel;
 
@@ -10,7 +10,7 @@ Ice Lime,Pieces Orange,Peel;
 Пожалуйста первую с "положительным", "нежным" вкусом кофе
 Description
 3
-#FF0000
+F1F52C
 Zero Positive Normal
 Coffee Lemon,Juice Lime,Juice;
 
@@ -18,7 +18,7 @@ Coffee Lemon,Juice Lime,Juice;
 Первую с анемией и яблоками
 Description
 3
-#FF0000
+F9DF86
 Zero Positive Anemia
 Orange,Pieces Apple,Pieces Lemon,Juice;
 
@@ -26,7 +26,7 @@ Orange,Pieces Apple,Pieces Lemon,Juice;
 Я требую сладко-пряный напиток с первой!
 Description
 4
-#FF0000
+F3F804
 Zero Positive Anemia
 Honey Lime,Pieces Pepper;
 
@@ -34,7 +34,7 @@ Honey Lime,Pieces Pepper;
 Мне пожалуйста одного "Поэта"
 Description
 0
-#FF0000
+F8B304
 Zero Negative Normal
 Lime,Pieces Orange,Pieces Ice;
 
@@ -42,7 +42,7 @@ Lime,Pieces Orange,Pieces Ice;
 Давно хотел попробовать Кровавую Мэри
 Description
 4
-#FF0000
+90F96C
 Zero Negative Normal
 Lemon,Pieces Celery,Juice Pepper;
 
@@ -50,7 +50,7 @@ Lemon,Pieces Celery,Juice Pepper;
 Хм... Давайте Глинтвейн с первой
 Description
 2
-#FF0000
+F0B827
 Zero Negative Anemia
 Carnation Orange,Peel Lemon,Peel;
 
@@ -58,199 +58,198 @@ Carnation Orange,Peel Lemon,Peel;
 Смиренно прошу первую с анемией и льдом
 Description
 3
-#FF0000
+91F018
 Zero Negative Anemia
 Celery,Juice Coffee Ice;
 
 зеленая фея
-Пожалуйста одну положительную Вторую, без анемии
+Пожалуйста одну положительную Вторую, без анемии, холодную
 Description
 1
-#FF0000
+FBFF29
 A Positive Normal
 Ice Lemon,Pieces Lemon,Peel;
 
 горячий тодди
-Быстро гони сюда вторую положительную! И чтобы без анемии!
+Быстро гони сюда вторую положительную с медом! И чтобы без анемии!
 Description
 2
-#FF0000
+FB7F58
 A Positive Normal
 Apple,Pieces Carnation Honey;
 
 рохля
-Order
+Одного Рохлю
 Description
 0
-#FF0000
+F0E478
 A Positive Anemia
 Apple,Pieces Lemon,Pieces Ice;
 
 путеобходчик
-Order
+Как на счет путеобходника
 Description
 4
-#FF0000
+BD2D24
 A Positive Anemia
 Lime,Peel Apple,Juice Pineapple,Juice;
 
 бенгалия
-Order
+Сегодня мне бы хотелось вторую отрицательную без анемии с кусочками ананасов
 Description
 4
-#FF0000
+D99D04
 A Negative Normal
 Pineapple,Pieces Lime,Juice Orange,Pieces;
 
 конник
-Order
+Сделайте вторую нормальную с гвоздикой
 Description
 2
-#FF0000
+D6E80F
 A Negative Normal
 Honey Carnation Lemon,Peel;
 
 рори
-Order
+Один Рори
 Description
 3
-#FF0000
+7AE349
 A Negative Anemia
 Celery,Juice Orange,Pieces Lemon,Juice;
 
 чван
-Order
+Вторую с анемией отрицательную и яблочным соком 
 Description
 3
-#FF0000
+E0D81E
 A Negative Anemia
 Lemon,Pieces Lime,Juice Apple,Juice;
 
 цевница
-Order
+Цевницу. 
 Description
 1
-#FF0000
+FDB427
 B Positive Normal
 Apple,Pieces Ice Lime,Peel;
 
 осечка
-Order
+Можно 3ю нормальную с медом?
 Description
 2
-#FF0000
+EFCC86
 B Positive Normal
 Honey Lime,Pieces Apple,Peel;
 
 тод грог
-Order
+Наливай Тода из Грога
 Description
 2
-#FF0000
+CF8B08
 B Positive Anemia
 Lemon,Pieces Orange,Pieces Carnation;
 
 ножка
-Order
+Как же он назывался... как часть тела вроде...
 Description
 4
-#FF0000
+8AFF2E
 B Positive Anemia
 Celery,Juice Pepper Apple,Juice;
 
 экзотический грог
-Order
+Дайте пожалуйста экзотического грога
 Description
 4
-#FF0000
+EC8711
 B Negative Normal
 Pepper Carnation Orange,Juice;
 
 бульдозер
-Order
+ХОЧУ БУЛЬДОЗЕР
 Description
 4
-#FF0000
+FDDCB5
 B Negative Normal
 Coffee Ice Pineapple,Juice;
 
 пикули
-Order
+Мне бы Пикули
 Description
 2
-#FF0000
+8E4F05
 B Negative Anemia
 Honey Coffee Lemon,Peel;
 
 гидропульт
-Order
+Налейте 3ю группу крови с анемией и кусочками фруктов
 Description
 0
-#FF0000
+DBDE47
 B Negative Anemia
 Lemon,Pieces Apple,Pieces Orange,Pieces;
 
 острая тропикана
-Order
+Дайте что-то тропическое и поострее
 Description
 4
-#FF0000
+A5A800
 AB Positive Normal
 Pineapple,Pieces Pepper Lemon,Juice;
 
 оранжевый бунт
-Order
+Хочу 4ю с одними цитрусами
 Description
 1
-#FF0000
+DEAB28
 AB Positive Normal
 Orange,Peel Orange,Pieces Lime,Pieces;
 
 капеллан
-Order
+Один капеллан с 4й положительной
 Description
 3
-#FF0000
+A47600
 AB Positive Anemia
 Coffee Carnation Orange,Juice;
 
 кино
-Order
+Я пробовал у вас что-то с названием про кино, можете повторить?
 Description
 4
-#FF0000
+E8DF90
 AB Positive Anemia
 Pepper Apple,Peel Apple,Juice;
 
 апология
-Order
+Давайте Апологию 
 Description
 3
-#FF0000
+90E893
 AB Negative Normal
 Celery,Juice Lemon,Peel Lime,Juice;
 
 томпак
-Order
+Мне бы 4ю отрицательную попрохладнее
 Description
 0
-#FF0000
+D8D01B
 AB Negative Normal
 Orange,Pieces Ice Lime,Pieces;
 
-
 том коллинз
-Order
+Дайте мне Том Коллинз
 Description
 2
-#FF0000
+B9416C
 AB Negative Anemia
 Apple,Pieces Coffee Orange,Peel;
 
 золотое дно
-Order
+Хочу четвертую с сельдереем, медом и анемией
 Description
 3
-#FF0000
+C3B10A
 AB Negative Anemia
 Celery,Juice Honey Lime,Juice;

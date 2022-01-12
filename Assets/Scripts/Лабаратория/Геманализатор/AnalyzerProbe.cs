@@ -66,9 +66,9 @@ public class AnalyzerProbe : MonoBehaviour
             
         if (BloodClass.CurrentBloodSample.BloodQuality == BloodQuality.Normal)
         {
-            return "ok";
+            return "норм";
         }
 
-        return "anemia";
+        return "анемия";
     }
 }

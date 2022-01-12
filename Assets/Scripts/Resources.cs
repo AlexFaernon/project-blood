@@ -2,12 +2,12 @@ using System;
 
 public static class Resources
 {
-    public const int SamplePrice = 200;
-    public static int Money = 100000;
+    public const int SamplePrice = 300;
+    public static int Money = 4000;
     public static int Samples => BloodClass.BloodSamples.Count;
     public static bool[] ToggleSampleShop { get; private set; } = { true, true, true, true, true, true };
 
-    private const int StartPackagesAmount = 1;
+    private const int StartPackagesAmount = 3;
 
     public static void ResetSamples()
     {

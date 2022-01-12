@@ -419,10 +419,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 399fe9cca6347f0438f1f3081114390a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pepper: {fileID: -8910185188965617263, guid: fa692d913f3d4604db7735911067272b, type: 3}
+  pepper: {fileID: 7390672627365032131, guid: 94dbecc329064fe4a8351a43ba27f890, type: 3}
   honey: {fileID: -2514090845265749896, guid: fa692d913f3d4604db7735911067272b, type: 3}
   coffee: {fileID: 7232866782919844115, guid: fa692d913f3d4604db7735911067272b, type: 3}
-  carnation: {fileID: 4228901137728465256, guid: fa692d913f3d4604db7735911067272b, type: 3}
+  carnation: {fileID: -3094164041140664026, guid: 94dbecc329064fe4a8351a43ba27f890, type: 3}
   apple: {fileID: -8127588152979283642, guid: fa692d913f3d4604db7735911067272b, type: 3}
   lemon: {fileID: 2846480466549036171, guid: fa692d913f3d4604db7735911067272b, type: 3}
   lime: {fileID: 525426231575101927, guid: fa692d913f3d4604db7735911067272b, type: 3}
@@ -585,10 +585,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 399fe9cca6347f0438f1f3081114390a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pepper: {fileID: -8910185188965617263, guid: fa692d913f3d4604db7735911067272b, type: 3}
+  pepper: {fileID: 7390672627365032131, guid: 94dbecc329064fe4a8351a43ba27f890, type: 3}
   honey: {fileID: -2514090845265749896, guid: fa692d913f3d4604db7735911067272b, type: 3}
   coffee: {fileID: 7232866782919844115, guid: fa692d913f3d4604db7735911067272b, type: 3}
-  carnation: {fileID: 4228901137728465256, guid: fa692d913f3d4604db7735911067272b, type: 3}
+  carnation: {fileID: -3094164041140664026, guid: 94dbecc329064fe4a8351a43ba27f890, type: 3}
   apple: {fileID: -8127588152979283642, guid: fa692d913f3d4604db7735911067272b, type: 3}
   lemon: {fileID: 2846480466549036171, guid: fa692d913f3d4604db7735911067272b, type: 3}
   lime: {fileID: 525426231575101927, guid: fa692d913f3d4604db7735911067272b, type: 3}
@@ -1015,10 +1015,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 399fe9cca6347f0438f1f3081114390a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pepper: {fileID: -8910185188965617263, guid: fa692d913f3d4604db7735911067272b, type: 3}
+  pepper: {fileID: 7390672627365032131, guid: 94dbecc329064fe4a8351a43ba27f890, type: 3}
   honey: {fileID: -2514090845265749896, guid: fa692d913f3d4604db7735911067272b, type: 3}
   coffee: {fileID: 7232866782919844115, guid: fa692d913f3d4604db7735911067272b, type: 3}
-  carnation: {fileID: 4228901137728465256, guid: fa692d913f3d4604db7735911067272b, type: 3}
+  carnation: {fileID: -3094164041140664026, guid: 94dbecc329064fe4a8351a43ba27f890, type: 3}
   apple: {fileID: -8127588152979283642, guid: fa692d913f3d4604db7735911067272b, type: 3}
   lemon: {fileID: 2846480466549036171, guid: fa692d913f3d4604db7735911067272b, type: 3}
   lime: {fileID: 525426231575101927, guid: fa692d913f3d4604db7735911067272b, type: 3}
@@ -1189,81 +1189,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1 &435292257
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 435292258}
-  - component: {fileID: 435292260}
-  - component: {fileID: 435292259}
-  m_Layer: 5
-  m_Name: Peeler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &435292258
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 435292257}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1339878578}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.12970088, y: 0.5}
-  m_AnchorMax: {x: 0.39423364, y: 0.90400004}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &435292259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 435292257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 6469986080808193202, guid: fa692d913f3d4604db7735911067272b, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &435292260
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 435292257}
-  m_CullTransparentMesh: 1
 --- !u!1 &438803319
 GameObject:
   m_ObjectHideFlags: 0
@@ -3685,9 +3610,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1877131200}
-  - {fileID: 435292258}
+  m_Children: []
   m_Father: {fileID: 589090758}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3716,7 +3639,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7542866833673289647, guid: fa692d913f3d4604db7735911067272b, type: 3}
+  m_Sprite: {fileID: 5280494265833716545, guid: 94dbecc329064fe4a8351a43ba27f890, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3821,15 +3744,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pieces: {fileID: 1266190358}
   peel: {fileID: 523585998}
-  lemonPeel: {fileID: 0}
-  limePeel: {fileID: 0}
-  orangePeel: {fileID: 0}
-  applePeel: {fileID: 0}
-  lemonPieces: {fileID: 0}
-  limePieces: {fileID: 0}
-  orangePieces: {fileID: 0}
-  applePieces: {fileID: 0}
-  pineapplePieces: {fileID: 0}
+  lemonPeel: {fileID: -5681715623906803659, guid: 46d0176a4966d214da9e3ee05b08ea5b, type: 3}
+  limePeel: {fileID: 390822217099590800, guid: 46d0176a4966d214da9e3ee05b08ea5b, type: 3}
+  orangePeel: {fileID: -5681715623906803659, guid: 46d0176a4966d214da9e3ee05b08ea5b, type: 3}
+  applePeel: {fileID: 6857994544077573545, guid: 46d0176a4966d214da9e3ee05b08ea5b, type: 3}
+  lemonPieces: {fileID: 3864506164475028038, guid: 46d0176a4966d214da9e3ee05b08ea5b, type: 3}
+  limePieces: {fileID: -5332933075894232698, guid: 46d0176a4966d214da9e3ee05b08ea5b, type: 3}
+  orangePieces: {fileID: -3253093238617776130, guid: 46d0176a4966d214da9e3ee05b08ea5b, type: 3}
+  applePieces: {fileID: -6618509765886037282, guid: 46d0176a4966d214da9e3ee05b08ea5b, type: 3}
+  pineapplePieces: {fileID: -5425085665731289121, guid: 46d0176a4966d214da9e3ee05b08ea5b, type: 3}
 --- !u!114 &1339878586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4071,10 +3994,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 399fe9cca6347f0438f1f3081114390a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pepper: {fileID: -8910185188965617263, guid: fa692d913f3d4604db7735911067272b, type: 3}
+  pepper: {fileID: 7390672627365032131, guid: 94dbecc329064fe4a8351a43ba27f890, type: 3}
   honey: {fileID: -2514090845265749896, guid: fa692d913f3d4604db7735911067272b, type: 3}
   coffee: {fileID: 7232866782919844115, guid: fa692d913f3d4604db7735911067272b, type: 3}
-  carnation: {fileID: 4228901137728465256, guid: fa692d913f3d4604db7735911067272b, type: 3}
+  carnation: {fileID: -3094164041140664026, guid: 94dbecc329064fe4a8351a43ba27f890, type: 3}
   apple: {fileID: -8127588152979283642, guid: fa692d913f3d4604db7735911067272b, type: 3}
   lemon: {fileID: 2846480466549036171, guid: fa692d913f3d4604db7735911067272b, type: 3}
   lime: {fileID: 525426231575101927, guid: fa692d913f3d4604db7735911067272b, type: 3}
@@ -5409,81 +5332,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea08771aff0839f478bf3e25e8b780d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1877131199
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1877131200}
-  - component: {fileID: 1877131202}
-  - component: {fileID: 1877131201}
-  m_Layer: 5
-  m_Name: Knife
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1877131200
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1877131199}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1339878578}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.47058406, y: 0.47010285}
-  m_AnchorMax: {x: 0.87600005, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1877131201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1877131199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: -8049069829848609737, guid: fa692d913f3d4604db7735911067272b, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1877131202
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1877131199}
-  m_CullTransparentMesh: 1
 --- !u!1 &1933452862
 GameObject:
   m_ObjectHideFlags: 0

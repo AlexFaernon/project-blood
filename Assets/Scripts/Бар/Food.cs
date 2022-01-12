@@ -95,7 +95,7 @@ public static class Food
 
         public Color GetColor()
         {
-            if (ColorUtility.TryParseHtmlString(color, out var parsedColor))
+            if (ColorUtility.TryParseHtmlString("#" + color, out var parsedColor))
             {
                 return parsedColor;
             }
@@ -109,12 +109,12 @@ public static class Food
             if (isBlood)
             {
                 PureBlood = true;
-                color = "#ff0000";
+                color = "ff0000";
                 return;
             }
 
             IsShitted = true;
-            color = "#000000";
+            color = "412414";
         }
 
         public override bool Equals(object obj)
