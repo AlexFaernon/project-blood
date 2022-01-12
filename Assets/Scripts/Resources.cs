@@ -16,6 +16,10 @@ public static class Resources
     
     public static void CreateFirstSamples()
     {
+        if (BloodClass.BloodSamples.Count > 0)
+        {
+            return;
+        }
         var random = new Random();
         for (var i = 0; i < StartPackagesAmount; i++)
         {

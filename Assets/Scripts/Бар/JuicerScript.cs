@@ -30,6 +30,7 @@ public class JuicerScript : MonoBehaviour
 
     private void JuiceFruit()
     {
+        glassColor.gameObject.SetActive(true);
         glassColor.color = TableManager.CurrentJuicerFruit switch
         {
             Food.Fruits.Lime => lime,
