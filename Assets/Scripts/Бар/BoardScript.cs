@@ -6,6 +6,15 @@ public class BoardScript : MonoBehaviour
 {
     [SerializeField] private GameObject pieces;
     [SerializeField] private GameObject peel;
+    [SerializeField] private Sprite lemonPeel;
+    [SerializeField] private Sprite limePeel;
+    [SerializeField] private Sprite orangePeel;
+    [SerializeField] private Sprite applePeel;
+    [SerializeField] private Sprite lemonPieces;
+    [SerializeField] private Sprite limePieces;
+    [SerializeField] private Sprite orangePieces;
+    [SerializeField] private Sprite applePieces;
+    [SerializeField] private Sprite pineapplePieces;
     private Image piecesImage;
     private Image peelImage;
     public static readonly Color pineapple = new Color(240f/255, 234f/255, 78f/255);
@@ -50,31 +59,29 @@ public class BoardScript : MonoBehaviour
         switch (TableManager.CurrentBoardFruit)
         {
             case Food.Fruits.Lime:
-                peelImage.color = lime;
-                piecesImage.color = lime;
+                peelImage.sprite = limePeel;
+                piecesImage.sprite = limePieces;
                 break;
             case Food.Fruits.Lemon:
-                peelImage.color = lemon;
-                piecesImage.color = lemon;
+                peelImage.sprite = lemonPeel;
+                piecesImage.sprite = lemonPieces;
                 break;
             case Food.Fruits.Apple:
-                peelImage.color = apple;
-                piecesImage.color = apple;
+                peelImage.sprite = applePeel;
+                piecesImage.sprite = applePieces;
                 break;
             case Food.Fruits.Orange:
-                peelImage.color = orange;
-                piecesImage.color = orange;
+                peelImage.sprite = orangePeel;
+                piecesImage.sprite = orangePieces;
                 break;
             case Food.Fruits.Pineapple:
                 peel.SetActive(false);
                 TableManager.IsPeelActive = false;
                 SaveDataScript.SaveIsPeelActive();
-                piecesImage.color = pineapple;
+                piecesImage.sprite = pineapplePieces;
                 break;
         }
     }
-
-    
 
     private void OnDestroy()
     {

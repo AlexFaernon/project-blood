@@ -23,14 +23,14 @@ public class PageScript : MonoBehaviour
         {"Pepper", "Перец"},
         {"Coffee", "Кофе"},
         {"Honey", "Мёд"},
-        {"Carnation", "Корица"},
+        {"Carnation", "Гвоздика"},
         {"Peel", "Кожура"},
         {"Pieces", "Кусочки"},
         {"Juice", "Сок"},
         {"Ice", "Лёд"}
     };
 
-    private void Awake()
+    private void Start()
     {
         order.text = CustomersClass.CurrentCustomer.Order;
         cocktail = PagesManager.GetPage(pageSide);

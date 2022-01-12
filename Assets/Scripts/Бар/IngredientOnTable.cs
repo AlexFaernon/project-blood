@@ -18,6 +18,7 @@ public class IngredientOnTable : MonoBehaviour
     private OnTrigger isTriggered;
     private RectTransform rectTransform;
     private Vector2 originalPos;
+    private Image image;
 
     private void Awake()
     {
@@ -28,11 +29,14 @@ public class IngredientOnTable : MonoBehaviour
             gameObject.SetActive(false);
             return;
         }
-
+        
+        image = GetComponent<Image>();
         rectTransform = GetComponent<RectTransform>();
         originalPos = rectTransform.anchoredPosition;
         EventAggregator.OnDrop.Subscribe(OnDrop);
         ChangeSprite();
+        var fitter = GetComponent<AspectRatioFitter>();
+        fitter.aspectRatio = image.sprite.rect.width / image.sprite.rect.height;
     }
 
     private void OnDrop(GameObject other)
@@ -122,7 +126,6 @@ public class IngredientOnTable : MonoBehaviour
     
     private void ChangeSprite()
     {
-        var image = GetComponent<Image>();
         if (ingredient.Fruit != null)
         {
             image.sprite = ingredient.Fruit switch

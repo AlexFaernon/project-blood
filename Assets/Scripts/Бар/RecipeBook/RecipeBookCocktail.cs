@@ -8,6 +8,15 @@ public class RecipeBookCocktail : MonoBehaviour
     [SerializeField] private Image pieces;
     [SerializeField] private Image peel;
     [SerializeField] private PageSide pageSide;
+    [SerializeField] private Sprite lemonPeel;
+    [SerializeField] private Sprite limePeel;
+    [SerializeField] private Sprite orangePeel;
+    [SerializeField] private Sprite applePeel;
+    [SerializeField] private Sprite lemonPieces;
+    [SerializeField] private Sprite limePieces;
+    [SerializeField] private Sprite orangePieces;
+    [SerializeField] private Sprite applePieces;
+    [SerializeField] private Sprite pineapplePieces;
 
     private void Awake()
     {
@@ -23,31 +32,42 @@ public class RecipeBookCocktail : MonoBehaviour
     
     private void ChangeSprite(Food.Cocktail cocktail)
     {
-        cocktailColor.color = cocktail.GetColor();
+        var color = cocktail.GetColor();
+        cocktailColor.color = new Color(color.r, color.g, color.b, 0.5f);
 
         foreach (var ingredient in cocktail.Ingredients)
         {
             if (ingredient.Fruit != null)
             {
-                var fruitColor = ingredient.Fruit switch
+                if (ingredient.Condition == Food.Condition.Peel)
                 {
-                    Food.Fruits.Lime => BoardScript.lime,
-                    Food.Fruits.Lemon => BoardScript.lemon,
-                    Food.Fruits.Apple => BoardScript.apple,
-                    Food.Fruits.Orange => BoardScript.orange,
-                    Food.Fruits.Pineapple => BoardScript.pineapple,
-                    _ => Color.white
-                };
-
-                switch (ingredient.Condition)
+                    peel.gameObject.SetActive(true);
+                }
+                else if (ingredient.Condition == Food.Condition.Pieces)
                 {
-                    case Food.Condition.Peel:
-                        peel.gameObject.SetActive(true);
-                        peel.color = fruitColor;
+                    pieces.gameObject.SetActive(true);
+                }
+                
+                switch (ingredient.Fruit)
+                {
+                    case Food.Fruits.Lime:
+                        peel.sprite = limePeel;
+                        pieces.sprite = limePieces;
                         break;
-                    case Food.Condition.Pieces:
-                        pieces.gameObject.SetActive(true);
-                        pieces.color = fruitColor;
+                    case Food.Fruits.Lemon:
+                        peel.sprite = lemonPeel;
+                        pieces.sprite = lemonPieces;
+                        break;
+                    case Food.Fruits.Apple:
+                        peel.sprite = applePeel;
+                        pieces.sprite = applePieces;
+                        break;
+                    case Food.Fruits.Orange:
+                        peel.sprite = orangePeel;
+                        pieces.sprite = orangePieces;
+                        break;
+                    case Food.Fruits.Pineapple:
+                        pieces.sprite = pineapplePieces;
                         break;
                 }
             }
