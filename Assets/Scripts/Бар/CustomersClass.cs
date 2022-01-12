@@ -66,6 +66,7 @@ public class Customer
         if (Cocktail.Equals(cocktail))
         {
             DailyStatistics.AddRecord(OrderStars.ThreeStars, Cocktail.BloodSample, cocktail.BloodSample, avatarNumber);
+            Resources.Money += 900;
             GlobalStatistics.AddAttempt(cocktail.BloodSample, true);
             return OrderStars.ThreeStars;
         }
@@ -73,6 +74,7 @@ public class Customer
         if (Cocktail.BloodSample.Equals(cocktail.BloodSample) && !cocktail.PureBlood)
         {
             DailyStatistics.AddRecord(OrderStars.TwoStars, Cocktail.BloodSample, cocktail.BloodSample, avatarNumber);
+            Resources.Money += 800;
             GlobalStatistics.AddAttempt(cocktail.BloodSample, true);
             return OrderStars.TwoStars;
         }
@@ -80,6 +82,7 @@ public class Customer
         if (Cocktail.BloodSample.Equals(cocktail.BloodSample) && cocktail.PureBlood)
         {
             DailyStatistics.AddRecord(OrderStars.OneStar, Cocktail.BloodSample, cocktail.BloodSample, avatarNumber);
+            Resources.Money += 700;
             GlobalStatistics.AddAttempt(cocktail.BloodSample, true);
             return OrderStars.OneStar;
         }
