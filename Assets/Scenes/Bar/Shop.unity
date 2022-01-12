@@ -5783,7 +5783,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\u0412\u0441\u0435 \u043F\u0430\u043A\u0435\u0442\u044B \u0441 \u043A\u0440\u043E\u0432\u044C\u044E
-    \u043F\u043E 300. \u0418\u043D\u0433\u0440\u0438\u0434\u0438\u0435\u043D\u0442\u044B
+    \u043F\u043E 300. \u0418\u043D\u0433\u0440\u0435\u0434\u0438\u0435\u043D\u0442\u044B
     \u043F\u043E 100!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7d0f00a772ef8e643a99845f6cb595a3, type: 2}
