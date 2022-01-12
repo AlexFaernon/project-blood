@@ -4,18 +4,16 @@ using UnityEngine.UI;
 
 public class JuicerScript : MonoBehaviour
 {
-    [SerializeField] private GameObject Glass;
-    private Image glassColor;
-    private readonly Color pineapple = new Color(240f/255, 234f/255, 78f/255);
-    private readonly Color lime = new Color(119f/255, 255f/255, 13f/255);
-    private readonly Color orange = new Color(255f/255, 138f/255, 0);
-    private readonly Color apple = new Color(255f/255, 9f/255, 9f/255);
-    private readonly Color lemon = new Color(255f/255, 202f/255, 33f/255);
-    private readonly Color celery = new Color(163f/255, 255f/255, 90f/255);
+    [SerializeField] private Image glassColor;
+    private readonly Color pineapple = new Color(240f/255, 234f/255, 78f/255, 0.5f);
+    private readonly Color lime = new Color(119f/255, 255f/255, 13f/255, 0.5f);
+    private readonly Color orange = new Color(255f/255, 138f/255, 0, 0.5f);
+    private readonly Color apple = new Color(255f/255, 9f/255, 9f/255, 0.5f);
+    private readonly Color lemon = new Color(255f/255, 202f/255, 33f/255, 0.5f);
+    private readonly Color celery = new Color(163f/255, 255f/255, 90f/255, 0.5f);
     void Awake()
     {
         EventAggregator.OnJuicerDrop.Subscribe(SetCurrentFruit);
-        glassColor = Glass.GetComponent<Image>();
         if (TableManager.CurrentJuicerFruit != null)
         {
             JuiceFruit();

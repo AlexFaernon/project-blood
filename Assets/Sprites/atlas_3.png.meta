@@ -334,10 +334,10 @@ TextureImporter:
       name: atlas_3_8
       rect:
         serializedVersion: 2
-        x: 6193
-        y: 3651
-        width: 2325
-        height: 1345
+        x: 6204
+        y: 3663
+        width: 2307
+        height: 1325
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -418,10 +418,10 @@ TextureImporter:
       name: atlas_3_12
       rect:
         serializedVersion: 2
-        x: 6171
-        y: 2124
-        width: 2367
-        height: 1340
+        x: 6180
+        y: 2133
+        width: 2358
+        height: 1319
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

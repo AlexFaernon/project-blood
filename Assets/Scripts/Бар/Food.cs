@@ -6,16 +6,16 @@ public static class Food
 {
     public static Dictionary<object, int> Ingredients = new Dictionary<object, int>
     {
-        {Fruits.Apple, 5},
-        {Fruits.Lemon, 5},
-        {Fruits.Lime, 5},
-        {Fruits.Pineapple, 5},
-        {Fruits.Orange, 5},
-        {Fruits.Celery, 5},
-        {Miscellaneous.Carnation, 5},
-        {Miscellaneous.Coffee, 5},
-        {Miscellaneous.Honey, 5},
-        {Miscellaneous.Pepper, 5}
+        {Fruits.Apple, 3},
+        {Fruits.Lemon, 3},
+        {Fruits.Lime, 3},
+        {Fruits.Pineapple, 3},
+        {Fruits.Orange, 3},
+        {Fruits.Celery, 3},
+        {Miscellaneous.Carnation, 3},
+        {Miscellaneous.Coffee, 3},
+        {Miscellaneous.Honey, 3},
+        {Miscellaneous.Pepper, 3}
     };
 
     [Serializable]

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public static class PagesManager
 {
-    private static int pageNumber;
+    public static int pageNumber { get; private set; }
 
     public static Food.Cocktail GetPage(PageSide pageSide)
     {
