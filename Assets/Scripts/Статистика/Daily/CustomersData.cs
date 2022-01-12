@@ -1,7 +1,10 @@
-using System;
+using UnityEngine;
+using Random = System.Random;
 
 public static class CustomerData
 {
+    public static Sprite[] Avatars;
+    public static int CurrentSpriteNumber;
     public static string[] Names;
     public static string[] ZeroStarReviews;
     public static string[] OneStarReviews;
@@ -9,6 +12,11 @@ public static class CustomerData
     public static string[] ThreeStarsReviews;
     private static readonly Random random = new Random();
 
+    public static void RandomizeAvatar()
+    {
+        CurrentSpriteNumber = random.Next(Avatars.Length);
+    }
+    
     public static string GetRandomName()
     {
         return Names[random.Next(Names.Length)];

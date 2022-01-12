@@ -8,6 +8,7 @@ public class StatisticRow : MonoBehaviour
     //todo name and review
     [SerializeField] private TMP_Text customerName;
     [SerializeField] private TMP_Text review;
+    [SerializeField] private Image avatar;
     [SerializeField] private Image oneStar;
     [SerializeField] private Image twoStar;
     [SerializeField] private Image threeStar;
@@ -27,6 +28,7 @@ public class StatisticRow : MonoBehaviour
         }
 
         customerName.text = CustomerData.GetRandomName();
+        avatar.sprite = record.Avatar;
         
         switch (record.Stars)
         {

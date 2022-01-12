@@ -1357,6 +1357,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phrase: {fileID: 461157160}
+  sprites:
+  - {fileID: 5004295228302479271, guid: bf0a2756a58e35a45bb5cb39e9ab8418, type: 3}
+  - {fileID: -7558899106870987644, guid: bf0a2756a58e35a45bb5cb39e9ab8418, type: 3}
+  - {fileID: 8748849617165538086, guid: bf0a2756a58e35a45bb5cb39e9ab8418, type: 3}
+  - {fileID: -7223555127256306126, guid: bf0a2756a58e35a45bb5cb39e9ab8418, type: 3}
+  - {fileID: 2186001265198185827, guid: bf0a2756a58e35a45bb5cb39e9ab8418, type: 3}
 --- !u!50 &438803324
 Rigidbody2D:
   serializedVersion: 4

@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CustomerScript : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class CustomerScript : MonoBehaviour
             return;
         }
 
+        GetComponent<Image>().sprite = customer.Avatar;
         EventAggregator.SellCocktail.Subscribe(SellCocktail);
         phrase.text = customer.Order;
     }
