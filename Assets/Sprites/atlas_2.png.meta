@@ -574,10 +574,10 @@ TextureImporter:
       name: atlas_2_18
       rect:
         serializedVersion: 2
-        x: 4257
-        y: 1910
-        width: 1754
-        height: 1244
+        x: 4271
+        y: 1923
+        width: 1726
+        height: 1219
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
