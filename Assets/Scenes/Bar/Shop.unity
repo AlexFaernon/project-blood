@@ -1790,7 +1790,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   fruits: 0
-  miscellaneous: 5
+  miscellaneous: 4
   price: 100
 --- !u!222 &475480139
 CanvasRenderer:
