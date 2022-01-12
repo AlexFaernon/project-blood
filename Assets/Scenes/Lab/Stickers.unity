@@ -567,8 +567,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f6ebbcd31736124f9f55d7b82e25359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteNegative: {fileID: 9067231885739494311, guid: 39b67efa64c874741bc552dc2708b013, type: 3}
-  spritePositive: {fileID: -9154349981637424030, guid: 39b67efa64c874741bc552dc2708b013, type: 3}
+  spriteNegative: {fileID: 6709283282450003341, guid: afd4e3880457bc24cb59ad0100f8fcef, type: 3}
+  spritePositive: {fileID: 6805222539368569808, guid: afd4e3880457bc24cb59ad0100f8fcef, type: 3}
 --- !u!1 &141662630
 GameObject:
   m_ObjectHideFlags: 0
@@ -942,10 +942,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79252e850bc2a8b4fbf9c16b921af4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite0: {fileID: 6790233536147402255, guid: 39b67efa64c874741bc552dc2708b013, type: 3}
-  spriteA: {fileID: -1865513627305380708, guid: 39b67efa64c874741bc552dc2708b013, type: 3}
-  spriteB: {fileID: 1875137858143941208, guid: 39b67efa64c874741bc552dc2708b013, type: 3}
-  spriteAB: {fileID: -6389311493790300230, guid: 39b67efa64c874741bc552dc2708b013, type: 3}
+  sprite0: {fileID: -2171425992481184831, guid: afd4e3880457bc24cb59ad0100f8fcef, type: 3}
+  spriteA: {fileID: 8798077226078285393, guid: afd4e3880457bc24cb59ad0100f8fcef, type: 3}
+  spriteB: {fileID: -8141309960943369591, guid: afd4e3880457bc24cb59ad0100f8fcef, type: 3}
+  spriteAB: {fileID: -8415229746782572642, guid: afd4e3880457bc24cb59ad0100f8fcef, type: 3}
 --- !u!114 &262686313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1757,7 +1757,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.26811615}
   m_AnchorMax: {x: 1, y: 0.8391263}
-  m_AnchoredPosition: {x: 0, y: -1.2}
+  m_AnchoredPosition: {x: 0, y: -1.1999998}
   m_SizeDelta: {x: 0, y: 2.540001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &740616267
@@ -3640,8 +3640,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d943fc92b6940fe4e8793108c5a6dba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteNormal: {fileID: 2884079414160265696, guid: 39b67efa64c874741bc552dc2708b013, type: 3}
-  spriteAnemia: {fileID: -4338973582282941595, guid: 39b67efa64c874741bc552dc2708b013, type: 3}
+  spriteNormal: {fileID: -6826919215724268928, guid: afd4e3880457bc24cb59ad0100f8fcef, type: 3}
+  spriteAnemia: {fileID: 6726013832431893144, guid: afd4e3880457bc24cb59ad0100f8fcef, type: 3}
 --- !u!114 &1543451701
 MonoBehaviour:
   m_ObjectHideFlags: 0
