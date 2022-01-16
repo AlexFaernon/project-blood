@@ -1,9 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
 
 public static class CustomerData
 {
-    public static Sprite[] Avatars;
+    public static List<CustomerAvatar> Avatars = new List<CustomerAvatar>();
     public static int CurrentSpriteNumber;
     public static string[] Names;
     public static string[] ZeroStarReviews;
@@ -14,7 +15,7 @@ public static class CustomerData
 
     public static void RandomizeAvatar()
     {
-        CurrentSpriteNumber = random.Next(Avatars.Length);
+        CurrentSpriteNumber = random.Next(Avatars.Count);
     }
     
     public static string GetRandomName()
@@ -40,5 +41,19 @@ public static class CustomerData
     public static string GetRandomThreeStarsReview()
     {
         return ThreeStarsReviews[random.Next(ThreeStarsReviews.Length)];
+    }
+}
+
+public class CustomerAvatar
+{
+    public readonly Sprite Normal;
+    public readonly Sprite Angry;
+    public readonly Sprite Happy;
+
+    public CustomerAvatar(Sprite normal, Sprite angry, Sprite happy)
+    {
+        Normal = normal;
+        Angry = angry;
+        Happy = happy;
     }
 }

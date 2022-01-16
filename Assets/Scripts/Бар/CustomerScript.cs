@@ -1,3 +1,6 @@
+using System;
+using System.Collections;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,6 +9,8 @@ using UnityEngine.UI;
 public class CustomerScript : MonoBehaviour
 {
     [SerializeField] private TMP_Text phrase;
+    [SerializeField] private GameObject bubble;
+    private Image avatar;
     private Customer customer;
     private void Awake()
     {
@@ -16,7 +21,8 @@ public class CustomerScript : MonoBehaviour
             return;
         }
 
-        GetComponent<Image>().sprite = customer.Avatar;
+        avatar = GetComponent<Image>();
+        avatar.sprite = customer.NormalAvatar;
         EventAggregator.SellCocktail.Subscribe(SellCocktail);
         phrase.text = customer.Order;
     }
@@ -24,6 +30,16 @@ public class CustomerScript : MonoBehaviour
     private void SellCocktail(Food.Cocktail cocktail)
     {
         var stars = customer.CheckCocktail(cocktail);
+        if (stars == OrderStars.NoStars)
+        {
+            avatar.sprite = customer.AngryAvatar;
+        }
+        else if (stars == OrderStars.TwoStars || stars == OrderStars.ThreeStars)
+        {
+            avatar.sprite = customer.HappyAvatar;
+        }
+        bubble.SetActive(false);
+        
         Debug.Log(stars.ToString());
     }
 

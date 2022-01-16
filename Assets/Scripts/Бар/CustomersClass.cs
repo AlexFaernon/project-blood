@@ -40,7 +40,9 @@ public static class CustomersClass
 public class Customer
 {
     private readonly int avatarNumber;
-    public Sprite Avatar => CustomerData.Avatars[avatarNumber];
+    public Sprite NormalAvatar => CustomerData.Avatars[avatarNumber].Normal;
+    public Sprite AngryAvatar => CustomerData.Avatars[avatarNumber].Angry;
+    public Sprite HappyAvatar => CustomerData.Avatars[avatarNumber].Happy;
     public readonly Food.Cocktail Cocktail;
     public string Order => Cocktail.Order;
     public string Blood => Cocktail.BloodSample.ToString();

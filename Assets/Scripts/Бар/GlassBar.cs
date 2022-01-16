@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -37,19 +38,24 @@ public class GlassBar : MonoBehaviour
     private void OnDrop(GameObject other)
     {
         if (other != gameObject) return;
-
+        
+        StartCoroutine(OnDropCoroutine());
+    }
+    
+    private IEnumerator OnDropCoroutine()
+    {
         switch (triggers)
         {
             case Triggers.Hole:
                 TableManager.ClearCocktail();
                 SceneManager.LoadScene("Bar");
-                return;
+                yield break;
             case Triggers.Customer:
                 if (!TableManager.IsPackageInShaker)
                 {
                     Debug.Log("Blood doko???");
                     rectTransform.anchoredPosition = originalPos;
-                    return;
+                    yield break;
                 }
                 EventAggregator.SellCocktail.Publish(TableManager.CurrentCocktail);
                 TableManager.ClearCocktail();
@@ -58,8 +64,16 @@ public class GlassBar : MonoBehaviour
                 SaveDataScript.SaveIsGlassActive();
                 
                 TableManager.RemovePackage();
+                
+                cocktailColor.gameObject.SetActive(false);
+                peel.gameObject.SetActive(false);
+                pieces.gameObject.SetActive(false);
+                Destroy(GetComponent<Image>());
+                
+                yield return new WaitForSeconds(2);
+
                 SceneManager.LoadScene("Bar");
-                return;
+                yield break;
             default:
                 rectTransform.anchoredPosition = originalPos;
                 break;

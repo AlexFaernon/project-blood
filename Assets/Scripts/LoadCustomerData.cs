@@ -5,7 +5,14 @@ public class LoadCustomerData : MonoBehaviour
 {
     private void Awake()
     {
-        CustomerData.Avatars = UnityEngine.Resources.LoadAll<Sprite>("Customers");
+        var normal = UnityEngine.Resources.LoadAll<Sprite>("Customers/normal");
+        var happy = UnityEngine.Resources.LoadAll<Sprite>("Customers/happy");
+        var angry = UnityEngine.Resources.LoadAll<Sprite>("Customers/angry");
+
+        for (var i = 0; i < 5; i++)
+        {
+            CustomerData.Avatars.Add(new CustomerAvatar(normal[i], angry[i], happy[i]));
+        }
 
         CustomerData.Names =
             UnityEngine.Resources.Load<TextAsset>("Reviews/Names").text.Split(new[] { "\r\n" },

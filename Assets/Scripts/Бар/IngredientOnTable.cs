@@ -15,10 +15,14 @@ public class IngredientOnTable : MonoBehaviour
     [SerializeField] private Sprite orange;
     [SerializeField] private Sprite celery;
     private Food.Ingredient ingredient;
-    private OnTrigger isTriggered;
     private RectTransform rectTransform;
     private Vector2 originalPos;
     private Image image;
+
+    private bool isOnShaker;
+    private bool isOnBoard;
+    private bool isOnJuicer;
+    private bool isOnFridge;
 
     private void Awake()
     {
@@ -46,64 +50,68 @@ public class IngredientOnTable : MonoBehaviour
             return;
         }
         
-        switch (isTriggered)
+        if (isOnBoard)
         {
-            case OnTrigger.None:
-                rectTransform.anchoredPosition = originalPos;
-                break;
-            case OnTrigger.Board:
-                Board();
-                break;
-            case OnTrigger.Juicer:
-                Juicer();
-                break;
-            case OnTrigger.Shaker:
-                Shaker();
-                break;
-            case OnTrigger.Fridge:
-                ToFridge();
-                break;
+            if (Board()) return;
+        }
+
+        if (isOnJuicer)
+        {
+            if (Juicer()) return;
+        }
+
+        if (isOnShaker)
+        {
+            if (Shaker()) return;
+        }
+
+        if (isOnFridge)
+        {
+            ToFridge();
         }
     }
 
-    private void Board()
+    private bool Board()
     {
         if (ingredient.Fruit == null || ingredient.Fruit == Food.Fruits.Celery)
         {
             rectTransform.anchoredPosition = originalPos;
-            return;
+            return false;
         }
         
         EventAggregator.OnBoardDrop.Publish(ingredient);
         TableManager.RemoveIngredientByName(name);
         ingredient = null;
+        return true;
     }
 
-    private void Juicer()
+    private bool Juicer()
     {
         if (ingredient.Fruit == null)
         {
             rectTransform.anchoredPosition = originalPos;
-            return;
+            return false;
         }
         
         EventAggregator.OnJuicerDrop.Publish(ingredient);
         TableManager.RemoveIngredientByName(name);
         ingredient = null;
+        return true;
     }
 
-    private void Shaker()
+    private bool Shaker()
     {
         if (ingredient.Miscellaneous == null)
         {
             rectTransform.anchoredPosition = originalPos;
-            return;
+            return false;
         }
         
         TableManager.AddIngredientToShaker(ingredient);
         TableManager.RemoveIngredientByName(name);
         ingredient = null;
         SceneManager.LoadScene("Bar");
+        return true;
     }
     
     private void ToFridge()
@@ -158,32 +166,44 @@ public class IngredientOnTable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        isTriggered = other.gameObject.tag switch
+        switch (other.tag)
         {
-            "Board" => OnTrigger.Board,
-            "Fridge" => OnTrigger.Fridge,
-            "Juicer" => OnTrigger.Juicer,
-            "Shaker" => OnTrigger.Shaker,
-            _ => isTriggered
-        };
+            case "Board":
+                isOnBoard = true;
+                break;
+            case "Juicer":
+                isOnJuicer = true;
+                break;
+            case "Shaker":
+                isOnShaker = true;
+                break;
+            case "Fridge":
+                isOnFridge = true;
+                break;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        isTriggered = OnTrigger.None;
+        switch (other.tag)
+        {
+            case "Board":
+                isOnBoard = false;
+                break;
+            case "Juicer":
+                isOnJuicer = false;
+                break;
+            case "Shaker":
+                isOnShaker = false;
+                break;
+            case "Fridge":
+                isOnFridge = false;
+                break;
+        }
     }
 
     private void OnDestroy()
     {
         EventAggregator.OnDrop.Unsubscribe(OnDrop);
-    }
-
-    private enum OnTrigger
-    {
-        None,
-        Board,
-        Juicer,
-        Fridge,
-        Shaker
     }
 }

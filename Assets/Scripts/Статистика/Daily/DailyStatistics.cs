@@ -14,12 +14,7 @@ public static class DailyStatistics
 
     public static StatisticRecord GetRecord()
     {
-        if (enumerator.MoveNext())
-        {
-            return enumerator.Current;
-        }
-
-        return null;
+        return enumerator.MoveNext() ? enumerator.Current : null;
     }
 
     public static void SetEnumerator()
@@ -41,7 +36,7 @@ public class StatisticRecord
     public readonly BloodSample Wanted;
     public readonly BloodSample Given;
     private readonly int avatarNumber;
-    public Sprite Avatar => CustomerData.Avatars[avatarNumber];
+    public Sprite Avatar => CustomerData.Avatars[avatarNumber].Normal;
 
     public StatisticRecord(OrderStars stars, BloodSample wanted, BloodSample given, int avatar)
     {

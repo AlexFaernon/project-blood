@@ -34,18 +34,18 @@ public class StatisticRow : MonoBehaviour
         {
             case OrderStars.NoStars:
                 review.text = CustomerData.GetRandomZeroStarReview();
-                oneStar.color = Color.clear;
-                twoStar.color = Color.clear;
-                threeStar.color = Color.clear;
+                oneStar.color = new Color(1,1,1, 0.4f);
+                twoStar.color = new Color(1,1,1, 0.4f);
+                threeStar.color = new Color(1,1,1, 0.4f);
                 break;
             case OrderStars.OneStar:
                 review.text = CustomerData.GetRandomOneStarReview();
-                twoStar.color = Color.clear;
-                threeStar.color = Color.clear;
+                twoStar.color = new Color(1,1,1, 0.4f);
+                threeStar.color = new Color(1,1,1, 0.4f);
                 break;
             case OrderStars.TwoStars:
                 review.text = CustomerData.GetRandomTwoStarsReview();
-                threeStar.color = Color.clear;
+                threeStar.color = new Color(1,1,1, 0.4f);
                 break;
             case OrderStars.ThreeStars:
                 review.text = CustomerData.GetRandomThreeStarsReview();
