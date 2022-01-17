@@ -32,4 +32,3 @@ Android
 2. Assets/Scenes - папка с используемыми сценами
 3. Assets/Resources - папка с используемыми ресурсами
 4. Assets/Sprites - папка с используемыми изображениями
-5. Documentation - Документация проекта
