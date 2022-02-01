@@ -25,6 +25,10 @@ public static class EventAggregator
     public static readonly Event<BloodQuality> HighlightCorrectQualitySticker = new Event<BloodQuality>();
     public static readonly Event<Food.Cocktail> RecipeBookCocktailLeft = new Event<Food.Cocktail>();
     public static readonly Event<Food.Cocktail> RecipeBookCocktailRight = new Event<Food.Cocktail>();
+    public static readonly BasicEvent PlasmaPickUp = new BasicEvent();
+    public static readonly BasicEvent BloodCellsPickUp = new BasicEvent();
+    public static readonly Event<Erythrocyte> ErythrocytePickUp = new Event<Erythrocyte>();
+    public static readonly Event<Antigen> AntigenPickUp = new Event<Antigen>();
 }
 
 public class Event<T>

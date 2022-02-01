@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 public class DragNDropTablet : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
-    [SerializeField] private GameObject drop;
+    [SerializeField] private GameObject pipette;
     [SerializeField] private TypeOfDraggingItem typeOfDraggingItem;
     [SerializeField] private Erythrocyte erythrocyte;
     [SerializeField] private Antigen antigen;
@@ -13,7 +13,7 @@ public class DragNDropTablet : MonoBehaviour, IDragHandler, IBeginDragHandler, I
 
     private void Awake()
     {
-        otherRectTransform = drop.GetComponent<RectTransform>();
+        otherRectTransform = pipette.GetComponent<RectTransform>();
         canvas = GetComponentInParent<Canvas>();
         originalPosition = otherRectTransform.anchoredPosition;
     }
@@ -27,8 +27,24 @@ public class DragNDropTablet : MonoBehaviour, IDragHandler, IBeginDragHandler, I
     public void OnBeginDrag(PointerEventData eventData)
     {
         var camPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,Input.mousePosition.y));
-        drop.transform.GetComponent<RectTransform>().position = new Vector3(camPos.x, camPos.y, 0);
-        drop.SetActive(true);
+        pipette.transform.GetComponent<RectTransform>().position = new Vector3(camPos.x, camPos.y, 0);
+        pipette.SetActive(true);
+        
+        switch (typeOfDraggingItem)
+        {
+            case TypeOfDraggingItem.Plasma:
+                EventAggregator.PlasmaPickUp.Publish();
+                break;
+            case TypeOfDraggingItem.BloodCells:
+                EventAggregator.BloodCellsPickUp.Publish();
+                break;
+            case TypeOfDraggingItem.Erythrocyte:
+                EventAggregator.ErythrocytePickUp.Publish(erythrocyte);
+                break;
+            case TypeOfDraggingItem.Antigen:
+                EventAggregator.AntigenPickUp.Publish(antigen);
+                break;
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -49,7 +65,7 @@ public class DragNDropTablet : MonoBehaviour, IDragHandler, IBeginDragHandler, I
                 break;
         }
         otherRectTransform.anchoredPosition = originalPosition;
-        drop.SetActive(false);
+        pipette.SetActive(false);
     }
     
     public enum TypeOfDraggingItem

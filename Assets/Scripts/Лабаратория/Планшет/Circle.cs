@@ -1,16 +1,22 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Circle : MonoBehaviour
 {
-    [SerializeField] Sprite AgglutinatedSprite;
-    [SerializeField] Sprite FilledSprite;
+    [SerializeField] private List<Sprite> AgglutinatedSprites;
+    [SerializeField] private List<Sprite> DilutedSprites;
+    [SerializeField] private Sprite BloodSprite;
+    [SerializeField] private Sprite PlasmsSprite;
 
     private int number;
     private CircleContent content;
     private bool isTriggered;
     private Image image;
 
+    private static System.Random random = new System.Random();
+    
     private void Awake()
     {
         number = int.Parse(name);
@@ -31,16 +37,45 @@ public class Circle : MonoBehaviour
     {
         if (IsAgglutinated())
         {
-            image.sprite = AgglutinatedSprite;
-            image.color = new Color(255, 255 , 255, 1);
+            image.sprite = GetRandomAgglutinatedSprite();
+            image.color = Color.white;
+            return;
+        }
+        
+        if (content.Antigens.Any() || content.Erythrocytes.Any())
+        {
+            if (content.ContainsBloodCells)
+            {
+                image.color = new Color(255, 255, 255, 0.8f);
+                return;
+            }
+            
+            image.sprite = GetRandomDilutedSprite();
+            image.color = Color.white;
             return;
         }
 
-        if (content.ContainsPlasma || content.ContainsBloodCells)
+        if (content.ContainsPlasma)
         {
-            image.sprite = FilledSprite;
-            image.color = new Color(255, 255, 255, 1);
+            image.sprite = PlasmsSprite;
+            image.color = Color.white;
         }
+
+        if (content.ContainsBloodCells)
+        {
+            image.sprite = BloodSprite;
+            image.color = Color.white;
+        }
+    }
+
+    private Sprite GetRandomAgglutinatedSprite()
+    {
+        return AgglutinatedSprites[random.Next(AgglutinatedSprites.Count)];
+    }
+    
+    private Sprite GetRandomDilutedSprite()
+    {
+        return DilutedSprites[random.Next(DilutedSprites.Count)];
     }
     
     private bool IsAgglutinated()
