@@ -69,4 +69,13 @@ public class PipetteScript : MonoBehaviour
                 throw new ArgumentOutOfRangeException(nameof(antigen), antigen, null);
         }
     }
+
+    private void OnDestroy()
+    {
+        EventAggregator.PlasmaPickUp.Unsubscribe(OnPlasmaPickUp);
+        EventAggregator.BloodCellsPickUp.Unsubscribe(OnBloodCellsPickUp);
+        EventAggregator.ErythrocytePickUp.Unsubscribe(OnErythrocytePickUp);
+        EventAggregator.AntigenPickUp.Unsubscribe(OnAntigenPickUp);
+    }
+        
 }
