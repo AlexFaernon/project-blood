@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class OnClickLab : MonoBehaviour
 {
+    [SerializeField] private GameObject close;
+    [SerializeField] private GameObject open;
+    
     public void LoadLab()
     {
         SceneManager.LoadScene("Lab");
@@ -41,5 +44,15 @@ public class OnClickLab : MonoBehaviour
     public void ClearTablet()
     {
         TabletCircles.ClearTablet();
+    }
+
+    public void CloseWindow()
+    {
+        close.SetActive(false);
+    }
+
+    public void OpenWindow()
+    {
+        open.SetActive(true);
     }
 }

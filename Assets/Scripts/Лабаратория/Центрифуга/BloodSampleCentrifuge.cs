@@ -18,7 +18,7 @@ public class BloodSampleCentrifuge : MonoBehaviour
         if (BloodClass.CurrentBloodSample.IsSeparated)
         {
             GetComponent<Image>().sprite = SeparatedSprite;
-            return;
+            gameObject.tag = "Finish";
         }
         
         rectTransform = GetComponent<RectTransform>();
@@ -32,8 +32,11 @@ public class BloodSampleCentrifuge : MonoBehaviour
         {
             if (isTriggered)
             {
-                gameObject.SetActive(false);
-                EventAggregator.SampleDropOnCentrifuge.Publish();
+                if (!BloodClass.CurrentBloodSample.IsSeparated)
+                {
+                    gameObject.SetActive(false);
+                    EventAggregator.SampleDropOnCentrifuge.Publish();
+                }
             }
             
             rectTransform.anchoredPosition = originalPos;

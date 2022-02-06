@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class UnknownPackage : MonoBehaviour
 {
+    [SerializeField] private GameObject helpScreen;
+    
     private bool IsTriggered;
     private Vector2 originalPos;
     private RectTransform rectTransform;
@@ -53,6 +55,8 @@ public class UnknownPackage : MonoBehaviour
     {
         if (gameObject == other)
         {
+            helpScreen.SetActive(false);
+            
             if (IsTriggered)
             {
                 BloodClass.ChangeCurrentBloodSample(BloodClass.GetUnknownSampleByNumber(name));

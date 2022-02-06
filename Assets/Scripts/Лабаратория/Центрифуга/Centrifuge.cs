@@ -1,9 +1,11 @@
+using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Centrifuge : MonoBehaviour
 {
     [SerializeField] private Sprite centrifugeWithSampleSprite;
+    [SerializeField] private Button button;
 
     private void Awake()
     {
@@ -13,6 +15,7 @@ public class Centrifuge : MonoBehaviour
     private void OnDrop()
     {
         GetComponent<Image>().sprite = centrifugeWithSampleSprite;
+        button.interactable = true;
     }
 
     private void OnDestroy()
